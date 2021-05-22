@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cuerpo {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url("https://www.scati.com/upload2013/314g.JPG") no-repeat
+    center/cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.cuerpo:before {
+  content: "";
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background: linear-gradient(90deg, #532e2e, #868685);
+  z-index: 1;
+  opacity: 0.7;
+}
+
+.formulario {
+  z-index: 2;
+  width: 30%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.formulario:before {
+  content: "";
+  width: 30%;
+  min-height: 80vh;
+  position: absolute;
+  top: 15%;
+  left: 35%;
+  border-radius: 20px;
+
+  background: linear-gradient(#6b0707, #412121);
+}
+
+.formulario .imagen {
+  position: absolute;
+  display: flex;
+  z-index: 3;
+  top: 51px;
+}
+
+.ingresar {
+  color: #fff;
+  height: 20px;
+  z-index: 3;
+  text-align: center;
+  margin-top: 161px;
+
+  font-size: 30px;
+}
+
+.formulario-usuario {
+  z-index: 2;
+  padding: 20px;
+  height: 30px;
+  width: 100%;
+  margin-top: 58px;
+  background: 0 0;
+  color: #fff;
+}
+
+.borde-usuario {
+  z-index: 2;
+  border-bottom: 2px solid rgb(134, 130, 130);
+  width: 90%;
+}
+
+.borde-contra {
+  z-index: 2;
+  border-bottom: 2px solid rgb(134, 130, 130);
+  width: 90%;
+}
+::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.formulario-contraseña {
+  z-index: 2;
+  padding: 20px;
+  height: 30px;
+  width: 100%;
+  margin-top: 33px;
+  background: 0 0;
+  border: none;
+  color: #fff;
+}
+
+.formulario input {
+  border: none;
+}
+
+.recordar-contra {
+  z-index: 2;
+}
+
+.label-recordar-contra {
+  z-index: 2;
+  color: #fff;
+  margin-top: 34px;
+  width: 90%;
+}
+
+.btn {
+  z-index: 2;
+  border-radius: 20px;
+  border: 1px solid #e9e8e8;
+  background-color: #e9e8e8;
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  margin-top: 45px;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn.ghost {
+  background-color: transparent;
+  border-color: #fff;
+}
+
+.olvidar-contra {
+  z-index: 2;
+  color: #fff;
+  margin-top: 42px;
+  font-size: 10px;
+}
+
+/*responsive*/
+@media (max-width: 1205px) {
+  .formulario:before {
+    width: 40%;
+    left: 30%;
+  }
+
+  .formulario {
+    width: 40%;
+  }
+}
+
+@media (max-width: 973px) {
+  .ingresar {
+    font-size: 20px;
+  }
+
+  .formulario-usuario {
+    margin-top: 37px;
+  }
+
+  .formulario:before {
+    width: 50%;
+    left: 25%;
+  }
+
+  .formulario {
+    width: 50%;
+  }
+}
+
+@media (max-width: 817px) {
+  .formulario:before {
+    width: 50%;
+    left: 25%;
+  }
+
+  .label-recordar-contra {
+    font-size: 14px;
+  }
+  .formulario {
+    width: 50%;
+    padding: 30px 11px;
+  }
+
+  .formulario-usuario {
+    padding: 5px;
+  }
+
+  .formulario-contraseña {
+    padding: 5px;
+  }
+
+  .ingresar {
+    margin-top: 204px;
+    font-size: 30px;
+    margin-bottom: 27px;
+    margin-top: 177px;
+  }
+}
+
+@media (max-width: 537px) {
+    .formulario:before {
+        width: 70%;
+        left: 15%;
+    }
+    .formulario {
+        width: 70%;
+        padding: 30px 11px;
+    }
+}
+
+@media (max-width: 470px) {
+  .btn {
+    padding: 12px 26px;
+  }
+
+  .ingresar {
+    font-size: 30px;
+  }
+
+  .label-recordar-contra {
+    font-size: 9px;
+  }
+
+  .formulario .imagen {
+    top: 52px;
+    width: 27%;
+}
+.formulario:before {
+    width: 75%;
+    left: 12%;
+}
+.formulario {
+    width: 75%;
+    
+}
+}
+
+@media (max-width: 360px) {
+    .formulario .imagen {
+        top: 62px;
+        width: 28%;
+    }
+
+    .formulario {
+        width: 75%;
+        padding: 40px 9px;
+    }
+
+    .ingresar {
+        font-size: 24px;
+    }
+
+    .btn {
+        padding: 8px 26px;
+    }
+
+  .olvidar-contra {
+    font-size: 10px;
+  }
+}

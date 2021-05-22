@@ -1,0 +1,41 @@
+.centrar{
+   
+   justify-content: center;
+   align-items: center;
+   
+    
+}
+
+.edit-input{
+    padding: 10px;
+
+}
+
+.edit-input:focus{
+    border-color: #6B0707;
+    box-shadow: 0px 0px 8px #6B0707;
+}
+
+.img-consulta{
+    width: 700px;
+    margin: 0 auto;
+}
+
+.boton{
+    border-color: #6B0707;
+    color: #6B0707;
+}
+
+.boton:hover{
+    background: #6B0707;
+    color: rgb(170, 170, 170);
+    transition: all 800ms ease;
+}
+
+.p-consulta{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.9rem;
+    text-shadow: 2px 2px 2px rgb(163, 163, 163);
+}
+
