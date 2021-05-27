@@ -264,7 +264,7 @@ include("inc/menuEmpresa.php");
     </script>
 
 
-
+        <script src="/ProyectoDiseño/Login2v2/Login/inc/js/crearOferta.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </main>
 
