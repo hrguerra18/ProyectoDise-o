@@ -37,8 +37,8 @@
   color: #6B0707;
   border: 1px solid #6B0707;
   background: rgb(250, 250, 250);
-  transition: all 500ms ease;
-  padding: 15px;
+  transition: all 200ms ease;
+  
   box-shadow: 0 0 10px #b4b4b4, 0 0 20px #b4b4b4, 0 0 20px #b4b4b4;
   
  

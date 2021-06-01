@@ -195,18 +195,9 @@ include("inc/menuEmpresa.php");
                                 </div>
                             </div>
                         </div>
-
-
-
                     </div>
                     <button onclick="AdicionarOferta();" id="btnguardarPersonalAtencion" class="btn btn-primary color-boton " type="submit">Crear Oferta</button>
                 </form>
-
-
-
-
-
-
             </div>
         </div>
     </div>
@@ -228,37 +219,40 @@ include("inc/menuEmpresa.php");
                                 <li class="list-group-item">Condiciones</li>
                             </ul>
                             <div class="card-body div-tarjeta">
-                                <button type="button" class="card-link color-tarjeta-a enlace" data-bs-toggle="modal" data-bs-target="#exampleModal"> Ver oferta</button>
+                                <button  type="button" class=" color-tarjeta-a enlace" data-bs-toggle="modal" data-bs-target="#exampleModal"> Ver oferta</button>
                             </div>
                         </div>
-                        <!-- Modal
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        ...
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
-
-
-
-
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 
+    <div class="modal fade" id="exampleModal" >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <img class="img-ver-oferta" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Olimpical.png" class="card-img-top" alt="...">
+          </div>
+          <div class="modal-body">
+            <h5>Nombre del cargo:</h5>
+            <h6>Vigencia de la oferta:</h6>
+            <h6>Numero maximo de aplicantes:</h6>
+            <h6>Descripcion del cargo:</h6>
+            <h6>Sector principal:</h6>
+            <h6>Tipo de contrato:</h6>
+            <h6>Salario:</h6>
+            <h6>Condiciones:</h6>
+            <h6>Horario:</h6>
+            <h6>Perfil del profesional:</h6>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary color-boton-seleccionar-oferta">Seleccionar oferta</button>
+          </div>
+        </div>
+      </div>
+    </div>`;
 
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
@@ -282,12 +276,9 @@ include("inc/menuEmpresa.php");
         })();
     </script>
 
-
     <script src="/ProyectoDiseño/Login2v2/Login/inc/js/crearOferta.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </main>
-
-
 
 <?php
 include("inc/footer.php");
