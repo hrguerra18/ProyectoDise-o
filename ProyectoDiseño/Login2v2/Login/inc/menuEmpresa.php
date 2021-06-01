@@ -22,7 +22,7 @@ header('Location: ingresar.php');
 	<div class="wrapper">
 		<nav id="sidebar" class="sidebar color-fondo">
 			<div class="sidebar-content js-simplebar color-fondo">
-				<a class="sidebar-brand" href="index.html">
+				<a class="sidebar-brand" href="inicioEmpresa.php">
 					<img class="img-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Olimpical.png" alt="Nombre de la empresa">
 					
 				</a>

@@ -3,6 +3,7 @@ include("inc/head.php");
 include("inc/menuEmpresa.php");
 ?>
 <link rel="stylesheet" href="Css/style-crear-oferta.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <main class="content">
 
     <div class="container-fluid p-0">
@@ -210,7 +211,7 @@ include("inc/menuEmpresa.php");
         </div>
     </div>
 
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0 contenido-tarjeta">
         <div class="card">
             <div class="card-body">
                 <form class="needs-validation" novalidate>
@@ -227,10 +228,28 @@ include("inc/menuEmpresa.php");
                                 <li class="list-group-item">Condiciones</li>
                             </ul>
                             <div class="card-body div-tarjeta">
-                                <a href="#" class="card-link color-tarjeta-a">Ver oferta</a>
+                                <button type="button" class="card-link color-tarjeta-a enlace" data-bs-toggle="modal" data-bs-target="#exampleModal"> Ver oferta</button>
                             </div>
                         </div>
-                    </div>
+                        <!-- Modal
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        ...
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
 
 
 
@@ -264,7 +283,7 @@ include("inc/menuEmpresa.php");
     </script>
 
 
-        <script src="/ProyectoDiseño/Login2v2/Login/inc/js/crearOferta.js"></script>
+    <script src="/ProyectoDiseño/Login2v2/Login/inc/js/crearOferta.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </main>
 
