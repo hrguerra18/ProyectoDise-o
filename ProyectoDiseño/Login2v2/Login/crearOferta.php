@@ -228,6 +228,8 @@ include("inc/menuEmpresa.php");
         </div>
     </div>
 
+    <!-- MODAL -->
+
     <div class="modal fade" id="exampleModal" >
       <div class="modal-dialog">
         <div class="modal-content">
