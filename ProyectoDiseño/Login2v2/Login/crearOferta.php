@@ -211,7 +211,9 @@ include("inc/menuEmpresa.php");
                 <form class="needs-validation" novalidate>
                     <div class="row">
                         <div class="card mt-4 edit-tarjeta" style="width: 18rem;">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Olimpical.png" class="card-img-top" alt="...">
+                            <div class="img-tarjeta">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Olimpical.png" class="card-img-top img-tarjeta" alt="...">
+                            </div>
                             <div class="card-body">
                                 <h3 class="card-title fw-bold tamaño-fuente">Nombre del cargo</h3>
                                 <p class="card-text">Aqui va toda la descripcion</p>
@@ -221,9 +223,9 @@ include("inc/menuEmpresa.php");
                                 <li class="list-group-item">Perfil del profesional</li>
                                 <li class="list-group-item">Condiciones</li>
                             </ul>
-                            <div class="card-body div-tarjeta">
-                                <a href="#" class="card-link color-tarjeta-a">Ver oferta</a>
-                            </div>
+                            <button type="button" class=" color-tarjeta-a" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Ver mas
+                            </button>
                         </div>
                     </div>
                 </form>
