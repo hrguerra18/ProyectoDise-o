@@ -18,7 +18,7 @@ include "inc/menuEmpresa.php";
 
           <div class="row">
             <p class="p-consulta">Puedes realizar filtros para hacer la busqueda especifica</p>
-            <img class="img-consulta" src="/ProyectoDiseño/Login2v2/Login/inc/img/consulta2.png" alt="">
+            <img class="img-consulta" src="inc/img/consulta2.png" alt="">
           </div>
         </div>
       </div>

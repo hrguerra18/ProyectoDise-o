@@ -1,19 +1,16 @@
 <?php
 session_start();
-/*if(isset($_SESSION["usuario"])){
-	 } else{		
-        header("Location: login.php");
-    }
-/*
-if(isset($_SESSION['usuario']))
-{
+if ($_SESSION['validar'] == true) {
 
-	
-} else{
-    
-header('Location: ingresar.php');
-} 
-*/
+	if ($_SESSION['tipo'] === "Empresa") {
+
+	} else {
+		header('Location: indexProfesional.php');
+	}
+} else {
+	header('Location: login.php');
+}
+
 ?>
 
 
@@ -23,17 +20,17 @@ header('Location: ingresar.php');
 		<nav id="sidebar" class="sidebar color-fondo">
 			<div class="sidebar-content js-simplebar color-fondo">
 				<a class="sidebar-brand" href="inicioEmpresa.php">
-					<img class="img-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Olimpical.png" alt="Nombre de la empresa">
+					<img class="img-logo" src=<?php echo $_SESSION['foto']?> alt="Nombre de la empresa">
 					
 				</a>
-				<span class="align-middle nombre-empresa">Nombre de la empresa</span>
+				<span class="align-middle nombre-empresa"><?php echo $_SESSION['usuario']?></span>
 				<ul class="sidebar-nav color-fondo">
 					<li class="sidebar-header">
 						Opciones
 					</li>
 
 					<li class="sidebar-item color-fondo ">
-						<a class="sidebar-link color-fondo-a " href="inicioEmpresa.php">
+						<a class="sidebar-link color-fondo-a " href="indexEmpresa.php">
 							<i class="align-middle color-iconos" data-feather="home"></i> <span class="align-middle ">Inicio</span>
 						</a>
 					</li>

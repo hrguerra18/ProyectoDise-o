@@ -6,7 +6,6 @@ $(document).ready(function () {
 
 function ConsultarPerfil() {
     var NIT = $("#nitempresa").val().trim();
-    alert(NIT);
     $.ajax({
         type: "POST",
         dataType: "json",

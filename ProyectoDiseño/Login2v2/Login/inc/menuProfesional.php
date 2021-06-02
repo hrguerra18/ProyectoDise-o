@@ -1,19 +1,15 @@
 <?php
 session_start();
-/*if(isset($_SESSION["usuario"])){
-	 } else{		
-        header("Location: login.php");
-    }
-/*
-if(isset($_SESSION['usuario']))
-{
+if ($_SESSION['validar'] == true) {
 
-	
-} else{
-    
-header('Location: ingresar.php');
-} 
-*/
+	if ($_SESSION['tipo'] === "Profesional") {
+
+	} else {
+		header('Location: indexEmpresa.php');
+	}
+} else {
+	header('Location: login.php');
+}
 ?>
 
 
