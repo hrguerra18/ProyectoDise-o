@@ -3,6 +3,8 @@ if (empty($_POST['accion'])) {
     $_POST['accion'] = "General";
 }
 
+$_POST['accion'] = "adicionar";
+
 switch ($_POST['accion']) {
 
     case "adicionar":
@@ -14,15 +16,27 @@ function AgregarEmpresa()
 {
     require "Conexion.php";
     require "usuarios.php";
-    $NIT = $_POST['NIT'];
-    $foto = $_POST['foto'];
-    $nombre = $_POST['nombre'];
-    $servicio = $_POST['servicio'];
-    $direccion = $_POST['direccion'];
-    $telefono = $_POST['telefono'];
-    $correo = $_POST['correo'];
-    $contraseña = $_POST['contraseña'];
+    // $NIT = $_POST['NIT'];
+    // $foto = $_POST['foto'];
+    // $nombre = $_POST['nombre'];
+    // $servicio = $_POST['servicio'];
+    // $direccion = $_POST['direccion'];
+    // $telefono = $_POST['telefono'];
+    // $correo = $_POST['correo'];
+    // $contraseña = $_POST['contraseña'];
+    // $IDUsuario = CrearUsuario($correo, $contraseña, "Empresa", $foto);
+
+    $NIT = "123";
+    $foto = "123";
+    $nombre = "123";
+    $servicio = "123";
+    $direccion = "123";
+    $telefono = "123";
+    $correo = "123";
+    $contraseña = "123";
     $IDUsuario = CrearUsuario($correo, $contraseña, "Empresa", $foto);
+
+    echo "$IDUsuario";
 
     if ($IDUsuario != "") {
 
