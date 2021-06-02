@@ -11,18 +11,18 @@ include("inc/menuEmpresa.php");
                 <div class="row row-completa">
                     <div class="row col-md-4 row-1-perfilEmpresa ">
                         <p class="p-row-1">Arrastra tu archivo de logo aqui</p>
-                        <img class="img-row-1" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Olimpical.png" alt="">
+                        <img class="img-row-1" src=<?php echo $_SESSION['foto'] ?> alt="">
                         <div class="input-group mb-3 mt-4 archivo">
                             <input type="file" class="form-control" id="inputGroupFile02">
 
                         </div>
-                        <h4 class="h4-row-1">Nombre de la empresa</h4>
+                        <h4 class="h4-row-1"><?php echo $_SESSION['usuario'] ?></h4>
                     </div>
 
                     <div class="row col-md-8 row-2-perfilEmpresa card-mod">
-                        
+
                         <div class="col-md-12 mb-3 ">
-                            <label class="mb-3 fw-bold"  for="validationCustom01">NOMBRE DE LA EMPRESA:</label>
+                            <label class="mb-3 fw-bold" for="validationCustom01">NOMBRE DE LA EMPRESA:</label>
                             <input type="text" class="form-control" id="nombreempresa" placeholder="Nombre de la empresa" required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
@@ -37,50 +37,14 @@ include("inc/menuEmpresa.php");
                         </div>
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">NIT:</label>
-                            <input type="text" disabled="disabled" class="form-control" id="nitempresa" placeholder="Nit de la empresa" required>
+                            <input type="text" disabled="disabled" class="form-control" id="nitempresa" placeholder="Nit de la empresa" required value=<?php echo $_SESSION['IDusuario'] ?>>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
                         </div>
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">CATEGORIA:</label>
-                            <select class="form-select" id="categoriaempresa" aria-label="Default select example" required>
-                                <option selected disabled value="">Seleccionar categoria</option>
-                                <option value="Activo">Ventas</option>
-                                <option value="Activo">Comercial</option>
-                                <option value="Activo">CallCenter</option>
-                                <option value="Activo">Telemercadeo</option>
-                                <option value="Activo">Almacen</option>
-                                <option value="Activo">Logistica</option>
-                                <option value="Activo">Atencion al cliente</option>
-                                <option value="Activo">Soporte</option>
-                                <option value="Activo">Oficina</option>
-                                <option value="Activo">Administracion</option>
-                                <option value="Activo">Informatica</option>
-                                <option value="Activo">Telecomunicaciones</option>
-                                <option value="Activo">Salud</option>
-                                <option value="Activo">Reparaciones tecnicas</option>
-                                <option value="Activo">Mantenimiento</option>
-                                <option value="Activo">Contabilidad</option>
-                                <option value="Activo">Finanzas</option>
-                                <option value="Activo">Servicios generales</option>
-                                <option value="Activo">Aseos</option>
-                                <option value="Activo">Ingenieria</option>
-                                <option value="Activo">Energia</option>
-                                <option value="Activo">Quimica</option>
-                                <option value="Activo">Recursos Humanos</option>
-                                <option value="Activo">Arquitectura</option>
-                                <option value="Activo">Construcciones</option>
-                                <option value="Activo">Publicidad</option>
-                                <option value="Activo">Mercadeo</option>
-                                <option value="Activo">Hoteleria</option>
-                                <option value="Activo">Educacion</option>
-                                <option value="Activo">Diseño</option>
-                                <option value="Activo">Direccion gerencial</option>
-                                <option value="Activo">Transporte</option>
-                                <option value="Activo">Cuidado del hogar</option>
-                                <option value="Activo">Otros</option>
-                            </select>
+                            <input type="text" class="form-control" id="categoriaempresa" placeholder="Categoria" required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
@@ -95,14 +59,14 @@ include("inc/menuEmpresa.php");
 
                         <div class="col-md-12 mb-3 ">
                             <label class="fw-bold" for="validationCustom04">DESCRIPCION</label>
-                            <input type="text" class="form-control input-descripcion-perfil" id="descripcion"  placeholder="" required>
+                            <input type="text" class="form-control input-descripcion-perfil" id="descripcion" placeholder="" required>
 
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
                         </div>
 
-                        <hr  style="color:black">
+                        <hr style="color:black">
 
                         <div class="col-md-12 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">DIRECCION:</label>
@@ -113,15 +77,8 @@ include("inc/menuEmpresa.php");
                         </div>
 
                         <div class="col-md-6 mb-3 ">
-                            <label class="mb-3 fw-bold for="validationCustom01">CIUDAD:</label>
-                            <select class="form-select" id="tipoContrato" aria-label="Default select example" required>
-                                <option selected disabled value=""></option>
-                                <option value="Activo">Ciudad1</option>
-                                <option value="Activo">Ciudad2</option>
-                                <option value="Activo">Ciudad3</option>
-                                <option value="Activo">Ciudad4</option>
-                                <option value="Activo">Ciudad5</option>
-                            </select>
+                            <label class="mb-3 fw-bold for=" validationCustom01">CIUDAD:</label>
+                            <input type="text" class="form-control" id="ciudad" placeholder="Nuevo telefono" required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
@@ -139,9 +96,14 @@ include("inc/menuEmpresa.php");
 
                 </div>
             </div>
+            <div style="display:flex">
+                <button onclick="ConsultarPerfil();" class="btn btn-primary" type="submit">Ver perfil</button>
+                <button onclick="ModificarPerfil();" class="btn btn-primary" type="submit">Modificar</button>
+            </div>
         </div>
 
-
+        <script type="text/javascript" src="inc/js/perfilempresa.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 
         <script>
@@ -167,8 +129,6 @@ include("inc/menuEmpresa.php");
         </script>
 
 
-
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </main>
 
 

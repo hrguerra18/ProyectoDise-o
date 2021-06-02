@@ -13,7 +13,7 @@ include("inc/menuEmpresa.php");
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom01" class="fw-bold">Nombre del cargo</label>
-
+                            <input type="hidden" class="form-control" id="nitempresaOferta" placeholder="Ejemplo: Ingeniero de Sistemas" value=<?php echo $_SESSION['IDusuario'] ?> required>
                             <input type="text" class="form-control" id="nombreCargo" placeholder="Ejemplo: Ingeniero de Sistemas" required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
@@ -89,11 +89,11 @@ include("inc/menuEmpresa.php");
                             <label for="validationCustom01" class="fw-bold">Tipo de contrato</label>
                             <select class="form-select" id="tipoContrato" aria-label="Default select example" required>
                                 <option selected disabled value="">Seleccione el sector principal</option>
-                                <option value="Activo">Tiempo completo</option>
-                                <option value="Activo">Medio tiempo</option>
-                                <option value="Activo">Obra/Labor</option>
-                                <option value="Activo">Pasantia</option>
-                                <option value="Activo">Por horas</option>
+                                <option value="Tiempo completo">Tiempo completo</option>
+                                <option value="Medio tiempo">Medio tiempo</option>
+                                <option value="Obra/Labor">Obra/Labor</option>
+                                <option value="Pasantia">Pasantia</option>
+                                <option value="Por horas">Por horas</option>
                             </select>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
@@ -121,12 +121,12 @@ include("inc/menuEmpresa.php");
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom01" class="fw-bold">Horario</label>
                             <select class="form-select" id="horario" aria-label="Default select example" required>
-                                <option selected disabled value="">Seleccionar horario</option>
-                                <option value="Activo">Regular</option>
-                                <option value="Activo">Flexible</option>
-                                <option value="Activo">Intensivo</option>
-                                <option value="Activo">Fines de semana</option>
-                                <option value="Activo">Nocturno</option>
+                                <option selected disabled >Seleccionar horario</option>
+                                <option value="Regular">Regular</option>
+                                <option value="Flexible">Flexible</option>
+                                <option value="Intensivo">Intensivo</option>
+                                <option value="Fines de semana">Fines de semana</option>
+                                <option value="Nocturno">Nocturno</option>
                             </select>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
@@ -139,70 +139,73 @@ include("inc/menuEmpresa.php");
                             <div class="d-flex flex-wrap">
 
                                 <div class="form-check mt-2  me-2">
-                                    <input class="form-check-input" type="checkbox" value="" id="practicante">
+                                    <input class="form-check-input" type="checkbox"  id="practicante">
                                     <label class="form-check-label" for="flexCheckDefault">
                                         Practicante
                                     </label>
                                 </div>
                                 <div class="form-check mt-2  me-2">
-                                    <input class="form-check-input" type="checkbox" value="" id="tecnico">
+                                    <input class="form-check-input" type="checkbox"  id="tecnico">
                                     <label class="form-check-label" for="flexCheckChecked">
                                         Tecnico
                                     </label>
                                 </div>
                                 <div class="form-check mt-2  me-2">
-                                    <input class="form-check-input" type="checkbox" value="" id="tecnologo">
+                                    <input class="form-check-input" type="checkbox"  id="tecnologo">
                                     <label class="form-check-label" for="flexCheckChecked">
                                         Tecnologo
                                     </label>
                                 </div>
                                 <div class="form-check mt-2  me-2">
-                                    <input class="form-check-input" type="checkbox" value="" id="profesional" checked>
+                                    <input class="form-check-input" type="checkbox"  id="profesional">
                                     <label class="form-check-label" for="flexCheckChecked">
                                         Profesional
                                     </label>
                                 </div>
                                 <div class="form-check mt-2  me-2">
-                                    <input class="form-check-input" type="checkbox" value="" id="postgrado">
+                                    <input class="form-check-input" type="checkbox"  id="postgrado">
                                     <label class="form-check-label" for="flexCheckChecked">
                                         Postgrado
                                     </label>
                                 </div>
                                 <div class="form-check mt-2  me-2">
-                                    <input class="form-check-input" type="checkbox" value="" id="especializacion">
+                                    <input class="form-check-input" type="checkbox"  id="especializacion">
                                     <label class="form-check-label" for="flexCheckChecked">
                                         Especializacion
                                     </label>
                                 </div>
                                 <div class="form-check mt-2  me-2">
-                                    <input class="form-check-input" type="checkbox" value="" id="maestria">
+                                    <input class="form-check-input" type="checkbox"  id="maestria">
                                     <label class="form-check-label" for="flexCheckChecked">
                                         Maestria
                                     </label>
                                 </div>
 
                                 <div class="form-check mt-2  me-2">
-                                    <input class="form-check-input" type="checkbox" value="" id="doctorado">
+                                    <input class="form-check-input" type="checkbox"  id="doctorado">
                                     <label class="form-check-label" for="flexCheckChecked">
                                         Doctorado
                                     </label>
                                 </div>
                                 <div class="form-check mt-2  me-2">
-                                    <input class="form-check-input" type="checkbox" value="" id="cualquiera">
+                                    <input class="form-check-input" type="checkbox"  id="cualquiera" checked>
                                     <label class="form-check-label" for="flexCheckChecked">
                                         Cualquiera
                                     </label>
                                 </div>
                             </div>
                         </div>
+
+
+
                     </div>
-                    <button onclick="AdicionarOferta();" id="btnguardarPersonalAtencion" class="btn btn-primary color-boton " type="submit">Crear Oferta</button>
+                    <button onclick="AdicionarOferta();" class="btn btn-primary color-boton btnCrearOferta" type="submit">Crear Oferta</button>
                 </form>
             </div>
         </div>
     </div>
 
-    <div class="container-fluid p-0 contenido-tarjeta">
+    <!-- <div class="container-fluid p-0">
         <div class="card">
             <div class="card-body">
                 <form class="needs-validation" novalidate>
@@ -219,41 +222,21 @@ include("inc/menuEmpresa.php");
                                 <li class="list-group-item">Condiciones</li>
                             </ul>
                             <div class="card-body div-tarjeta">
-                                <button  type="button" class=" color-tarjeta-a enlace" data-bs-toggle="modal" data-bs-target="#exampleModal"> Ver oferta</button>
+                                <a href="#" class="card-link color-tarjeta-a">Ver oferta</a>
                             </div>
                         </div>
                     </div>
-                </form>
+
+
+
+
+
             </div>
         </div>
-    </div>
-
-    <div class="modal fade" id="exampleModal" >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <img class="img-ver-oferta" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Olimpical.png" class="card-img-top" alt="...">
-          </div>
-          <div class="modal-body">
-            <h5>Nombre del cargo:</h5>
-            <h6>Vigencia de la oferta:</h6>
-            <h6>Numero maximo de aplicantes:</h6>
-            <h6>Descripcion del cargo:</h6>
-            <h6>Sector principal:</h6>
-            <h6>Tipo de contrato:</h6>
-            <h6>Salario:</h6>
-            <h6>Condiciones:</h6>
-            <h6>Horario:</h6>
-            <h6>Perfil del profesional:</h6>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary color-boton-seleccionar-oferta">Seleccionar oferta</button>
-          </div>
-        </div>
-      </div>
-    </div>`;
-
+    </div>-->
+</main>
+<script type="text/javascript" src="inc/js/ofertas.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function() {
@@ -278,7 +261,6 @@ include("inc/menuEmpresa.php");
 
     <script src="/ProyectoDiseño/Login2v2/Login/inc/js/crearOferta.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-</main>
 
 <?php
 include("inc/footer.php");

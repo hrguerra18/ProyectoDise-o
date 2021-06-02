@@ -9,5 +9,5 @@ include("inc/menuEmpresa.php");
  </main>
 
 <?php
-include("footer");
+include("inc/footer.php");
 ?>

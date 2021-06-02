@@ -1,54 +1,25 @@
-function loguearse(){
-    let usuario = $("#usuario").val().trim();
-    let contraseña = $("#contraseña").val().trim();
-    if( usuario != "" && contraseña != "" ){
-        $.ajax({
-            url:'ProyectoDiseño/Login2v2/Login/Controles/validarUsuario.php',
-            type:'POST',
-            dataType: "json",          
-            data:{
-                usuario:usuario,
-                contraseña:contraseña
-            },
-            success:function(resp){
-                alert("success");
-                if(resp.validar) {
-                    if(esUsuarioEmpresa(resp.tipo)){
-                        irAPaginaPrincipalEmpresa();
-                    }
-                    else
-                    irAPaginaPrincipalProfesional();
+
+$(document).ready(function(){
+    console.log("documento");
+    $("#botoningresar").click(function(){
+        console.log("click");
+        var username = $("#user").val().trim();
+        var password = $("#password").val().trim();
+
+        if( username != "" && password != "" ){
+            console.log("entro");
+            $.ajax({
+                url:'Controles/validarUsuario.php',
+                type:'post',
+               
+                data:{
+                    username:username,
+                    password:password
+                },
+                success:function(response){
+                window.location="indexEmpresa.php";
                 }
-            }
-        });
-    }
-}
-
-
-function obtenerUsuario(){
-    let nombreUsuario = $("#usuario").val().trim();
-    let contraseña = $("#contraseña").val().trim();
-    let usuario ={
-        'contraseña' : contraseña,
-        'nombreUsuario' : nombreUsuario,
-    }
-    return usuario;
-}
-
-function irAPaginaPrincipalEmpresa(){
-    let ruta = 'indexEmpresa.php';
-    window.location = ruta;
-}
-
-function esUsuarioEmpresa(tipo){
-    let admnistrativo = 'Empresa';
-    if (tipo === admnistrativo)
-        return true;
-    else
-        return false;   
-}
-
-function irAPaginaPrincipalProfesional() { 
-    let ruta = 'indexProfesional.php';
-    window.location = ruta;
-}
+            });
+        }
+    });
+});
