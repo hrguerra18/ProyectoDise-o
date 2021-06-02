@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Css/style-profesional.css">
-    <title>Profesional</title>
+    <title>Empresa</title>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 	<link href="http://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
@@ -17,7 +17,7 @@
         <form action="" class="formulario">
             <div class="botones">
                 <ul class="ul-botones">
-                    <li class="li-profesional li-profesional-opacity">
+                    <li  class="li-profesional li-profesional-opacity">
                         <a class=" a-profesional " href="registrarProfesional.php"> COMO PROFESIONAL</a>
                     </li>
                     <li class="li-empresa li-profesiona-color-fondo">
