@@ -3,7 +3,7 @@
 include("inc/head.php");
 
 ?>
-<link rel="stylesheet" href="/ProyectoDiseño/Login2v2/Login/Css/style.css">
+
 
 <body>
 	<main class="d-flex w-100 cuerpo">
