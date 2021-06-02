@@ -70,7 +70,7 @@ header('Location: ingresar.php');
 					</li>
 
                     <li class="sidebar-item">
-						<a class="sidebar-link color-fondo-a" href="#">
+						<a class="sidebar-link color-fondo-a" href="controles/cerrar.php">
 							<i class="align-middle" data-feather="log-out"></i> <span class="align-middle">Cerrar sesion</span>
 						</a>
 					</li>
@@ -101,7 +101,7 @@ header('Location: ingresar.php');
 							</a>
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-								<img  class="avatar img-fluid rounded me-1" alt="Alex" /> <span class="text-dark"> </span>
+								<img src= <?php echo $_SESSION['foto']?> class="avatar img-fluid rounded me-1" alt="Alex" /> <span class="text-dark"> <?php echo $_SESSION['usuario']?> </span>
 							</a>
 							<div class="dropdown-menu dropdown-menu-end">
 								<a class="dropdown-item" href="controles/cerrar.php">Cerrar Session</a>

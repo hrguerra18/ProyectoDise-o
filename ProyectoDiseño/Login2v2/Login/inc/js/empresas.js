@@ -1,4 +1,3 @@
-
 function AdicionarEmpresa() {
 
     var NIT = $("#Nitempresa").val();
@@ -9,7 +8,7 @@ function AdicionarEmpresa() {
     var telefono = $("#telefonoempresa").val();
     var correo = $("#emailempresa").val();
     var contraseña = $("#contraseñaempresa").val();
-
+    alert(NIT);
     $.ajax({
         type: "POST",
         dataType: "json",
@@ -26,7 +25,19 @@ function AdicionarEmpresa() {
             contraseña: contraseña,
         },
         success: function (resp) {
-           
+            limpiar();
         }
     });
+}
+
+function limpiar() {
+    $("#nitempresa").val("");
+    $("#nombreempresa").val("");
+    $("#categoriaempresa").val("");
+    $("#direccionempresa").val("");
+    $("#telefonoempresa").val("");
+    $("#paginaweb").val("");
+    $("#numeroempleado").val("");
+    $("#descripcion").val("");
+    $("#ciudad").val(2);
 }

@@ -1,47 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Css/style.css">
-    <title>Login</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-	<link href="http://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
-</head>
+<?php 
+
+include("inc/head.php");
+
+?>
 
 
 <body>
-    <section class="cuerpo">
-        <form action="" class="formulario">
-            
-                <img src="inc/img/usuario.png" alt="" class="imagen">
-            
-            
-                <p class="ingresar">INICIAR SESIÓN</p>
-            
+	<main class="d-flex w-100">
+		<div class="container d-flex flex-column">
+			<div class="row vh-100">
+				<div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+					<div class="d-table-cell align-middle">
 
-                <div class="borde-usuario">
-                    <input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario" class="formulario-usuario" >
-                </div>
-                
-                <div class="borde-contra">
-                     <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña" class="formulario-contraseña" >
-                </div>
+						<div class="text-center mt-4">
+							<h1 class="h2">Bienvenido</h1>
+							<p class="lead">
+								Ingrese usuario y Contraseña
+							</p>
+						</div>
+						<div id="mensajeno"></div>
 
-                <label class="label-recordar-contra" for="recordarcontraseña"><input class="recordar-contra" type="checkbox" name="recordarcontraseña" id="recordarcontraseña"> Recordar contraseña</label>
+						<div class="card">
+							<div class="card-body">
+								<div class="m-sm-4">
+									<div class="text-center">
+										<img src="inc/img/avatars/avatar.jpg" alt="Charles Hall" class="img-fluid rounded-circle" width="132" height="132" />
+									</div>
+								
+										<div class="mb-3">
+											<label class="form-label">Usuario</label>
+											<input class="form-control form-control-lg" type="text" id="user" placeholder="Ingrese el Usuario" />
+										</div>
+										<div class="mb-3">
+											<label class="form-label">Password</label>
+											<input class="form-control form-control-lg" type="password" id="password" placeholder="Ingrese password" />
+											<small>
+           									 <a href="pages-reset-password.html">Recuperar Clave?</a>
+          									</small>
+										</div>
+										<div>
+																	<label class="form-check">
+									<input class="form-check-input" type="checkbox" value="remember-me" name="remember-me" checked>
+									<span class="form-check-label">
+									Recordar Datos
+									</span>
+								</label>
+										</div>
+										<div class="text-center mt-3">
+											<!--<a href="index.html" class="btn btn-lg btn-primary">Ingresar</a> -->
+											 <button type="submit" class="btn btn-lg btn-primary"  id="botoningresar" >Ingresar</button> 
+										</div>
+								
+								</div>
+							</div>
+						</div>
 
-                <button type="submit" onclick ="loguearse();" class="btn btn-primary" id ="botoningresarr" >Ingresar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
 
-                <p class="olvidar-contra">¿Has olvidado tu contraseña?</p>
-        </form>
-        
-    </section>
-    <script type="text/javascript" src="/ProyectoDiseño/Login2v2/Login/inc/js/login.js"></script>
-    <script src="inc/js/app.js"></script>
-	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-</body>
-</html>
+	<?php 
+include("inc/footer.php");
+
+?>

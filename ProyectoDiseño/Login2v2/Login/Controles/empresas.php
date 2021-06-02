@@ -22,10 +22,10 @@ function AgregarEmpresa()
     $telefono = $_POST['telefono'];
     $correo = $_POST['correo'];
     $contraseña = $_POST['contraseña'];
-    $IDUsuario = CrearUsuario($correo,$contraseña,"Empresa",$foto);
+    $IDUsuario = CrearUsuario($correo, $contraseña, "Empresa", $foto);
 
-    if( $IDUsuario != ""){
-        
+    if ($IDUsuario != "") {
+
         $sqlEmpresa = "INSERT INTO empresa (NIT,nombre,servicio,direccion,telefono,correo,IDusuario) 
         VALUES ('$NIT','$nombre','$servicio','$direccion','$telefono','$correo','$IDUsuario')";
         if (mysqli_query($con, $sqlEmpresa)) {
@@ -37,10 +37,9 @@ function AgregarEmpresa()
             $json_string = json_encode($respuesta);
             echo $json_string;
         }
-    }else{
+    } else {
         $respuesta = array("mensaje" => "Error ID del usuario vacio");
         $json_string = json_encode($respuesta);
         echo $json_string;
     }
 }
-?>
