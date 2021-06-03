@@ -3,7 +3,7 @@ if (empty($_POST['accion'])) {
     $_POST['accion'] = "General";
 }
 
-$_POST['accion'] = "adicionar";
+
 
 switch ($_POST['accion']) {
 

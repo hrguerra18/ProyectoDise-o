@@ -13,7 +13,7 @@ include("inc/menuEmpresa.php");
         <div class="row">
           <form class="d-flex centrar">
             <input class="form-control me-2  w-100 edit-input" type="search" placeholder="Ejemplo: Ingeniero, Contador, Psicologo..." aria-label="Search">
-            <button class="btn btn-outline-success edit-input boton" type="submit">Buscar</button>
+            <button class=" edit-input boton" type="submit">Buscar</button>
           </form>
 
           <div class="row">

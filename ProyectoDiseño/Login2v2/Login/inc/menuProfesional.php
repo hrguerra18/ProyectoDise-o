@@ -29,8 +29,8 @@ if ($_SESSION['validar'] == true) {
 					</li>
 
 					<li class="sidebar-item color-fondo ">
-						<a class="sidebar-link color-fondo-a " href="#">
-							<i class="align-middle color-iconos" data-feather="user-plus"></i> <span class="align-middle ">Personal de Atencion</span>
+						<a class="sidebar-link color-fondo-a " href="indexProfesional.php">
+							<i class="align-middle color-iconos" data-feather="home"></i> <span class="align-middle ">Inicio</span>
 						</a>
 					</li>
 
@@ -38,13 +38,36 @@ if ($_SESSION['validar'] == true) {
 
 					<li class="sidebar-item ">
 						<a class="sidebar-link color-fondo-a" href="#">
-							<i class="align-middle" data-feather="thermometer"></i> <span class="align-middle">Pacientes</span>
+							<i class="align-middle" data-feather="bell"></i> <span class="align-middle">Perfil</span>
 						</a>
 					</li>
 
 					<li class="sidebar-item">
 						<a class="sidebar-link color-fondo-a" href="#">
-							<i class="align-middle" data-feather="settings"></i> <span class="align-middle">Citas</span>
+							<i class="align-middle" data-feather="inbox"></i> <span class="align-middle">Ofertas</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link color-fondo-a" href="#">
+							<i class="align-middle" data-feather="archive"></i> <span class="align-middle">Historial</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link color-fondo-a" href="#">
+							<i class="align-middle" data-feather="lock"></i> <span class="align-middle">Configuracion</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link color-fondo-a" href="#">
+							<i class="align-middle" data-feather="phone"></i> <span class="align-middle">Contacto</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link color-fondo-a" href="#">
+							<i class="align-middle" data-feather="log-out"></i> <span class="align-middle">Cerrar sesion</span>
 						</a>
 					</li>
 

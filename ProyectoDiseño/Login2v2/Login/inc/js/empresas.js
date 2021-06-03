@@ -9,6 +9,7 @@ function AdicionarEmpresa() {
     var correo = $("#emailempresa").val();
     var contraseña = $("#contraseñaempresa").val();
     alert(NIT);
+    debugger
     $.ajax({
         type: "POST",
         dataType: "json",
@@ -28,6 +29,7 @@ function AdicionarEmpresa() {
             limpiar();
         }
     });
+    
 }
 
 function limpiar() {
