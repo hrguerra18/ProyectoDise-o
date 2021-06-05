@@ -208,26 +208,11 @@ include("inc/menuEmpresa.php");
     <div class="container-fluid p-0">
         <div class="card">
             <div class="card-body">
-                <form class="needs-validation" novalidate>
-                    <div class="row">
-                        <div class="card mt-4 edit-tarjeta" style="width: 18rem;">
-                            <div class="img-tarjeta">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Olimpical.png" class="card-img-top img-tarjeta" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-title fw-bold tamaño-fuente">Nombre del cargo</h3>
-                                <p class="card-text">Aqui va toda la descripcion</p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Salario</li>
-                                <li class="list-group-item">Perfil del profesional</li>
-                                <li class="list-group-item">Condiciones</li>
-                            </ul>
-                            <button type="button" class=" color-tarjeta-a" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Ver mas
-                            </button>
-                        </div>
-                    </div>
+                <form class="needs-validation mostrarOfertas" novalidate>
+                    <?php
+                    require("Controles/ofertas.php");
+                    ConsultarOferta($_SESSION['IDusuario']);
+                    ?>
                 </form>
             </div>
         </div>

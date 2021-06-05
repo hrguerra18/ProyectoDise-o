@@ -1,4 +1,3 @@
-
 function AdicionarOferta() {
     var NIT = $("#nitempresaOferta").val().trim();
     var Cargo = $("#nombreCargo").val().trim();
@@ -20,7 +19,7 @@ function AdicionarOferta() {
     // var checkBoxdoctorado = document.getElementById("doctorado");
     // var checkBoxcualquiera = document.getElementById("cualquiera");
     alert(NIT);
-    
+
     $.ajax({
         type: "POST",
         dataType: "json",
@@ -42,5 +41,30 @@ function AdicionarOferta() {
 
         }
     });
-    debugger
+}
+
+function BuscarOferta() {
+    $(".btnModal").click(function () {
+
+        IDoferta = $(this).data("id");
+        //console.log(idcliente);
+        alert("Entro");
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "Controles/ofertas.php",
+            data: {
+                accion: 'BuscarOferta',
+                IDoferta: IDoferta,
+            },
+            success: function (resp) {
+
+
+            }
+        });
+
+
+
+    });
+
 }
