@@ -205,7 +205,7 @@ include("inc/menuEmpresa.php");
         </div>
     </div>
 
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0" style="align-items: center;">
         <div class="card">
             <div class="card-body">
                 <form class="needs-validation mostrarOfertas" novalidate>

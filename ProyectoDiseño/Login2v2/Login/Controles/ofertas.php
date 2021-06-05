@@ -72,8 +72,8 @@ function ConsultarOferta($NITempresa)
                 <img src=" . $row["foto"] . " class='card-img-top img-tarjeta' alt='...'>
                 </div>
                 <div class='card-body'>
-                    <h3 class='card-title fw-bold tamaño-fuente'>Cargo: " . $row["cargo"] . "</h3>
-                    <p class='card-text'>descripcion: " . $row["descripcion"] . "</p>
+                    <h3 class='card-title fw-bold tamaño-fuente'>Cargo: " .$row["cargo"]. "</h3>
+                    <p class='card-text'>descripcion: ".$row["descripcion"]. "</p>
                 </div>
                 <ul class=list-group list-group-flush'>
                     <li class='list-group-item'>Salario: " . $row["salario"] . "</li>
