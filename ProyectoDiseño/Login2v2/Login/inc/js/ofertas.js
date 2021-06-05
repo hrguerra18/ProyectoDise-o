@@ -49,6 +49,7 @@ function AdicionarOferta() {
 
         }
     });
+    debugger
 }
 
 function BuscarOferta() {
