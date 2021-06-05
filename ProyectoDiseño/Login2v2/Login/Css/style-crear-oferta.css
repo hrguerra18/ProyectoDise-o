@@ -15,6 +15,7 @@
 /* TARJETA DE OFERTA*/
 .edit-tarjeta{
   box-shadow:  0 0 10px #b4b4b4, 0 0 20px #b4b4b4, 0 0 20px #b4b4b4;
+  margin: 2px 7px;
 }
 
 .tamaño-fuente{
