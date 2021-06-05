@@ -224,23 +224,25 @@ include("inc/menuEmpresa.php");
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <img class="img-ver-oferta" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Olimpical.png" class="card-img-top" alt="...">
+                    <!-- <img class="img-ver-oferta" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Olimpical.png" class="card-img-top" alt="..."> -->
                 </div>
+                <input type="hidden" class="form-control" id="IDoferta" placeholder="Ejemplo: Ingeniero de Sistemas" required>
                 <div class="modal-body">
-                    <h5>Nombre del cargo:</h5>
-                    <h6>Vigencia de la oferta:</h6>
-                    <h6>Numero maximo de aplicantes:</h6>
-                    <h6>Descripcion del cargo:</h6>
-                    <h6>Sector principal:</h6>
-                    <h6>Tipo de contrato:</h6>
-                    <h6>Salario:</h6>
-                    <h6>Condiciones:</h6>
-                    <h6>Horario:</h6>
-                    <h6>Perfil del profesional:</h6>
+                    <h5 id="CargoOferta">Nombre del cargo:</h5>
+                    <h6 id="Vigenciaoferta">Vigencia de la oferta:</h6>
+                    <h6 id="CantidadAplicanteOferta">Numero maximo de aplicantes:</h6>
+                    <h6 id="DescripcionOferta">Descripcion del cargo:</h6>
+                    <h6 id="SectorOferta">Sector principal:</h6>
+                    <h6 id="ContratoOferta">Tipo de contrato:</h6>
+                    <h6 id="SalarioOferta">Salario:</h6>
+                    <h6 id="CondicionesOferta">Condiciones:</h6>
+                    <h6 id="HorarioOferta">Horario:</h6>
+                    <h6 id="PerfilOferta">Perfil del profesional:</h6>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary color-boton-seleccionar-oferta">Seleccionar oferta</button>
+                <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Cerrar</button>
+                    <button type='button' onclick='ModificarOferta();' class='btn btn-primary color-boton-seleccionar-oferta '>Modificar</button>
+                    <button type='button' onclick='CancelarOferta();' class='btn btn-primary color-boton-seleccionar-oferta'>Cancelar</button>
                 </div>
             </div>
         </div>

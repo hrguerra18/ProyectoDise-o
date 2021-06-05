@@ -11,6 +11,9 @@ switch ($_POST['accion']) {
     case "BuscarOferta":
         BuscarOferta();
         break;
+    case "Modificar":
+        ModificarOferta();
+        break;
 }
 
 
@@ -91,43 +94,20 @@ function ConsultarOferta($NITempresa)
 function BuscarOferta()
 {
     require "Conexion.php";
-    $IDoferta = $_POST['IDoferta'];    //'Juanita'; //
-    //echo $idcliente;
-    //$idcliente=2;
-
+    $IDoferta = $_POST['IDoferta'];  
     $sql = "SELECT  * FROM oferta WHERE IDoferta ='$IDoferta'";
 
     if (!$result = mysqli_query($con, $sql)) die();
 
+    $ofertas = array(); 
 
-    while ($row = $result->fetch_assoc()) {
-        echo " <div class='modal fade' id='exampleModal'>
-        <div class='modal-dialog'>
-            <div class='modal-content'>
-                <div class='modal-header'>
-                    <img class='img-ver-oferta' src='https://upload.wikimedia.org/wikipedia/commons/4/4c/Olimpical.png' class='card-img-top' alt='...'>
-                </div>
-                <div class='modal-body'>
-                    <h5>Nombre del cargo: " . $row["cargo"] . "</h5>
-                    <h6>Vigencia de la oferta: " . $row["vigencia"] . "</h6>
-                    <h6>Numero maximo de aplicantes: " . $row["vigencia"] . "</h6>
-                    <h6>Descripcion del cargo: " . $row["vigencia"] . "</h6>
-                    <h6>Sector principal: " . $row["vigencia"] . "</h6>
-                    <h6>Tipo de contrato: " . $row["vigencia"] . "</h6>
-                    <h6>Salario: " . $row["vigencia"] . "</h6>
-                    <h6>Condiciones: " . $row["vigencia"] . "</h6>
-                    <h6>Horario: " . $row["vigencia"] . "</h6>
-                    <h6>Perfil del profesional:</h6>
-                </div>
-                <div class='modal-footer'>
-                    <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Cerrar</button>
-                    <button type='button'data-id=" . $row["IDoferta"] . " onclick='ModificarOferta();' class='btn btn-primary color-boton-seleccionar-oferta btnModifiacr'>Modificar</button>
-                    <button type='button'data-id=" . $row["IDoferta"] . " onclick='CancelarOferta();' class='btn btn-primary color-boton-seleccionar-oferta btnCancelar'>Cancelar</button>
-                </div>
-            </div>
-        </div>
-    </div>";
+    while($row = $result->fetch_assoc()) 
+    { 
+    array_push($ofertas,$row);
     }
+  
+    $json_string = json_encode($ofertas);
+    echo $json_string;
 }
 
 function ModificarOferta()
@@ -144,6 +124,18 @@ function ModificarOferta()
     $NITempresa = $_POST['NIT'];
     $condicion = $_POST['condicion'];
     $IDoferta = $_POST['IDoferta'];
+
+    // $cargo = "Asistente";
+    // $Vigencia ="22-07-2021";
+    // $numeroAplicantes = "49";
+    // $descripcion = "Ayudar al jefe";
+    // $sector = "Logistica";
+    // $tipoContrato = "Tiempo Completo";
+    // $salario ="4000000";
+    // $horario = "Intensivo";
+    // $NITempresa = "999999999999";
+    // $condicion = "1. un año de experiencia 2. tecnico en gerencias";
+    // $IDoferta = "1";
     if ($NITempresa != "") {
 
         $sqlOferta = "UPDATE oferta SET cargo = '$cargo',vigencia = ' $Vigencia',numeroAplicantes = '$numeroAplicantes',

@@ -9,6 +9,7 @@ function AdicionarOferta() {
     var salario = $("#salario").val().trim();
     var horario = $("#horario").val().trim();
     var condiciones = $("#condiciones").val().trim();
+    var IDoferta = $("#IDoferta").val();
     // var checkBoxpracticante = document.getElementById("practicante");
     // var checkBoxtecnico = document.getElementById("tecnico");
     // var checkBoxtecnologo = document.getElementById("tecnologo");
@@ -20,12 +21,18 @@ function AdicionarOferta() {
     // var checkBoxcualquiera = document.getElementById("cualquiera");
     alert(NIT);
 
+    if (IDoferta === "") {
+        var accion = "adicionar";
+    } else {
+        var accion = "Modificar";
+    }
+
     $.ajax({
         type: "POST",
         dataType: "json",
         url: "Controles/ofertas.php",
         data: {
-            accion: "adicionar",
+            accion:accion,
             Cargo: Cargo,
             vigencia: vigencia,
             numeroAplicantes: numeroAplicantes,
@@ -36,6 +43,7 @@ function AdicionarOferta() {
             horario: horario,
             condiciones: condiciones,
             NIT: NIT,
+            IDoferta: IDoferta,
         },
         success: function (resp) {
 
@@ -45,26 +53,38 @@ function AdicionarOferta() {
 
 function BuscarOferta() {
     $(".btnModal").click(function () {
-
         IDoferta = $(this).data("id");
-        //console.log(idcliente);
-        alert("Entro");
         $.ajax({
             type: "POST",
             dataType: "json",
             url: "Controles/ofertas.php",
             data: {
-                accion: 'BuscarOferta',
+                accion: "BuscarOferta",
                 IDoferta: IDoferta,
             },
             success: function (resp) {
-
-
+                $("#IDoferta").val(resp[0]['IDoferta']);
+                $("#CargoOferta").val$("#CargoOferta").val() + "" + (resp[0]['cargo']);
             }
         });
-
-
-
     });
 
+}
+
+function ModificarOferta(){
+    var IDoferta = $("#IDoferta").val();
+    alert(Modifico);
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "Controles/ofertas.php",
+        data: {
+            accion: "BuscarOferta",
+            IDoferta: IDoferta,
+        },
+        success: function (resp) {
+            $("#IDoferta").val(resp[0]['IDoferta']);
+            $("#nombreCargo").val(resp[0]['cargo']).trim();
+        }
+    });
 }
