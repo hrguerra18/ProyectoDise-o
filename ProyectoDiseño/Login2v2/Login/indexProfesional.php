@@ -12,8 +12,8 @@ include("inc/menuProfesional.php");
       <div class="card-body">
         <div class="row">
           <form class="d-flex centrar">
-            <input class="form-control me-2  w-100 edit-input" type="search" placeholder="Ejemplo: Ingeniero, Contador, Psicologo..." aria-label="Search">
-            <button class="edit-input boton" type="submit">Buscar</button>
+            <input id="inputBuscarOferta" class="form-control me-2  w-100 edit-input" type="text" placeholder="Ejemplo: Ingeniero, Contador, Psicologo..." aria-label="Search">
+            <input id="botonBuscarOferta" class="edit-input boton" type="submit" value="Buscar"></input>
           </form>
 
           <div class="row">
@@ -23,6 +23,11 @@ include("inc/menuProfesional.php");
         </div>
       </div>
     </div>
+  </div>
+
+
+  <div class="row-filtros">
+
   </div>
 </main>
 
