@@ -19,10 +19,10 @@ if ($_SESSION['validar'] == true) {
 		<nav id="sidebar" class="sidebar color-fondo">
 			<div class="sidebar-content js-simplebar color-fondo">
 				<a class="sidebar-brand" href="index.html">
-					<img class="img-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Olimpical.png" alt="">
+					<img class="img-logo" src="<?php echo $_SESSION['foto']?>" alt="">
 					
 				</a>
-				<span class="align-middle nombre-empresa">Nombre del usuario</span>
+				<span class="align-middle nombre-empresa"><?php echo $_SESSION['usuario']?></span>
 				<ul class="sidebar-nav color-fondo">
 					<li class="sidebar-header">
 						Opciones
@@ -37,7 +37,7 @@ if ($_SESSION['validar'] == true) {
 
 
 					<li class="sidebar-item ">
-						<a class="sidebar-link color-fondo-a" href="#">
+						<a class="sidebar-link color-fondo-a" href="perfilProfesional.php">
 							<i class="align-middle" data-feather="bell"></i> <span class="align-middle">Perfil</span>
 						</a>
 					</li>
@@ -97,7 +97,7 @@ if ($_SESSION['validar'] == true) {
 							</a>
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-								<img  class="avatar img-fluid rounded me-1" alt="Alex" /> <span class="text-dark"> </span>
+								<img src="<?php echo $_SESSION['foto']?>" class="avatar img-fluid rounded me-1" alt="Foto perfil" /> <span class="text-dark"> </span>
 							</a>
 							<div class="dropdown-menu dropdown-menu-end">
 								<a class="dropdown-item" href="controles/cerrar.php">Cerrar Session</a>
