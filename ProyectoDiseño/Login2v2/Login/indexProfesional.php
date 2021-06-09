@@ -21,18 +21,18 @@ include("inc/menuProfesional.php");
             <img class="img-consulta" src="inc/img/consulta2.png" alt="">
           </div>
 
-          <div class="tarjetas">
-            
+          <div class="row-filtros d-flex mr-7">
+
           </div>
+
+
         </div>
       </div>
     </div>
   </div>
 
 
-  <div class="row-filtros">
 
-  </div>
 </main>
 
 <?php
