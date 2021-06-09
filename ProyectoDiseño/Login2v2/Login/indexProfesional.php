@@ -18,15 +18,15 @@ include("inc/menuProfesional.php");
 
           <div class="row">
             <p class="p-consulta">Puedes realizar filtros para hacer la busqueda especifica</p>
-            <img class="img-consulta" src="inc/img/consulta2.png" alt="">
+            <img id="imagen" class="img-consulta" src="inc/img/consulta2.png" alt="">
           </div>
 
-          <div class="row-filtros d-flex mr-7">
-
-          </div>
-
-
+    
         </div>
+
+        <div class="row-filtros d-flex mr-7">
+
+          </div>
       </div>
     </div>
   </div>

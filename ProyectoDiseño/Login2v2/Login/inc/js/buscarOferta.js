@@ -15,18 +15,15 @@ boton.addEventListener("click", () => {
         filtroOferta: filtroOferta,
       },
       success: function (resp) {
-        
         alert(resp[0].salario);
-        
         var t;
-
         fragment = document.createDocumentFragment();
 
         for(i=0; i<2;i++){
             t = `<div class='row'>
             <div class='card mt-6 edit-tarjeta' style='width: 18rem;'>
                <div class='img-tarjeta'>
-
+               <img src="${resp[i].foto}"class='card-img-top img-tarjeta' alt='...'>
                </div>
                <div class='card-body'>
                    <h3 class='card-title fw-bold tamaño-fuente'>Cargo: "${resp[i].cargo}"</h3>
@@ -41,7 +38,7 @@ boton.addEventListener("click", () => {
                </button>
            </div>
             </div>`;
-            let div = document.createElement("div");
+            var div = document.createElement("div");
             div.innerHTML = t;
             fragment.appendChild(div);
         }
@@ -49,7 +46,6 @@ boton.addEventListener("click", () => {
         tarjeta.appendChild(fragment);
       }
     });
-    debugger
   } else {
     alert("Ingrese algun valor de busqueda por favor!!");
   }
