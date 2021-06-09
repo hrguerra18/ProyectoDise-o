@@ -2,8 +2,8 @@ let boton = document.getElementById("botonBuscarOferta");
 
 boton.addEventListener("click",()=>{
     let filtroOferta = document.getElementById("inputBuscarOferta").value;
-    let rowFiltros = document.querySelector(".row-filtros");
-    
+    let tarjeta = document.querySelector(".tarjetas");
+
     if(filtroOferta != ""){
         $.ajax({
             type: "POST",
@@ -15,7 +15,7 @@ boton.addEventListener("click",()=>{
                 
             },
             success: function (resp) {
-                
+                alert(resp)
             }
         });
     }else{

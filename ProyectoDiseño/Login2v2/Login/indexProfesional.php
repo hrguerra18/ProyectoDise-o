@@ -20,6 +20,10 @@ include("inc/menuProfesional.php");
             <p class="p-consulta">Puedes realizar filtros para hacer la busqueda especifica</p>
             <img class="img-consulta" src="inc/img/consulta2.png" alt="">
           </div>
+
+          <div class="tarjetas">
+            
+          </div>
         </div>
       </div>
     </div>
