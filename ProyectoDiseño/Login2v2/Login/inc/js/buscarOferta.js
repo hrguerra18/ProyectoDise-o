@@ -3,7 +3,7 @@ let boton = document.getElementById("botonBuscarOferta");
 boton.addEventListener("click", () => {
   let filtroOferta = document.getElementById("inputBuscarOferta").value;
   let tarjeta = document.querySelector(".row-filtros");
-  let img = document.querySelector(".img-consulta");
+  let imagen = document.getElementById("imagen");
 
   if (filtroOferta != "") {
     $.ajax({
@@ -38,14 +38,17 @@ boton.addEventListener("click", () => {
                </button>
            </div>
             </div>`;
-            var div = document.createElement("div");
+            var div = document.createElement("DIV");
             div.innerHTML = t;
             fragment.appendChild(div);
         }
-        img.remove();
+        padre = imagen.parentNode;
+        padre.removeChild(imagen);
+
         tarjeta.appendChild(fragment);
       }
     });
+    
   } else {
     alert("Ingrese algun valor de busqueda por favor!!");
   }

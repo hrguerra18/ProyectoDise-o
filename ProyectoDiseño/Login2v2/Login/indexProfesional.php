@@ -16,7 +16,7 @@ include("inc/menuProfesional.php");
             <input id="botonBuscarOferta" class="edit-input boton" type="submit" value="Buscar"></input>
           </form>
 
-          <div class="row">
+          <div id="row-principal" class="row">
             <p class="p-consulta">Puedes realizar filtros para hacer la busqueda especifica</p>
             <img id="imagen" class="img-consulta" src="inc/img/consulta2.png" alt="">
           </div>
