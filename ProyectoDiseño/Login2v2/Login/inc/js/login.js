@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-    console.log("documento");
+    
     $("#botoningresar").click(function(){
         console.log("click");
         var username = $("#user").val().trim();

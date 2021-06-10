@@ -24,6 +24,11 @@
 .boton{
     border-color: #6B0707;
     color: #6B0707;
+    
+}
+
+.boton:focus{
+    outline: none;
 }
 
 .boton:hover{
