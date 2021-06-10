@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 	<link href="Css/app.css" rel="stylesheet">
+	<link rel="stylesheet" href="Css/style-indexProfesional.css">
 	<link href="Css/style-menu.css" rel="stylesheet">
 	<link rel="stylesheet" href="Css/style-crear-oferta.css">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">

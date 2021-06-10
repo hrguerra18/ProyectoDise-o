@@ -22,7 +22,7 @@ function BuscarOfertas()
 
     
     $sql = "SELECT o.IDoferta,o.cargo,o.vigencia,o.numeroAplicantes,o.descripcion,o.sector,o.tipoContrato,o.salario,o.horario,
-    o.NITempresa, o.condicion,u.foto FROM oferta o JOIN empresa e ON(o.NITempresa = e.NIT) JOIN usuario u ON(e.IDusuario = u.ID)
+    o.NITempresa, o.condicion,u.foto,e.nombre FROM oferta o JOIN empresa e ON(o.NITempresa = e.NIT) JOIN usuario u ON(e.IDusuario = u.ID)
      WHERE o.cargo LIKE '%$buscarOferta%'";
 
     if (!$result = mysqli_query($con, $sql)) die();

@@ -24,7 +24,7 @@ include("inc/menuProfesional.php");
     
         </div>
 
-        <div class="row-filtros d-flex ">
+        <div class="row-filtros">
 
         </div>
       </div>
