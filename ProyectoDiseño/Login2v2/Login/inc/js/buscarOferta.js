@@ -1,5 +1,5 @@
 let boton = document.querySelector(".boton");
-let input = document.getElementById("inputBuscarOferta")
+
 
 boton.addEventListener("click", (e) => {
   let datoClases = recibirDatos();
@@ -25,9 +25,7 @@ boton.addEventListener("click", (e) => {
       },
     });
     e.preventDefault();
-  } else {
-    alert("Ingrese algun valor de busqueda por favor!!");
-  }
+  } 
 });
 
 function recibirDatos() {
