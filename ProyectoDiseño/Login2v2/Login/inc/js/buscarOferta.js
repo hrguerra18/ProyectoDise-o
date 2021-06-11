@@ -3,7 +3,10 @@ let boton = document.querySelector(".boton");
 
 boton.addEventListener("click", (e) => {
   let datoClases = recibirDatos();
+
+  console.log(datoClases.filtroOferta);
   if (datoClases.filtroOferta != "") {
+    console.log("entro")
     $.ajax({
       type: "POST",
       dataType: "json",
@@ -13,19 +16,27 @@ boton.addEventListener("click", (e) => {
         filtroOferta: datoClases.filtroOferta,
       },
       success: function (resp) {
-        removerImagenYParrafo(datoClases);
+        console.log(resp[0])
+       if(datoClases.imagen !=null && datoClases.p !=null){
+        removerImagenYParrafo(datoClases)
+       }
         var datos = resp;
+        console.log(datos);
         let t;
+        datoClases.tarjeta.innerHTML="";
         datos.forEach((elemento) => {
           t = crearTarjeta(elemento);
           var div = document.createElement("DIV");
           div.innerHTML = t;
           datoClases.tarjeta.appendChild(div);
+          document.querySelector("input").value = "";
+         
         });
       },
     });
     e.preventDefault();
   } 
+  
 });
 
 function recibirDatos() {
@@ -71,6 +82,6 @@ function crearTarjeta(elemento) {
 }
 
 function removerImagenYParrafo(datoClases) {
-  datoClases.imagen.remove();
-  datoClases.p.remove();
+    datoClases.imagen.remove();
+    datoClases.p.remove();
 }
