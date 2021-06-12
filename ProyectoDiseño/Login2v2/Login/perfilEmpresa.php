@@ -77,7 +77,7 @@ include("inc/menuEmpresa.php");
                         </div>
 
                         <div class="col-md-6 mb-3 ">
-                            <label class="mb-3 fw-bold for=" validationCustom01">CIUDAD:</label>
+                            <label class="mb-3 fw-bold" for=" validationCustom01">CIUDAD:</label>
                             <input type="text" class="form-control" id="ciudad" placeholder="Nuevo telefono" required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
