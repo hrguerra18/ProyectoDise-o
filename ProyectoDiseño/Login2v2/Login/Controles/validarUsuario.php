@@ -76,6 +76,8 @@ function ConsultarInformacionProfesional($ID)
 
     $_SESSION['IDusuario'] = $row['Identidad'];
     $_SESSION['usuario'] = $row['nombre'] . ' ' . $row['apellido'];
+    $_SESSION['nombre'] = $row['nombre'];
+    $_SESSION['apellido'] = $row['apellido'];
     $_SESSION['direccion'] = $row['direccion'];
     $_SESSION['telefono'] = $row['telefono'];
     $_SESSION['correo'] = $row['correo'];

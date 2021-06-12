@@ -23,7 +23,7 @@ include("inc/menuProfesional.php");
 
                         <div class="col-md-12 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">CARRERA:</label>
-                            <input type="text" class="form-control" id="carreraProfesional" placeholder="Carrera cursada" required>
+                            <input type="text" class="form-control" id="carreraProfesional" placeholder="" required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
@@ -37,21 +37,21 @@ include("inc/menuProfesional.php");
                         </div>
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">CORREO:</label>
-                            <input type="text" class="form-control" id="correoProfesional" placeholder="Correo personal" required value=<?php echo $_SESSION['IDusuario'] ?>>
+                            <input type="text" class="form-control" id="correoProfesional" placeholder="Correo personal" required value=<?php echo $_SESSION['correo'] ?>>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
                         </div>
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">NOMBRE:</label>
-                            <input type="text" class="form-control" id="nombreProfesional" placeholder="Nombre" required>
+                            <input type="text" class="form-control" id="nombreProfesional" placeholder="Nombre" required value=<?php echo $_SESSION['nombre'] ?>>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
                         </div>
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">APELLIDO:</label>
-                            <input type="text" class="form-control" id="apellidoProfesional" placeholder="Apellido" required>
+                            <input type="text" class="form-control" id="apellidoProfesional" placeholder="Apellido" required value="<?php echo $_SESSION['apellido'] ?>">
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
@@ -59,7 +59,7 @@ include("inc/menuProfesional.php");
 
                         <div class="col-md-12 mb-3 ">
                             <label class="fw-bold" for="validationCustom04">SOBRE MI:</label>
-                            <input type="text" class="form-control" id="sobreMiProfesional" placeholder="Acerca de mi" required>
+                            <input type="text" class="form-control" id="sobreMiProfesional" placeholder="" required>
 
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
@@ -70,7 +70,7 @@ include("inc/menuProfesional.php");
 
                         <div class="col-md-12 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">DIRECCION:</label>
-                            <input type="text" class="form-control" id="direccionempresa" placeholder="" required>
+                            <input type="text" class="form-control" id="direccionempresa" placeholder="" required value="<?php echo $_SESSION['direccion'] ?>">
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
@@ -78,7 +78,7 @@ include("inc/menuProfesional.php");
 
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for=" validationCustom01">CIUDAD:</label>
-                            <input type="text" class="form-control" id="ciudad" placeholder="Nuevo telefono" required>
+                            <input type="text" class="form-control" id="ciudad" placeholder="" required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
@@ -86,7 +86,7 @@ include("inc/menuProfesional.php");
 
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">TELEFONO:</label>
-                            <input type="number" class="form-control" id="telefonoempresa" placeholder="" required>
+                            <input type="number" class="form-control" id="telefonoempresa" placeholder="" required value="<?php echo $_SESSION['telefono'] ?>">
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
