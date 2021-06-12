@@ -74,9 +74,18 @@ function crearTarjeta(elemento) {
                    <li class='list-group-item'><b>Horario:</b> ${elemento.horario}</li>
                    <li class='list-group-item'><b>Condiciones:</b> ${elemento.condicion}</li>
                </ul>
-               <button data-id="${elemento.IDoferta}"  onclick='BuscarOferta();' type='button' class='btnModal color-tarjeta-a' data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                   Ver mas
-               </button>
+               <div class="d-flex flex-wrap">
+                  <button data-id="${elemento.IDoferta}"  type='button' class='botones-ofertas'>
+                      Postularme
+                  </button>
+
+                  <input type="file" class="botones-ofertas"  id="inputGroupFile02">
+
+                  <button data-id="${elemento.IDoferta}"   type='button' class='botones-ofertas'>
+                     Informacion de la empresa
+                  </button>
+               </div>
+               
            </div>
             </div>`;
 }
@@ -85,3 +94,4 @@ function removerImagenYParrafo(datoClases) {
     datoClases.imagen.remove();
     datoClases.p.remove();
 }
+

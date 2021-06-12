@@ -1,6 +1,6 @@
 <?php
 include "Conexion.php";
-
+session_start();
 //header('Location: index.php'); 
 
 //Escapa los caracteres especiales de una cadena para usarla 

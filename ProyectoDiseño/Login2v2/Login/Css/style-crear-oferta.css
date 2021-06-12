@@ -8,7 +8,7 @@
     border-color: #6B0707;
     opacity: 0.8;
     transition: all 500ms ease;
-    box-shadow: 0 0 10px #6B0707, 0 0 20px #6B0707, 0 0 20px #6B0707;
+    box-shadow: 0 0 7px #6B0707;
    
 }
 
@@ -48,7 +48,7 @@
   border: 1px solid #6B0707;
   background: rgb(250, 250, 250);
   transition: all 200ms ease;
-  box-shadow: 0 0 10px #b4b4b4, 0 0 20px #b4b4b4, 0 0 20px #b4b4b4;
+  box-shadow: 0 0 5px #b4b4b4, 0 0 10px #b4b4b4, 0 0 10px #b4b4b4;
 }
 
 .color-tarjeta-a:focus{

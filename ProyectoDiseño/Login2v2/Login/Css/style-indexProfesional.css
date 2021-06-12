@@ -30,3 +30,27 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+
+.botones-ofertas{
+    color: rgb(250, 250, 250);
+  border: 3px solid #6B0707;
+  background: #6B0707 ;
+  height: 32px;
+  border-radius: 3px;
+  width: 230px;
+  margin:0px auto;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+.botones-ofertas:hover{
+    color: #6B0707;
+    border: 1px solid #6B0707;
+    background: rgb(250, 250, 250);
+    transition: all 200ms ease;
+    box-shadow: 0 0 1px  #b4b4b4;
+  }
+  
+  .botones-ofertas:focus{
+    border-color: #6B0707 !important;
+  }
