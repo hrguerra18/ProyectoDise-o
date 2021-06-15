@@ -4,6 +4,7 @@
 <script type="text/javascript" src="inc/js/login.js"></script>
 <script src="http://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <script src="inc/js/buscarOferta.js"></script>
+<script src="inc/js/perfilProfesional.js"></script>
 
 </body>
 
