@@ -18,7 +18,7 @@ $(document).ready(function(){
                 },
                 success:function(response){
                 window.location="indexEmpresa.php";
-                console.log(response)
+               console.log(response);
                 }
             });
         }

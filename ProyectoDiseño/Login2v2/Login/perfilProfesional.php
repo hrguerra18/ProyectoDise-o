@@ -23,6 +23,7 @@ include("inc/menuProfesional.php");
 
                         <div class="col-md-12 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">CARRERA:</label>
+                            <input  type="hidden" class="form-control" id="identidadProfesional" value="<?php echo $_SESSION['IDusuario'] ?>" >
                             <input type="text" class="form-control" id="carreraProfesional" placeholder="" required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
@@ -59,7 +60,7 @@ include("inc/menuProfesional.php");
 
                         <div class="col-md-12 mb-3 ">
                             <label class="fw-bold" for="validationCustom04">SOBRE MI:</label>
-                            <input type="text" class="form-control" id="sobreMiProfesional" placeholder="" required>
+                            <input type="text" class="form-control" id="sobreMiProfesional" value="<?php echo $_SESSION['sobreMiProfesional'] ?>" >
 
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
