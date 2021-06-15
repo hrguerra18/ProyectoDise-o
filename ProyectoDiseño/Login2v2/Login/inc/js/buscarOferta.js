@@ -3,8 +3,6 @@ let boton = document.querySelector(".boton");
 
 boton.addEventListener("click", (e) => {
   let datoClases = recibirDatos();
-
-  console.log(datoClases.filtroOferta);
   if (datoClases.filtroOferta != "") {
     console.log("entro")
     $.ajax({
@@ -16,14 +14,13 @@ boton.addEventListener("click", (e) => {
         filtroOferta: datoClases.filtroOferta,
       },
       success: function (resp) {
-        console.log(resp[0])
        if(datoClases.imagen !=null && datoClases.p !=null){
         removerImagenYParrafo(datoClases)
        }
         var datos = resp;
-        console.log(datos);
         let t;
         datoClases.tarjeta.innerHTML="";
+        
         datos.forEach((elemento) => {
           t = crearTarjeta(elemento);
           var div = document.createElement("DIV");
@@ -81,9 +78,13 @@ function crearTarjeta(elemento) {
 
                   <input type="file" class="botones-ofertas"  id="inputGroupFile02">
 
-                  <button data-id="${elemento.IDoferta}"   type='button' class='botones-ofertas'>
-                     Informacion de la empresa
-                  </button>
+                  <a href="mostrarInformacionEmpresa.php" target="_blank">
+                    <button id="btn-info-empresa" onclick="InfoEmpresa(${elemento.NITempresa})" type='button' class='botones-ofertas'>
+                      Informacion de la empresa
+                    </button>
+                  </a>
+
+                 
                </div>
                
            </div>
@@ -95,3 +96,18 @@ function removerImagenYParrafo(datoClases) {
     datoClases.p.remove();
 }
 
+function InfoEmpresa(NITempresa){
+  $.ajax({
+    type : "POST",
+    dataType : "json",
+    url : "Controles/buscarOfertas.php",
+    data : {
+      accion : "buscarInfoEmpresa",
+      NITempresa : NITempresa,
+    },
+    success: function(resp){
+      
+      // window.location = "mostrarInformacionEmpresa.php";
+    }
+  })
+}

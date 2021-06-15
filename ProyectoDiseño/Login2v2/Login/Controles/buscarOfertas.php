@@ -4,12 +4,15 @@ if (empty($_POST['accion'])) {
 }
 
 
-$_POST['accion'] = "buscar";
+// $_POST['accion'] = "buscar";
 switch ($_POST['accion']) {
 
     case "buscar":
         BuscarOfertas();
-        break;
+    break;
+    case "buscarInfoEmpresa":
+        BuscarInfoEmpresa();
+    break;
 }
 
 function BuscarOfertas()
@@ -38,23 +41,33 @@ function BuscarOfertas()
     echo $json;
 }
 
+function BuscarInfoEmpresa(){
+    session_start();
+    require "Conexion.php";
+    $NITempresa = $_POST['NITempresa'];
 
+    $sql = "SELECT count(*) as numusu,e.nombre,u.foto,e.telefono,e.direccion FROM empresa e JOIN usuario u ON(e.IDusuario = u.ID) WHERE NIT='$NITempresa'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_array($result);
 
-// "<div class='row'>
-//                <div class='card mt-6 edit-tarjeta' style='width: 18rem;'>
-//                   <div class='img-tarjeta'>
-                  
-//                   </div>
-//                   <div class='card-body'>
-//                       <h3 class='card-title fw-bold tamaño-fuente'>Cargo: " .  $row['cargo'] . "</h3>
-//                       <h3 class='card-title fw-bold tamaño-fuente'>descirpcion: " .  $row['descripcion'] . "</h3>
-//                   </div>
-//                   <ul class=list-group list-group-flush'>
-//                       <li class='list-group-item'>Salario: " .  $row['salario'] . "</li>
-//                       <li class='list-group-item'>Condiciones: " .  $row['condicion'] . "</li>
-//                   </ul>
-//                   <button data-id=" .  $row['descripcion'] . "  onclick='BuscarOferta();' type='button' class='btnModal color-tarjeta-a' data-bs-toggle='modal' data-bs-target='#exampleModal'>
-//                       Ver mas
-//                   </button>
-//               </div>
-//                </div>";
+    $nombre = $row['nombre'];
+    $foto = $row['foto'];
+    $telefono = $row['telefono'];
+    $direccion = $row['direccion'];
+    $count = $row['numusu'];
+
+    if ($count > 0) {
+        $_SESSION['nombreMostrarInformacion']= $nombre;
+        $_SESSION['fotoMostrarInformacion']= $foto;
+        $_SESSION['telefonoMostrarInformacion']= $telefono;
+        $_SESSION['direccionMostrarInformacion']= $direccion;
+        $_SESSION['validarr'] = true;
+        $json_string = json_encode($_SESSION);
+        echo $json_string;
+    } else {
+        $respuesta = array("mensaje" => "Error" . mysqli_error($con));
+        $json_string = json_encode($respuesta);
+        echo $json_string;
+    }
+}
+

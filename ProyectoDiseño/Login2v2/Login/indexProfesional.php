@@ -7,7 +7,7 @@ include("inc/menuProfesional.php");
 
 <main class="content">
 
-  <div class="container-fluid">
+  <div class="container-fluid container-prueba">
     <div class="card ">
       <div class="card-body">
         <div class="row">
@@ -23,6 +23,7 @@ include("inc/menuProfesional.php");
 
     
         </div>
+        
 
         <div class="row-filtros">
 
