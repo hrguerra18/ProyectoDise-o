@@ -33,7 +33,7 @@ function ConsultarPerfilProfesional() {
 
 
 
-function ModificarPerfil(){
+function ModificarPerfilProfesional(){
     let identidad = document.getElementById("identidadProfesional").value.trim();
     let carreraProfesional = document.getElementById("carreraProfesional").value.trim();
     let fechaNacimientoProfesional = document.getElementById("fechaNacimientoProfesional").value.trim();

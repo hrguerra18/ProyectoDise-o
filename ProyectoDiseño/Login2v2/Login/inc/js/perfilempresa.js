@@ -29,7 +29,7 @@ function ConsultarPerfil() {
 }
 
 function ModificarPerfil() {
-
+    
     var NIT = $("#nitempresa").val();
     var nombre = $("#nombreempresa").val();
     var servicio = $("#categoriaempresa").val();
@@ -39,6 +39,7 @@ function ModificarPerfil() {
     var CantidadEmpleado = $("#numeroempleado").val();
     var descripcion = $("#descripcion").val();
     var ciudad = $("#ciudad").val();
+    
     $.ajax({
         type: 'POST',
         dataType: 'json',

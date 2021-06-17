@@ -23,7 +23,7 @@ include("inc/menuEmpresa.php");
 
                         <div class="col-md-12 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">NOMBRE DE LA EMPRESA:</label>
-                            <input type="text" class="form-control" id="nombreempresa" placeholder="Nombre de la empresa" required>
+                            <input type="text" class="form-control" id="nombreempresa"  required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
@@ -37,21 +37,21 @@ include("inc/menuEmpresa.php");
                         </div>
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">NIT:</label>
-                            <input type="text" disabled="disabled" class="form-control" id="nitempresa" placeholder="Nit de la empresa" required value=<?php echo $_SESSION['IDusuario'] ?>>
+                            <input type="text" disabled="disabled" class="form-control" id="nitempresa"  required value=<?php echo $_SESSION['IDusuario'] ?>>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
                         </div>
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">CATEGORIA:</label>
-                            <input type="text" class="form-control" id="categoriaempresa" placeholder="Categoria" required>
+                            <input type="text" class="form-control" id="categoriaempresa" required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
                         </div>
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">NUMERO DE EMPLEADOS:</label>
-                            <input type="number" class="form-control" id="numeroempleado" placeholder="Nit de la empresa" required>
+                            <input type="number" class="form-control" id="numeroempleado"  required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
@@ -59,7 +59,7 @@ include("inc/menuEmpresa.php");
 
                         <div class="col-md-12 mb-3 ">
                             <label class="fw-bold" for="validationCustom04">DESCRIPCION</label>
-                            <input type="text" class="form-control input-descripcion-perfil" id="descripcion" placeholder="" required>
+                            <input type="text" class="form-control input-descripcion-perfil" id="descripcion"  required>
 
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
@@ -70,7 +70,7 @@ include("inc/menuEmpresa.php");
 
                         <div class="col-md-12 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">DIRECCION:</label>
-                            <input type="text" class="form-control" id="direccionempresa" placeholder="" required>
+                            <input type="text" class="form-control" id="direccionempresa"  required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
@@ -78,7 +78,7 @@ include("inc/menuEmpresa.php");
 
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for=" validationCustom01">CIUDAD:</label>
-                            <input type="text" class="form-control" id="ciudad" placeholder="Nuevo telefono" required>
+                            <input type="text" class="form-control" id="ciudad"  required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
@@ -86,7 +86,7 @@ include("inc/menuEmpresa.php");
 
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">TELEFONO:</label>
-                            <input type="number" class="form-control" id="telefonoempresa" placeholder="" required>
+                            <input type="number" class="form-control" id="telefonoempresa"  required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
