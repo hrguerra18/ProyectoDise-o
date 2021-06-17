@@ -46,7 +46,7 @@ function  ModificarEmpresa()
 
 
     $sql = "UPDATE empresa SET nombre = '$nombre', servicio = '$servicio', direccion = '$direccion', telefono = '$telefono', pagina = '$pagina',
-    cantidadEmpleado = '$cantidadEmpleado', descripcion = '$descripcion', ciudad = '$ciudad' WHERE NIT = '$NIT'";
+    cantidadEmpleado = '$cantidadEmpleado', descripcionEmpresa = '$descripcion', ciudad = '$ciudad' WHERE NIT = '$NIT'";
 
     if (mysqli_query($con, $sql)) {
         echo "Cliente Modificado";

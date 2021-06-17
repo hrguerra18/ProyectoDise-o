@@ -22,7 +22,7 @@ function ConsultarPerfil() {
             $("#nitempresa").val(resp[0]['NIT']);
             $("#paginaweb").val(resp[0]['pagina']);
             $("#numeroempleado").val(resp[0]['cantidadEmpleado']);
-            $("#descripcion").val(resp[0]['descripcion']);
+            $("#descripcion").val(resp[0]['descripcionEmpresa']);
             $("#ciudad").val(resp[0]['ciudad']);
         }
     });
