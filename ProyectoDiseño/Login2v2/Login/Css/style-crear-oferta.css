@@ -31,7 +31,11 @@
 }
 
 .tamaño-fuente{
-  font-size: 20px;
+  font-size: 14px;
+}
+
+.tamaño-fuente-salario{
+  font-size: 12px;
 }
 
 .activo{
