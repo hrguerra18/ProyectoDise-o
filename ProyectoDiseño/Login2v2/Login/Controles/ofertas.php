@@ -70,7 +70,7 @@ function ConsultarOferta($NITempresa)
         }
 
 
-        echo  " <div class='card mt-6 edit-tarjeta' style='width: 18rem;'>
+        echo  " <div class='card mb-5 edit-tarjeta' style='width: 18rem;'>
                 <div class='img-tarjeta'>
                 <button class='activo'>Activo</button>
                 <img src=" . $row["foto"] . " class='card-img-top img-tarjeta' alt='...'>

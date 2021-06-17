@@ -200,6 +200,8 @@ include("inc/menuEmpresa.php");
 
                     </div>
                     <button onclick="AdicionarOferta();" class="btn btn-primary color-boton btnCrearOferta" type="submit">Crear Oferta</button>
+
+                    
                 </form>
             </div>
         </div>
@@ -240,7 +242,7 @@ include("inc/menuEmpresa.php");
                     <h6 id="PerfilOferta">Perfil del profesional:</h6>
                 </div>
                 <div class="modal-footer">
-                <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Cerrar</button>
+                    <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Cerrar</button>
                     <button type='button' onclick='ModificarOferta();' class='btn btn-primary color-boton-seleccionar-oferta '>Modificar</button>
                     <button type='button' onclick='CancelarOferta();' class='btn btn-primary color-boton-seleccionar-oferta'>Cancelar</button>
                 </div>
