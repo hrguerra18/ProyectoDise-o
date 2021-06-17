@@ -77,7 +77,7 @@ function ConsultarOferta($NITempresa)
                 </div>
                 <div class='card-body'>
                     <h6 class='card-title fw-bold tamaño-fuente'>Cargo: " . $row["cargo"] . "</h6>
-                    <h3 class='card-title fw-bold tamaño-fuente'>des". $row["descripcion"] . "</h3>
+                    <h3 class='card-title  tamaño-fuente'>". $row["descripcion"] . "</h3>
                 </div>
                 <ul class=list-group list-group-flush'>
                     <li class='list-group-item tamaño-fuente-salario'><b>Salario:</b> " . $row["salario"] . "</li>
