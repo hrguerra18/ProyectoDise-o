@@ -62,7 +62,7 @@ function ConsultarInformacionEmpresa($ID)
     $_SESSION['telefono'] = $row['telefono'];
     $_SESSION['pagina'] = $row['pagina'];
     $_SESSION['cantidadEmpleado'] = $row['cantidadEmpleado'];
-    $_SESSION['descripcion'] = $row['descripcion'];
+    $_SESSION['descripcion'] = $row['descripcionEmpresa'];
     $_SESSION['ciudad'] = $row['ciudad'];
     $_SESSION['correo'] = $row['correo'];
 }

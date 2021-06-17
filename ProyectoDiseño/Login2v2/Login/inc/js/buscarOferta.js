@@ -14,10 +14,11 @@ boton.addEventListener("click", (e) => {
         filtroOferta: datoClases.filtroOferta,
       },
       success: function (resp) {
+        console.log[resp[0]]
        if(datoClases.imagen !=null && datoClases.p !=null){
         removerImagenYParrafo(datoClases)
        }
-        var datos = resp;
+        var datos = resp;        
         let t;
         datoClases.tarjeta.innerHTML="";
         
@@ -27,7 +28,7 @@ boton.addEventListener("click", (e) => {
           div.innerHTML = t;
           datoClases.tarjeta.appendChild(div);
           document.querySelector("input").value = "";
-         
+          
         });
       },
     });
@@ -72,7 +73,7 @@ function crearTarjeta(elemento) {
                    <li class='list-group-item'><b>Condiciones:</b> ${elemento.condicion}</li>
                </ul>
                <div class="d-flex flex-wrap">
-                  <button data-id="${elemento.IDoferta}"  type='button' class='botones-ofertas'>
+                  <button data-id="${elemento.IDoferta}" onclick="RegistrarPostulacion(${elemento.IDoferta})"  type='button' class='botones-ofertas'>
                       Postularme
                   </button>
 
