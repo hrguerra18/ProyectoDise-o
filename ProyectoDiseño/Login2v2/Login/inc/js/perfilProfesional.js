@@ -1,3 +1,38 @@
+
+$(document).ready(function () {
+    ConsultarPerfilProfesional();
+});
+
+
+function ConsultarPerfilProfesional() {
+    var identidad = document.getElementById("identidadProfesional").value;
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "Controles/perfilProfesional.php",
+        data: {
+            accion: "consultarperfil",
+            identidad: identidad,
+        },
+        success: function (resp) {
+            console.log(resp)
+            $("#carreraProfesional").val(resp[0]['carrera']);
+            $("#fechaNacimientoProfesional").val(resp[0]['fechaNacimiento']);
+            $("#correoProfesional").val(resp[0]['correo']);
+            $("#nombreProfesional").val(resp[0]['nombre']);
+            $("#apellidoProfesional").val(resp[0]['apellido']);
+            $("#sobreMiProfesional").val(resp[0]['sobreMi']);
+            $("#direccionProfesional").val(resp[0]['direccion']);
+            $("#telefonoProfesional").val(resp[0]['telefono']);
+            $("#departamentoProfesional").val(resp[0]['departamentoProfesional']);
+            $("#ciudadProfesional").val(resp[0]['ciudadProfesional']);
+        }
+    });
+}
+
+
+
+
 function ModificarPerfil(){
     let identidad = document.getElementById("identidadProfesional").value.trim();
     let carreraProfesional = document.getElementById("carreraProfesional").value.trim();
@@ -29,6 +64,7 @@ function ModificarPerfil(){
         },
         success : function(resp) {
             alert("se guardo correctamente");
+            ConsultarPerfilProfesional();
         }
     })
     

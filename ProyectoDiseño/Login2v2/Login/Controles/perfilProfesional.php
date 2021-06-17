@@ -2,11 +2,14 @@
 if (empty($_POST['accion'])) {
     $_POST['accion'] = "general";
 }
-$_POST['accion'] = "modificar";
+// $_POST['accion'] = "modificar";
 switch ($_POST['accion']) {
     case "modificar":
         ModificarDatosProfesional();
         break;
+    case "consultarperfil":
+            ConsultarPerfil();
+     break;
 }
 
 
@@ -16,6 +19,7 @@ function ModificarDatosProfesional()
     require "Conexion.php";
 
     $identidad = $_POST['identidad'];
+    $carreraProfesional = $_POST['carreraProfesional'];
     $fechaNacimiento = $_POST['fechaNacimientoProfesional'];
     $nombreProfesional = $_POST['nombreProfesional'];
     $apellidoProfesional = $_POST['apellidoProfesional'];
@@ -27,21 +31,30 @@ function ModificarDatosProfesional()
 
     $sql = "UPDATE profesional SET fechaNacimiento='$fechaNacimiento',nombre='$nombreProfesional',apellido='$apellidoProfesional',
     sobreMi='$sobreMiProfesional',direccion='$direccionProfesional',departamentoProfesional='$departamentoProfesional',
-    ciudadProfesional='$ciudadProfesional',telefono='$telefonoProfesional' WHERE Identidad = '$identidad'";
+    ciudadProfesional='$ciudadProfesional',telefono='$telefonoProfesional',carrera='$carreraProfesional' WHERE Identidad = '$identidad'";
 
     if (mysqli_query($con, $sql)) {
-        $_SESSION['nombre'] = $nombreProfesional;
-        $_SESSION['apellido'] = $apellidoProfesional;
-        $_SESSION['direccion'] = $direccionProfesional;
-        $_SESSION['telefono'] = $telefonoProfesional;
-        $_SESSION['sobreMiProfesional'] = $sobreMiProfesional;
-        $_SESSION['fechaNacimiento'] = $fechaNacimiento;
-        $respuesta = array("mensaje" => "Se ha registrado los datos de manera correcta");
-        $json_string = json_encode($respuesta);
-        echo $json_string;
+        echo "Cliente Modificado";
     } else {
-        $respuesta = array("mensaje" => "Error" . mysqli_error($con));
-        $json_string = json_encode($respuesta);
-        echo $json_string;
+        echo "Error: " . $sql;
+        echo mysqli_error($con);
     }
+}
+
+function ConsultarPerfil(){
+    session_start();
+    require "Conexion.php";
+    $identidad = $_POST['identidad'];
+    $sql = "SELECT * FROM profesional WHERE Identidad = '$identidad'";
+
+    if (!$result = mysqli_query($con, $sql)) die();
+
+    $profesionales = array(); //creamos un array
+
+    while ($row = $result->fetch_assoc()) {
+        array_push($profesionales, $row);
+    }
+
+    $json_string = json_encode($profesionales);
+    echo $json_string;
 }

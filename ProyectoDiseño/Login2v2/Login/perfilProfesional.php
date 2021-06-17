@@ -24,35 +24,35 @@ include("inc/menuProfesional.php");
                         <div class="col-md-12 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">CARRERA:</label>
                             <input  type="hidden" class="form-control" id="identidadProfesional" value="<?php echo $_SESSION['IDusuario'] ?>" >
-                            <input type="text" class="form-control" id="carreraProfesional" placeholder="" required>
+                            <input type="text" class="form-control" id="carreraProfesional" placeholder="" >
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
                         </div>
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">FECHA NACIMIENTO:</label>
-                            <input type="date" class="form-control" id="fechaNacimientoProfesional" placeholder="" required>
+                            <input type="date" class="form-control" id="fechaNacimientoProfesional" placeholder="" >
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
                         </div>
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">CORREO:</label>
-                            <input type="text" disabled="disabled" class="form-control" id="correoProfesional" placeholder="Correo personal" required value=<?php echo $_SESSION['correo'] ?>>
+                            <input type="text" disabled="disabled" class="form-control" id="correoProfesional" placeholder="Correo personal" required >
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
                         </div>
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">NOMBRE:</label>
-                            <input type="text" class="form-control" id="nombreProfesional" placeholder="Nombre" required value=<?php echo $_SESSION['nombre'] ?>>
+                            <input type="text" class="form-control" id="nombreProfesional" placeholder="Nombre" required >
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
                         </div>
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">APELLIDO:</label>
-                            <input type="text" class="form-control" id="apellidoProfesional" placeholder="Apellido" required value="<?php echo $_SESSION['apellido'] ?>">
+                            <input type="text" class="form-control" id="apellidoProfesional" placeholder="Apellido" required >
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
@@ -60,7 +60,7 @@ include("inc/menuProfesional.php");
 
                         <div class="col-md-12 mb-3 ">
                             <label class="fw-bold" for="validationCustom04">SOBRE MI:</label>
-                            <input type="text" class="form-control" id="sobreMiProfesional" value="<?php echo $_SESSION['sobreMiProfesional'] ?>" >
+                            <input type="text" class="form-control" id="sobreMiProfesional"  >
 
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
@@ -71,7 +71,7 @@ include("inc/menuProfesional.php");
 
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">DIRECCION:</label>
-                            <input type="text" class="form-control" id="direccionProfesional" placeholder="" required value="<?php echo $_SESSION['direccion'] ?>">
+                            <input type="text" class="form-control" id="direccionProfesional"  required >
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
@@ -79,16 +79,16 @@ include("inc/menuProfesional.php");
 
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">TELEFONO:</label>
-                            <input type="number" class="form-control" id="telefonoProfesional" placeholder="" required value="<?php echo $_SESSION['telefono'] ?>">
+                            <input type="number" class="form-control" id="telefonoProfesional"  required >
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
                         </div>
 
                         <div class="col-md-6 mb-3 ">
-                            <label class="mb-3 fw-bold" for=" departamentoProfesional">DEPARTAMENTO:</label>
-                            <select class="form-control" id="departamentoProfesional" name="departamento" required>
-                                <option value="">Seleccione el departamento </option>
+                            <label class="mb-3 fw-bold" for="departamentoProfesional">DEPARTAMENTO:</label>
+                            <select class="form-control form-select" id="departamentoProfesional" name="departamento"  >
+                                <option value=""></option>
                                 <option value="Amazonas">Amazonas</option>
                                 <option value="Antioquia">Antioquia</option>
                                 <option value="Arauca">Arauca</option>
@@ -129,8 +129,8 @@ include("inc/menuProfesional.php");
 
                         <div class="col-md-6 mb-3 ">
                             <label for="ciudadProfesional" class="mb-3 fw-bold control-label">CIUDAD:</label>
-                            <select class="form-control" id="ciudadProfesional">
-                                <option value="">Seleccione una opcion</option>
+                            <select class="form-control form-select" id="ciudadProfesional" >
+                                <option value=""></option>
                                 <option value="Arauca">Arauca</option>
                                 <option value="Armenia">Armenia</option>
                                 <option value="Barranquilla">Barranquilla</option>
