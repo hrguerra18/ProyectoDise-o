@@ -14,16 +14,13 @@ boton.addEventListener("click", (e) => {
         filtroOferta: datoClases.filtroOferta,
       },
       success: function (resp) {
-        console.log[resp[0]]
        if(datoClases.imagen !=null && datoClases.p !=null){
         removerImagenYParrafo(datoClases)
        }
-        var datos = resp;        
-        let t;
+        var datos = resp;     
         datoClases.tarjeta.innerHTML="";
-        
         datos.forEach((elemento) => {
-          t = crearTarjeta(elemento);
+          let t = crearTarjeta(elemento,datoClases.IdEmpresaOProfesional);
           var div = document.createElement("DIV");
           div.innerHTML = t;
           datoClases.tarjeta.appendChild(div);
@@ -42,18 +39,21 @@ function recibirDatos() {
   let tarjeta = document.querySelector(".row-filtros");
   let imagen = document.getElementById("imagen");
   let p = document.getElementById("p-index");
+  var IdEmpresaOProfesional = document.getElementById("IdEmpresaOProfesional").value;
+  
 
   clases = {
     filtroOferta: filtroOferta,
     tarjeta: tarjeta,
     imagen: imagen,
     p: p,
+    IdEmpresaOProfesional : IdEmpresaOProfesional,
   };
 
   return clases;
 }
 
-function crearTarjeta(elemento) {
+function crearTarjeta(elemento,IdEmpresaOProfesional) {
   return `<div class='row  d-flex flex-wrap'>
             <div class='card mt-3 mb-3 edit-tarjeta-profesional' '>
                <div class='img-tarjeta mb-7'>
@@ -73,7 +73,7 @@ function crearTarjeta(elemento) {
                    <li class='list-group-item'><b>Condiciones:</b> ${elemento.condicion}</li>
                </ul>
                <div class="d-flex flex-wrap">
-                  <button data-id="${elemento.IDoferta}" onclick="RegistrarPostulacion(${elemento.IDoferta})"  type='button' class='botones-ofertas'>
+                  <button  onclick="RegistrarPostulacion(${elemento.IDoferta},${IdEmpresaOProfesional})"  type='button' class='botones-ofertas'>
                       Postularme
                   </button>
 
@@ -111,4 +111,10 @@ function InfoEmpresa(NITempresa){
       // window.location = "mostrarInformacionEmpresa.php";
     }
   })
+}
+
+
+function RegistrarPostulacion(IDoferta,IdEmpresaOProfesional) {
+  alert(IDoferta)
+  alert(IdEmpresaOProfesional)
 }

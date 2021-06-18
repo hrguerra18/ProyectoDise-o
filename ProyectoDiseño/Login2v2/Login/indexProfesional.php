@@ -13,7 +13,7 @@ include("inc/menuProfesional.php");
         <div class="row">
           <form class="d-flex centrar">
             <input id="inputBuscarOferta" class="form-control me-2  w-100 edit-input" type="text" placeholder="Ejemplo: Ingeniero, Contador, Psicologo..." aria-label="Search">
-            <!-- <input  id="botonBuscarOferta" class="edit-input boton" type="button" value="Buscar"></input> -->
+            <input id="IdEmpresaOProfesional" type="hidden" value="<?php echo $_SESSION['IDusuario'] ?>">
             <button  id="botonBuscarOferta" class="edit-input boton" type="submit">Buscar</button>
           </form>
           <div id="row-principal" class="row">
