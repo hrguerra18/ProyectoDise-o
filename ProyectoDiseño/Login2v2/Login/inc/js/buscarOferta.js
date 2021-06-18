@@ -113,8 +113,44 @@ function InfoEmpresa(NITempresa){
   })
 }
 
-
 function RegistrarPostulacion(IDoferta,IdEmpresaOProfesional) {
-  alert(IDoferta)
-  alert(IdEmpresaOProfesional)
+   if(NoPermitirDobleRegistro(IDoferta,IdEmpresaOProfesional)){
+    $.ajax({
+      type: "POST",
+      dataType :"json",
+      url : "Controles/buscarOfertas.php",
+      data:{
+        accion:"registrarPostulacion",
+        IDoferta:IDoferta,
+        IdEmpresaOProfesional:IdEmpresaOProfesional
+      },
+      success:function(resp){
+        alert("se ha registrado correctamente");
+      }
+    })
+   }else{
+     alert("ya se encuentra registrado a esta oferta");
+   }
+ 
+  
+  
+}
+
+function NoPermitirDobleRegistro(IDoferta,IdEmpresaOProfesional){
+  var retornar;
+    $.ajax({
+          type : "POST",
+          dataType : "json",
+          url : "Controles/buscarOfertas.php",
+          async: false,
+          data : {
+            accion : "NoPermitirDobleRegistro",
+            IDoferta:IDoferta,
+            IdEmpresaOProfesional:IdEmpresaOProfesional
+          },
+          success : function(resp){
+            retornar = resp['mensaje'];
+          }
+  })
+return retornar;
 }

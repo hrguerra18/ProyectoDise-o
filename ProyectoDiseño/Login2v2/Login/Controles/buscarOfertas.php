@@ -13,6 +13,12 @@ switch ($_POST['accion']) {
     case "buscarInfoEmpresa":
         BuscarInfoEmpresa();
     break;
+    case "registrarPostulacion":
+        RegistrarPostulacion();
+    break;
+    case "NoPermitirDobleRegistro":
+        NoPermitirDobleRegistro();
+    break;
 }
 
 function BuscarOfertas()
@@ -69,5 +75,67 @@ function BuscarInfoEmpresa(){
         $json_string = json_encode($respuesta);
         echo $json_string;
     }
+}
+
+
+function RegistrarPostulacion(){
+    session_start();
+    require "Conexion.php";
+
+    $IDoferta = $_POST['IDoferta'];
+    $IdEmpresaOProfesional = $_POST['IdEmpresaOProfesional'];
+
+    if($IDoferta != "" && $IdEmpresaOProfesional != ""){
+        $sql = "INSERT INTO pro_ofert (idProOfert,idProfesional,idOferta) VALUES (default,'$IdEmpresaOProfesional','$IDoferta')";
+
+        if(mysqli_query($con,$sql)){
+            $respuesta = array("mensaje"=> "Se ha registrado correctamente la postulacion a la oferta");
+            $json_string = json_encode($respuesta);
+            echo $json_string;
+        }else{
+            $respuesta = array("mensaje"=> "Error" . mysqli_error($con));
+            $json_string = json_encode($respuesta);
+            echo $json_string;
+        }
+
+
+    }else{
+        $respuesta = array("mensaje"=> "Error, campos vacios");
+        $json_string = json_encode($respuesta);
+        echo $json_string;
+    }
+
+    
+}
+
+function NoPermitirDobleRegistro(){
+    session_start();
+    require "Conexion.php";
+
+    $IDoferta = $_POST['IDoferta'];
+    $IdEmpresaOProfesional = $_POST['IdEmpresaOProfesional'];
+
+    if($IDoferta != "" && $IdEmpresaOProfesional != ""){
+        $sql = "SELECT count(*) AS cantidad,idProOfert,idProfesional,idOferta FROM pro_ofert WHERE idProfesional = '$IdEmpresaOProfesional'AND idOferta = '$IDoferta'";
+        $result = mysqli_query($con,$sql);
+        $row = mysqli_fetch_array($result);
+
+        $cantidad = $row['cantidad'];
+
+        if($cantidad == 0){
+            $respuesta = array("mensaje"=> true);
+            $json_string = json_encode($respuesta);
+            echo $json_string;
+        }else{
+            $respuesta = array("mensaje"=> false);
+            $json_string = json_encode($respuesta);
+            echo $json_string;
+        }
+    }else{
+        $respuesta = array("mensaje"=> "Error, campos vacios");
+        $json_string = json_encode($respuesta);
+        echo $json_string;
+    }
+
 }
 
