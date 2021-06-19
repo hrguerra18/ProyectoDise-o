@@ -18,18 +18,30 @@
 
 <body>
     <section class="cuerpo">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light navegacion">
+    <nav class="navbar navbar-expand-lg navbar-light  navegacion" style="background: #f5f5f5">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#">Empresas Cesar</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        <a class="nav-link" href="#">Features</a>
-                        <a class="nav-link" href="#">Pricing</a>
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                <div class="collapse navbar-collapse enlaces-nav" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ">
+                        <a class="nav-link " href="login.php">Iniciar sesion</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Registrarme
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                <li><a class="dropdown-item" href="#">Empresa</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Profesional</a></li>
+                                
+                                
+                            </ul>
+                        </li>
+                        
                     </div>
                 </div>
             </div>
@@ -52,7 +64,7 @@
             <div class="inputs">
                 <div class="grupo-nom-ape">
                     <div class="formulario-nombre borde-div">
-                        <input class="input-nombre form-control" autocomplete="off" type="text" name="identidad" id="identidad" placeholder="Identidad" required>
+                        <input class="input-nombre form-control " autocomplete="off" type="text" name="identidad" id="identidad" placeholder="Identidad" required>
                     </div>
 
                     <div class="formulario-apellido borde-div">

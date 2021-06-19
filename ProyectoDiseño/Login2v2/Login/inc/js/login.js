@@ -21,6 +21,13 @@ $(document).ready(function(){
                console.log(response);
                 }
             });
+        }else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Error...',
+                text: 'Ingrese los datos correctamente!',
+                footer: ''
+              })
         }
     });
 });

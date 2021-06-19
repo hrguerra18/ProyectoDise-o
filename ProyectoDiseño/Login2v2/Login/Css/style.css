@@ -5,6 +5,11 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body{
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
 .card-edit{
   z-index: 2;
   background: linear-gradient(rgb(77, 20, 20),rgb(95, 16, 16));
@@ -62,6 +67,18 @@
   border-radius: 20px;
   padding: 30px;
   background: linear-gradient(#6b0707, #412121);
+}
+
+.navegacion{
+  z-index: 2;
+  width: 100%;
+}
+
+
+.enlaces-nav{
+right: 20px !important;
+flex-grow: inherit !important;
+
 }
 
 /* .formulario:before {

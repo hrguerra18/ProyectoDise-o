@@ -6,7 +6,36 @@ include("inc/head.php");
 
 
 <body>
+<nav class="navbar navbar-expand-lg navbar-light  navegacion" style="background: #f5f5f5">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Empresas Cesar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse enlaces-nav" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ">
+                        <a class="nav-link " href="login.php">Iniciar sesion</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Registrarme
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                <li><a class="dropdown-item" href="registrarEmpresa.php">Empresa</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="registrarProfesional.php">Profesional</a></li>
+                                
+                                
+                            </ul>
+                        </li>
+                        
+                    </div>
+                </div>
+            </div>
+        </nav>
 	<main class="d-flex w-100 cuerpo">
+		
 		<div class="container d-flex flex-column ">
 			<div class="row vh-100">
 				<div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
@@ -57,3 +86,4 @@ include("inc/head.php");
 	<script src="inc/js/app.js"></script>
 	<script type="text/javascript" src="inc/js/login.js"></script>
 	<script src="http://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

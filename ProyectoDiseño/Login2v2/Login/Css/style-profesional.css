@@ -7,7 +7,9 @@
 
 body{
     overflow-y: hidden;
-}
+    overflow-x: hidden;
+  }
+  
 
 .cuerpo{
     width: 100%;
@@ -53,8 +55,28 @@ body{
 .navegacion{
     z-index: 2;
     width: 100%;
+    
+   
    
 }
+
+/* .navegacion a{
+    color: #fff !important;
+} */
+
+
+
+.enlaces-nav{
+  right: 20px !important;
+  flex-grow: inherit !important;
+ 
+}
+
+.prueba{
+    background: rgb(243, 243, 243);
+}
+
+
 
 /* .formulario:before {
     content: "";
@@ -291,18 +313,19 @@ body{
     z-index: 2;
     width: 100%;
     padding-top: 20px;
-    padding-left: 20px;
+    padding-left: 30px;
     margin-top: 5px;
     font-size: 30px;
     color: #fff;
     opacity: 0.8;
+    margin-bottom: 0px;
 }
 
 .parrafo-2{
     z-index: 2;
     width: 100%;
     padding-top: 10px;
-    padding-left: 20px;
+    padding-left: 30px;
     
     font-size: 15px;
     color: #fff;
@@ -312,7 +335,7 @@ body{
 .borde-div{
     z-index: 2;
     
-    width: 50%;
+    width: 100%;
 }
 
 .input-formulario{
@@ -324,6 +347,7 @@ body{
     
 }
 
+
 .inputs{
     width: 100%;
     padding: 30px;
@@ -331,6 +355,7 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
     gap: 2px;
+    padding-bottom: 2px;
 }
 .grupo-nom-ape{
     width: 100%;
@@ -371,9 +396,9 @@ body{
 
 .borde-correo{
     z-index: 2;
-  
     width: 100%;
-    margin-top: 25px;
+    margin-top: 0px;
+    margin-bottom: 20px;
 }
 
 .boton-guardar{
@@ -444,34 +469,13 @@ body{
 }
 
 @media(max-width:845px){
-    .borde-div{
-        
-        width: 100%;
-    }
-
-    .grupo-nom-ape {
-        
-        display: flex;
-        flex-direction: column;
-    }    
-
-    .grupo-nom-ape {
-        
-        gap: 0px;
-        margin-bottom: 0px;
-    }
-
-    .borde-correo {
-        
-        margin-top: 0px;
-    }
-    .formulario:before {
-        width: 65%;
-        left: 18%;
-    }
     .formulario {
-        width: 65%;
+        width: 70%;
+        padding-left: 10px;
+        padding-right: 15px;
     }
+
+    
     
 }
 
@@ -545,23 +549,27 @@ body{
 }
 
 @media(max-width:613px){
+    
+
     .inputs {
-        
-        padding-left: 0px;
-        padding-right: 0px;
-        
+       gap: 0px;
+        margin-top: 0px;
     }
 
-    .parrafo-crear {
-        
-        padding-left: 0px;
-        
+    .grupo-nom-ape {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        margin-bottom: 0px;
+    }
+    
+    .btn {
+         margin-top: 0px; 
     }
 
-    .parrafo-2 {
-        
-        padding-left: 0px;
-        
+    .span-politica {
+        margin-top: 3px;
     }
 
     .a-profesional {
@@ -590,11 +598,17 @@ body{
     }
 
     
+
+    
 }
 
 @media (max-width : 495px){
     .btn {
         margin-top: 0px;
+    }
+
+    .borde-div {
+        margin-bottom: 0px;
     }
   }
 @media (max-width : 845px){
@@ -628,15 +642,13 @@ body{
     }
   }
 
-@media(max-width:423px){
+@media(max-width:441px){
     .formulario {
        
         width: 80%;
     }
-    .formulario:before {
-        width: 80%;
-        left: 10%;
-    }
+    
+    
 
     .parrafo-crear {
         padding-top: 0px;
@@ -650,10 +662,14 @@ body{
     }
 
     .parrafo-2 {
-       
+        font-size: 11px;
         padding-top: 0px;
         margin-bottom: 0px;
        
+    }
+
+    .borde-div {
+         margin-bottom: 0px; 
     }
 
     
@@ -677,11 +693,13 @@ body{
     .parrafo-crear {
         margin-bottom: 0px;
         margin-top: 0px;
-        
+        font-size: 25px;
+        padding-left: 30px;
     }
 
     .parrafo-2 {
-        margin-bottom: 0px;
+        margin-bottom: 10px;
+        padding-left: 30px;
     }
     .input-nombre {
         margin-bottom: 5px !important;
