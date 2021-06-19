@@ -8,14 +8,13 @@ include("inc/menuEmpresa.php");
     
     <div class="container-fluid p-0">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body tres-columnas">
                 <form class="needs-validation" novalidate>
-                    <div class="row">
+                <input class="idEmpresa" type="hidden" value = "<?php echo $_SESSION['IDusuario'] ?>">
+                    <div class="tarjetas">
                        
                     </div>
-                    <div class="row">
-                        
-                    </div>
+                    
 
                 </form>
 

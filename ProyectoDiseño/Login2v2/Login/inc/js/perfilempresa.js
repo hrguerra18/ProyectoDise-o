@@ -24,6 +24,7 @@ function ConsultarPerfil() {
             $("#numeroempleado").val(resp[0]['cantidadEmpleado']);
             $("#descripcion").val(resp[0]['descripcionEmpresa']);
             $("#ciudad").val(resp[0]['ciudad']);
+            $("#departamentoEmpresa").val(resp[0]['departamentoEmpresa']);
         }
     });
 }
@@ -39,6 +40,7 @@ function ModificarPerfil() {
     var CantidadEmpleado = $("#numeroempleado").val();
     var descripcion = $("#descripcion").val();
     var ciudad = $("#ciudad").val();
+    var departamento = $("#departamentoEmpresa").val();
     
     $.ajax({
         type: 'POST',
@@ -55,6 +57,7 @@ function ModificarPerfil() {
             CantidadEmpleado: CantidadEmpleado,
             descripcion: descripcion,
             ciudad: ciudad,
+            departamento,departamento
         },
         success: function (resp) {
             limpiar();

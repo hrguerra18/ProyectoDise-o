@@ -1,0 +1,33 @@
+.tarjetas{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.boton-ver-postulados{
+    color: rgb(250, 250, 250);
+    border: 3px solid #6B0707;
+    background: #6B0707 ;
+    padding: 5px 8px;
+    border-radius: 3px;
+    width: auto;
+    margin: 10px auto;
+    
+   
+  }
+  
+  .boton-ver-postulados:hover{
+    color: #6B0707;
+    border: 1px solid #6B0707;
+    background: rgb(250, 250, 250);
+    transition: all 200ms ease;
+    box-shadow: 0 0 5px #b4b4b4, 0 0 10px #b4b4b4, 0 0 10px #b4b4b4;
+  }
+
+  .tarjeta-historial-empresa{
+    box-shadow:  0 0 10px #b4b4b4, 0 0 20px #b4b4b4, 0 0 20px #b4b4b4 !important;
+    margin: 2px 7px;
+    max-height: 550px;
+  }
+
+
