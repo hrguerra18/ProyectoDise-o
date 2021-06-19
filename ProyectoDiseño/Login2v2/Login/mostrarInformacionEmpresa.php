@@ -31,13 +31,7 @@ include("inc/menuProfesional.php");
                               Ingrese un Dato Valido
                           </div>
                       </div>
-                      <div class="col-md-6 mb-3 ">
-                          <label class="mb-3 fw-bold" for="validationCustom01">NIT:</label>
-                          <input type="text" disabled="disabled" class="form-control" id="nitempresa"  required value="">
-                          <div class="invalid-feedback">
-                              Ingrese un Dato Valido
-                          </div>
-                      </div>
+                      
                       <div class="col-md-6 mb-3 ">
                           <label class="mb-3 fw-bold" for="validationCustom01">CATEGORIA:</label>
                           <input type="text" class="form-control" id="categoriaempresa" placeholder="" required>
@@ -95,12 +89,7 @@ include("inc/menuProfesional.php");
                           </div>
                       </div>
 
-                      
-
-                      
-
-                      
-
+                     
                   </div>
 
               </div>

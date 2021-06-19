@@ -10,6 +10,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 	<link href="http://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 
 <body>
@@ -32,43 +33,69 @@
             <div class="inputs">
             <div class="grupo-nom-ape">
                     <div class="formulario-nombre borde-div">
-                        <input class="input-nombre " type="text" name="nombre" id="nombreempresa" placeholder="Nombre de la empresa" required>
+                        <input class="input-nombre " autocomplete="off" type="text" name="nombre" id="nombreempresa" placeholder="Nombre de la empresa" required>
                     </div>
 
                     <div class="formulario-apellido borde-div">
-                        <input class="input-apellido " type="text" name="foto" id="fotoempresa" placeholder="Foto de la empresa" required>
+                        <input class="input-apellido " autocomplete="off" type="text" name="foto" id="fotoempresa" placeholder="Foto de la empresa" required>
                     </div>
 
                 </div>
 
                 <div class="grupo-nom-ape">
                     <div class="formulario-nombre borde-div">
-                        <input class="input-nombre " type="text" name="Nit" id="Nitempresa" placeholder="Nit de la empresa" required>
+                        <input class="input-nombre "autocomplete="off" type="text" name="Nit" id="Nitempresa" placeholder="Nit de la empresa" required>
                     </div>
 
                     <div class="formulario-apellido borde-div">
-                        <input class="input-apellido " type="text" name="servicio" id="servicioempresa" placeholder="Servicio" required>
+                        <select class="input-apellido form-select"  name="servicio" id="servicioempresa"  required>
+                        <option selected disabled value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        <option  value="">Servicio</option>
+                        </select>
                     </div>
 
                 </div>
 
                 <div class="grupo-nom-ape">
                     <div class="formulario-nombre borde-div">
-                        <input class="input-nombre " type="text" name="direccion" id="direccionempresa" placeholder="Direccion" required>
+                        <input class="input-nombre "autocomplete="off" type="text" name="direccion" id="direccionempresa" placeholder="Direccion" required>
                     </div>
 
                     <div class="formulario-apellido borde-div">
-                        <input class="input-apellido " type="number" name="telefono" id="telefonoempresa" placeholder="Telefono" required>
+                        <input class="input-apellido "autocomplete="off" type="number" name="telefono" id="telefonoempresa" placeholder="Telefono" required>
                     </div>
 
                 </div>
 
                 <div class="formulario-correo borde-correo">
-                    <input class="input-formulario" type="email" name="email" id="emailempresa" placeholder="Correo electronico" required>
+                    <input class="input-formulario" type="email"autocomplete="off" name="email" id="emailempresa" placeholder="Correo electronico" required>
                 </div>
 
                 <div class="formulario-contra borde-correo">
-                    <input class="input-formulario" type="password" name="contraseña" id="contraseñaempresa" placeholder="Contraseña" required>
+                    <input class="input-formulario"autocomplete="off" type="password" name="contraseña" id="contraseñaempresa" placeholder="Contraseña" required>
                 </div>
             </div>
 

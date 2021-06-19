@@ -20,7 +20,7 @@ boton.addEventListener("click", (e) => {
         var datos = resp;     
         datoClases.tarjeta.innerHTML="";
         datos.forEach((elemento) => {
-          let t = crearTarjetaGrande(elemento,datoClases.IdEmpresaOProfesional);
+          let t = crearTarjeta(elemento,datoClases.IdEmpresaOProfesional);
           var div = document.createElement("DIV");
           div.innerHTML = t;
           datoClases.tarjeta.appendChild(div);
@@ -53,7 +53,7 @@ function recibirDatos() {
   return clases;
 }
 
-function crearTarjetaGrande(elemento,IdEmpresaOProfesional) {
+function crearTarjeta(elemento,IdEmpresaOProfesional) {
   return `<div class='row  d-flex flex-wrap'>
             <div class='card mt-3 mb-3 edit-tarjeta-profesional' '>
                <div class='img-tarjeta mb-7'>
