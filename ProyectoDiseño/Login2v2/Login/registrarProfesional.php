@@ -84,6 +84,8 @@
 
     </section>
     <script type="text/javascript" src="inc/js/profesionales.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function() {

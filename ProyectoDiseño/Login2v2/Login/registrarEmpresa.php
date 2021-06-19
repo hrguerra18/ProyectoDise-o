@@ -108,6 +108,8 @@
 
     </section>
     <script type="text/javascript" src="inc/js/empresas.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script src="inc/js/app.js"></script>
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
     <script>

@@ -1,7 +1,7 @@
 
 
 function AdicionarProfesional() {
-    alert("Entro");
+    
 
     var identidad = $("#identidad").val();
     var foto = $("#foto").val();
@@ -11,27 +11,37 @@ function AdicionarProfesional() {
     var telefono = $("#telefono").val();
     var correo = $("#email").val();
     var contraseña = $("#contraseña").val();
-    alert("Entro");
+    
+    if(identidad != "" && foto != "" && nombre != "" && apellido != "" && direccion != "" && telefono != "" && correo != "" && contraseña != ""){
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "Controles/profesionales.php",
+            data: {
+                accion: "adicionar",
+                identidad: identidad,
+                foto: foto,
+                nombre: nombre,
+                apellido: apellido,
+                direccion: direccion,
+                telefono: telefono,
+                correo: correo,
+                contraseña: contraseña,
+            },
+            success: function (resp) {
+               
+            }
+        });
+    }else{
+         Swal.fire({
+            icon: 'error',
+            title: 'Error...',
+            text: 'Ingrese los datos correctamente!',
+            footer: ''
+          })
+    }
 
-    $.ajax({
-        type: "POST",
-        dataType: "json",
-        url: "Controles/profesionales.php",
-        data: {
-            accion: "adicionar",
-            identidad: identidad,
-            foto: foto,
-            nombre: nombre,
-            apellido: apellido,
-            direccion: direccion,
-            telefono: telefono,
-            correo: correo,
-            contraseña: contraseña,
-        },
-        success: function (resp) {
-           
-        }
-    });
+   
 }
 
 function Limpiar() {
