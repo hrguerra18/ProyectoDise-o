@@ -1,6 +1,6 @@
 <?php
 include "Conexion.php";
-
+session_start();
 //header('Location: index.php'); 
 
 //Escapa los caracteres especiales de una cadena para usarla 
@@ -57,6 +57,17 @@ function ConsultarInformacionEmpresa($ID)
     $nombre =  $row['nombre'];
     $_SESSION['IDusuario'] = $row['NIT'];
     $_SESSION['usuario'] = $nombre;
+<<<<<<< HEAD
+=======
+    $_SESSION['servicio'] = $row['servicio'];
+    $_SESSION['direccion'] = $row['direccion'];
+    $_SESSION['telefono'] = $row['telefono'];
+    $_SESSION['pagina'] = $row['pagina'];
+    $_SESSION['cantidadEmpleado'] = $row['cantidadEmpleado'];
+    $_SESSION['descripcion'] = $row['descripcionEmpresa'];
+    $_SESSION['ciudad'] = $row['ciudad'];
+    $_SESSION['correo'] = $row['correo'];
+>>>>>>> 250dedfdea2bd758fcb250d2736e1fedbaa4d262
 }
 
 function ConsultarInformacionProfesional($ID)
@@ -67,6 +78,16 @@ function ConsultarInformacionProfesional($ID)
     $row = mysqli_fetch_array($result);
 
     $_SESSION['IDusuario'] = $row['Identidad'];
+<<<<<<< HEAD
     $_SESSION['usuario'] = $row['nombre'] . '' . $row['apellido'];
    
+=======
+    $_SESSION['usuario'] = $row['nombre'] . ' ' . $row['apellido'];
+    $_SESSION['nombre'] = $row['nombre'];
+    $_SESSION['apellido'] = $row['apellido'];
+    $_SESSION['direccion'] = $row['direccion'];
+    $_SESSION['telefono'] = $row['telefono'];
+    $_SESSION['correo'] = $row['correo'];
+    $_SESSION['sobreMiProfesional'] = $row['sobreMi'];
+>>>>>>> 250dedfdea2bd758fcb250d2736e1fedbaa4d262
 }

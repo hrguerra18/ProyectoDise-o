@@ -5,7 +5,7 @@ $(document).ready(function () {
 
 
 function ConsultarPerfil() {
-    var NIT = $("#nitempresa").val().trim();
+    var NIT = $("#nitempresa").val();
     $.ajax({
         type: "POST",
         dataType: "json",
@@ -22,14 +22,15 @@ function ConsultarPerfil() {
             $("#nitempresa").val(resp[0]['NIT']);
             $("#paginaweb").val(resp[0]['pagina']);
             $("#numeroempleado").val(resp[0]['cantidadEmpleado']);
-            $("#descripcion").val(resp[0]['descripcion']);
+            $("#descripcion").val(resp[0]['descripcionEmpresa']);
             $("#ciudad").val(resp[0]['ciudad']);
+            $("#departamentoEmpresa").val(resp[0]['departamentoEmpresa']);
         }
     });
 }
 
 function ModificarPerfil() {
-
+    
     var NIT = $("#nitempresa").val();
     var nombre = $("#nombreempresa").val();
     var servicio = $("#categoriaempresa").val();
@@ -39,6 +40,8 @@ function ModificarPerfil() {
     var CantidadEmpleado = $("#numeroempleado").val();
     var descripcion = $("#descripcion").val();
     var ciudad = $("#ciudad").val();
+    var departamento = $("#departamentoEmpresa").val();
+    
     $.ajax({
         type: 'POST',
         dataType: 'json',
@@ -54,6 +57,7 @@ function ModificarPerfil() {
             CantidadEmpleado: CantidadEmpleado,
             descripcion: descripcion,
             ciudad: ciudad,
+            departamento,departamento
         },
         success: function (resp) {
             limpiar();

@@ -42,14 +42,14 @@ if ($_SESSION['validar'] == true) {
 						</a>
 					</li>
 
-					<li class="sidebar-item">
+					<!-- <li class="sidebar-item">
 						<a class="sidebar-link color-fondo-a" href="#">
 							<i class="align-middle" data-feather="inbox"></i> <span class="align-middle">Ofertas</span>
 						</a>
-					</li>
+					</li> -->
 
 					<li class="sidebar-item">
-						<a class="sidebar-link color-fondo-a" href="#">
+						<a class="sidebar-link color-fondo-a" href="historialProfesional.php">
 							<i class="align-middle" data-feather="archive"></i> <span class="align-middle">Historial</span>
 						</a>
 					</li>

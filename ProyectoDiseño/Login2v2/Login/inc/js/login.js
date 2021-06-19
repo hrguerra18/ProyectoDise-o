@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-    console.log("documento");
+    
     $("#botoningresar").click(function(){
         console.log("click");
         var username = $("#user").val().trim();
@@ -18,8 +18,16 @@ $(document).ready(function(){
                 },
                 success:function(response){
                 window.location="indexEmpresa.php";
+               console.log(response);
                 }
             });
+        }else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Error...',
+                text: 'Ingrese los datos correctamente!',
+                footer: ''
+              })
         }
     });
 });

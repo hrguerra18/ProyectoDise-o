@@ -46,40 +46,40 @@ include("inc/menuEmpresa.php");
                             <label for="validationCustom01" class="fw-bold">Sector principal</label>
                             <select class="form-select" id="sector" aria-label="Default select example" required>
                                 <option selected disabled value="">Seleccionar categoria</option>
-                                <option value="Activo">Ventas</option>
-                                <option value="Activo">Comercial</option>
-                                <option value="Activo">CallCenter</option>
-                                <option value="Activo">Telemercadeo</option>
-                                <option value="Activo">Almacen</option>
-                                <option value="Activo">Logistica</option>
-                                <option value="Activo">Atencion al cliente</option>
-                                <option value="Activo">Soporte</option>
-                                <option value="Activo">Oficina</option>
-                                <option value="Activo">Administracion</option>
-                                <option value="Activo">Informatica</option>
-                                <option value="Activo">Telecomunicaciones</option>
-                                <option value="Activo">Salud</option>
-                                <option value="Activo">Reparaciones tecnicas</option>
-                                <option value="Activo">Mantenimiento</option>
-                                <option value="Activo">Contabilidad</option>
-                                <option value="Activo">Finanzas</option>
-                                <option value="Activo">Servicios generales</option>
-                                <option value="Activo">Aseos</option>
-                                <option value="Activo">Ingenieria</option>
-                                <option value="Activo">Energia</option>
-                                <option value="Activo">Quimica</option>
-                                <option value="Activo">Recursos Humanos</option>
-                                <option value="Activo">Arquitectura</option>
-                                <option value="Activo">Construcciones</option>
-                                <option value="Activo">Publicidad</option>
-                                <option value="Activo">Mercadeo</option>
-                                <option value="Activo">Hoteleria</option>
-                                <option value="Activo">Educacion</option>
-                                <option value="Activo">Diseño</option>
-                                <option value="Activo">Direccion gerencial</option>
-                                <option value="Activo">Transporte</option>
-                                <option value="Activo">Cuidado del hogar</option>
-                                <option value="Activo">Otros</option>
+                                <option value="Ventas">Ventas</option>
+                                <option value="Comercial">Comercial</option>
+                                <option value="CallCenter">CallCenter</option>
+                                <option value="Telemercadeo">Telemercadeo</option>
+                                <option value="Almacen">Almacen</option>
+                                <option value="Logistica">Logistica</option>
+                                <option value="Atencion al cliente">Atencion al cliente</option>
+                                <option value="Soporte">Soporte</option>
+                                <option value="Oficina">Oficina</option>
+                                <option value="Administracion">Administracion</option>
+                                <option value="Informatica">Informatica</option>
+                                <option value="Telecomunicaciones">Telecomunicaciones</option>
+                                <option value="Salud">Salud</option>
+                                <option value="Reparaciones tecnicas">Reparaciones tecnicas</option>
+                                <option value="Mantenimiento">Mantenimiento</option>
+                                <option value="Contabilidad">Contabilidad</option>
+                                <option value="Finanzas">Finanzas</option>
+                                <option value="Servicios generales">Servicios generales</option>
+                                <option value="Aseos">Aseos</option>
+                                <option value="Ingenieria">Ingenieria</option>
+                                <option value="Energia">Energia</option>
+                                <option value="Quimica">Quimica</option>
+                                <option value="Recursos Humanos">Recursos Humanos</option>
+                                <option value="Arquitectura">Arquitectura</option>
+                                <option value="Construcciones">Construcciones</option>
+                                <option value="Publicidad">Publicidad</option>
+                                <option value="Mercadeo">Mercadeo</option>
+                                <option value="Hoteleria">Hoteleria</option>
+                                <option value="Educacion">Educacion</option>
+                                <option value="Diseño">Diseño</option>
+                                <option value="Direccion gerencial">Direccion gerencial</option>
+                                <option value="Transporte">Transporte</option>
+                                <option value="Cuidado del hogar">Cuidado del hogar</option>
+                                <option value="Otros">Otros</option>
                             </select>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
@@ -200,6 +200,8 @@ include("inc/menuEmpresa.php");
 
                     </div>
                     <button onclick="AdicionarOferta();" class="btn btn-primary color-boton btnCrearOferta" type="submit">Crear Oferta</button>
+
+                    
                 </form>
             </div>
         </div>
@@ -240,7 +242,7 @@ include("inc/menuEmpresa.php");
                     <h6 id="PerfilOferta">Perfil del profesional:</h6>
                 </div>
                 <div class="modal-footer">
-                <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Cerrar</button>
+                    <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Cerrar</button>
                     <button type='button' onclick='ModificarOferta();' class='btn btn-primary color-boton-seleccionar-oferta '>Modificar</button>
                     <button type='button' onclick='CancelarOferta();' class='btn btn-primary color-boton-seleccionar-oferta'>Cancelar</button>
                 </div>

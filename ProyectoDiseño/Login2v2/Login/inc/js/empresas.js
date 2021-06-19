@@ -8,27 +8,36 @@ function AdicionarEmpresa() {
     var telefono = $("#telefonoempresa").val();
     var correo = $("#emailempresa").val();
     var contraseña = $("#contraseñaempresa").val();
-    alert(NIT);
-    debugger
-    $.ajax({
-        type: "POST",
-        dataType: "json",
-        url: "Controles/empresas.php",
-        data: {
-            accion: "adicionar",
-            NIT: NIT,
-            foto: foto,
-            nombre: nombre,
-            servicio: servicio,
-            direccion: direccion,
-            telefono: telefono,
-            correo: correo,
-            contraseña: contraseña,
-        },
-        success: function (resp) {
-            limpiar();
-        }
-    });
+
+    if(NIT != "" && foto != "" && nombre != ""  && direccion != "" && telefono != "" && correo != "" && contraseña != ""){
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "Controles/empresas.php",
+            data: {
+                accion: "adicionar",
+                NIT: NIT,
+                foto: foto,
+                nombre: nombre,
+                servicio: servicio,
+                direccion: direccion,
+                telefono: telefono,
+                correo: correo,
+                contraseña: contraseña,
+            },
+            success: function (resp) {
+                limpiar();
+            }
+        });
+    }else{
+        Swal.fire({
+            icon: 'error',
+            title: 'Error...',
+            text: 'Ingrese los datos correctamente!',
+            footer: ''
+          })
+    }
+   
     
 }
 

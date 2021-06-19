@@ -70,17 +70,18 @@ function ConsultarOferta($NITempresa)
         }
 
 
-        echo  " <div class='card mt-6 edit-tarjeta' style='width: 18rem;'>
+        echo  " <div class='card mb-5 edit-tarjeta' style='width: 18rem;'>
                 <div class='img-tarjeta'>
+                <button class='activo'>Activo</button>
                 <img src=" . $row["foto"] . " class='card-img-top img-tarjeta' alt='...'>
                 </div>
                 <div class='card-body'>
-                    <h3 class='card-title fw-bold tamaño-fuente'>Cargo: " . $row["cargo"] . "</h3>
-                    <h3 class='card-title fw-bold tamaño-fuente'>descirpcion: " . $row["descripcion"] . "</h3>
+                    <h6 class='card-title fw-bold tamaño-fuente'>Cargo: " . $row["cargo"] . "</h6>
+                    <h3 class='card-title  tamaño-fuente'>". $row["descripcion"] . "</h3>
                 </div>
                 <ul class=list-group list-group-flush'>
-                    <li class='list-group-item'>Salario: " . $row["salario"] . "</li>
-                    <li class='list-group-item'>Condiciones: " . $row["condicion"] . "</li>
+                    <li class='list-group-item tamaño-fuente-salario'><b>Salario:</b> " . $row["salario"] . "</li>
+                    <li class='list-group-item tamaño-fuente-salario'><b>Sector:</b> " . $row["sector"] . "</li>
                 </ul>
                 <button data-id=" . $row["IDoferta"] . "  onclick='BuscarOferta();' type='button' class='btnModal color-tarjeta-a' data-bs-toggle='modal' data-bs-target='#exampleModal'>
                     Ver mas

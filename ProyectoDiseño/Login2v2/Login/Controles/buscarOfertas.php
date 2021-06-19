@@ -3,55 +3,139 @@ if (empty($_POST['accion'])) {
     $_POST['accion'] = "General";
 }
 
-$_POST['accion'] = "buscar";
 
+// $_POST['accion'] = "buscar";
 switch ($_POST['accion']) {
 
     case "buscar":
         BuscarOfertas();
-        break;
+    break;
+    case "buscarInfoEmpresa":
+        BuscarInfoEmpresa();
+    break;
+    case "registrarPostulacion":
+        RegistrarPostulacion();
+    break;
+    case "NoPermitirDobleRegistro":
+        NoPermitirDobleRegistro();
+    break;
 }
 
 function BuscarOfertas()
 {
     require "Conexion.php";
-    // $buscarOferta = $_POST['filtroOferta'];
-    mysqli_set_charset($con, "utf8"); //formato de datos utf8
+    $buscarOferta = $_POST['filtroOferta'];
+    mysqli_set_charset($con, "utf8");
 
-    $buscarOferta = 'ing';
+    // $buscarOferta = 'ing';
 
-    $sql = "SELECT * FROM oferta WHERE cargo LIKE '$buscarOferta%'";
+    
+    $sql = "SELECT o.IDoferta,o.cargo,o.vigencia,o.numeroAplicantes,o.descripcion,o.sector,o.tipoContrato,o.salario,o.horario,
+    o.NITempresa, o.condicion,u.foto,e.nombre FROM oferta o JOIN empresa e ON(o.NITempresa = e.NIT) JOIN usuario u ON(e.IDusuario = u.ID)
+     WHERE o.cargo LIKE '%$buscarOferta%'";
 
     if (!$result = mysqli_query($con, $sql)) die();
 
-    $ofertas = array(); //creamos un array
+
+    $tarjeta = array();
 
     while ($row = $result->fetch_assoc()) {
-        array_push($ofertas, $row);
+
+        array_push($tarjeta, $row);
+    }
+    $json = json_encode($tarjeta);
+    echo $json;
+}
+
+function BuscarInfoEmpresa(){
+    session_start();
+    require "Conexion.php";
+    $NITempresa = $_POST['NITempresa'];
+
+    $sql = "SELECT count(*) as numusu,e.nombre,u.foto,e.telefono,e.direccion FROM empresa e JOIN usuario u ON(e.IDusuario = u.ID) WHERE NIT='$NITempresa'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_array($result);
+
+    $nombre = $row['nombre'];
+    $foto = $row['foto'];
+    $telefono = $row['telefono'];
+    $direccion = $row['direccion'];
+    $count = $row['numusu'];
+
+    if ($count > 0) {
+        $_SESSION['nombreMostrarInformacion']= $nombre;
+        $_SESSION['fotoMostrarInformacion']= $foto;
+        $_SESSION['telefonoMostrarInformacion']= $telefono;
+        $_SESSION['direccionMostrarInformacion']= $direccion;
+        $_SESSION['validarr'] = true;
+        $json_string = json_encode($_SESSION);
+        echo $json_string;
+    } else {
+        $respuesta = array("mensaje" => "Error" . mysqli_error($con));
+        $json_string = json_encode($respuesta);
+        echo $json_string;
+    }
+}
+
+
+function RegistrarPostulacion(){
+    session_start();
+    require "Conexion.php";
+
+    $IDoferta = $_POST['IDoferta'];
+    $IdEmpresaOProfesional = $_POST['IdEmpresaOProfesional'];
+
+    if($IDoferta != "" && $IdEmpresaOProfesional != ""){
+        $sql = "INSERT INTO pro_ofert (idProOfert,idProfesional,idOferta) VALUES (default,'$IdEmpresaOProfesional','$IDoferta')";
+
+        if(mysqli_query($con,$sql)){
+            $respuesta = array("mensaje"=> "Se ha registrado correctamente la postulacion a la oferta");
+            $json_string = json_encode($respuesta);
+            echo $json_string;
+        }else{
+            $respuesta = array("mensaje"=> "Error" . mysqli_error($con));
+            $json_string = json_encode($respuesta);
+            echo $json_string;
+        }
+
+
+    }else{
+        $respuesta = array("mensaje"=> "Error, campos vacios");
+        $json_string = json_encode($respuesta);
+        echo $json_string;
     }
 
-    $json_string = json_encode($ofertas);
-    echo $json_string;
-
-    // while ($row = $result->fetch_assoc()) {
-
-    //     echo  " <div class='row'>;
-    //      <div class='card mt-6 edit-tarjeta' style='width: 18rem;'>
-    //         <div class='img-tarjeta'>
-    //         <img src=" . $row["foto"] . " class='card-img-top img-tarjeta' alt='...'>
-    //         </div>
-    //         <div class='card-body'>
-    //             <h3 class='card-title fw-bold tamaño-fuente'>Cargo: " . $row["cargo"] . "</h3>
-    //             <h3 class='card-title fw-bold tamaño-fuente'>descirpcion: " . $row["descripcion"] . "</h3>
-    //         </div>
-    //         <ul class=list-group list-group-flush'>
-    //             <li class='list-group-item'>Salario: " . $row["salario"] . "</li>
-    //             <li class='list-group-item'>Condiciones: " . $row["condicion"] . "</li>
-    //         </ul>
-    //         <button data-id=" . $row["IDoferta"] . "  onclick='BuscarOferta();' type='button' class='btnModal color-tarjeta-a' data-bs-toggle='modal' data-bs-target='#exampleModal'>
-    //             Ver mas
-    //         </button>
-    //     </div>
-    //      </div>";
-    // // }
+    
 }
+
+function NoPermitirDobleRegistro(){
+    session_start();
+    require "Conexion.php";
+
+    $IDoferta = $_POST['IDoferta'];
+    $IdEmpresaOProfesional = $_POST['IdEmpresaOProfesional'];
+
+    if($IDoferta != "" && $IdEmpresaOProfesional != ""){
+        $sql = "SELECT count(*) AS cantidad,idProOfert,idProfesional,idOferta FROM pro_ofert WHERE idProfesional = '$IdEmpresaOProfesional'AND idOferta = '$IDoferta'";
+        $result = mysqli_query($con,$sql);
+        $row = mysqli_fetch_array($result);
+
+        $cantidad = $row['cantidad'];
+
+        if($cantidad == 0){
+            $respuesta = array("mensaje"=> true);
+            $json_string = json_encode($respuesta);
+            echo $json_string;
+        }else{
+            $respuesta = array("mensaje"=> false);
+            $json_string = json_encode($respuesta);
+            echo $json_string;
+        }
+    }else{
+        $respuesta = array("mensaje"=> "Error, campos vacios");
+        $json_string = json_encode($respuesta);
+        echo $json_string;
+    }
+
+}
+

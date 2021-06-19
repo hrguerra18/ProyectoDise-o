@@ -13,11 +13,13 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="../img/icons/icon-48x48.png" />
     <link rel="stylesheet" href="ProyectoDiseño/Login2v2/Login/Css/style-empresa.css">
+	<link rel="stylesheet" href="Css/style-historial-empresa.css">
 	<title>Empresas del cesar</title>
 	<link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0yy6GgieSUwaPJaCUrLJQBGZMFplhQjRPug&usqp=CAU">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 	<link href="Css/app.css" rel="stylesheet">
+	<link rel="stylesheet" href="Css/style-indexProfesional.css">
 	<link href="Css/style-menu.css" rel="stylesheet">
 	<link rel="stylesheet" href="Css/style-crear-oferta.css">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">

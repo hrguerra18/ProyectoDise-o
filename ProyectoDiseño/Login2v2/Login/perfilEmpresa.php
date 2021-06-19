@@ -23,7 +23,7 @@ include("inc/menuEmpresa.php");
 
                         <div class="col-md-12 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">NOMBRE DE LA EMPRESA:</label>
-                            <input type="text" class="form-control" id="nombreempresa" placeholder="Nombre de la empresa" required>
+                            <input type="text" class="form-control" id="nombreempresa"  required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
@@ -37,21 +37,21 @@ include("inc/menuEmpresa.php");
                         </div>
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">NIT:</label>
-                            <input type="text" disabled="disabled" class="form-control" id="nitempresa" placeholder="Nit de la empresa" required value=<?php echo $_SESSION['IDusuario'] ?>>
+                            <input type="text" disabled="disabled" class="form-control" id="nitempresa"  required value=<?php echo $_SESSION['IDusuario'] ?>>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
                         </div>
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">CATEGORIA:</label>
-                            <input type="text" class="form-control" id="categoriaempresa" placeholder="Categoria" required>
+                            <input type="text" class="form-control" id="categoriaempresa" required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
                         </div>
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">NUMERO DE EMPLEADOS:</label>
-                            <input type="number" class="form-control" id="numeroempleado" placeholder="Nit de la empresa" required>
+                            <input type="number" class="form-control" id="numeroempleado"  required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
@@ -59,7 +59,7 @@ include("inc/menuEmpresa.php");
 
                         <div class="col-md-12 mb-3 ">
                             <label class="fw-bold" for="validationCustom04">DESCRIPCION</label>
-                            <input type="text" class="form-control input-descripcion-perfil" id="descripcion" placeholder="" required>
+                            <input type="text" class="form-control input-descripcion-perfil" id="descripcion"  required>
 
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
@@ -68,17 +68,9 @@ include("inc/menuEmpresa.php");
 
                         <hr style="color:black">
 
-                        <div class="col-md-12 mb-3 ">
-                            <label class="mb-3 fw-bold" for="validationCustom01">DIRECCION:</label>
-                            <input type="text" class="form-control" id="direccionempresa" placeholder="" required>
-                            <div class="invalid-feedback">
-                                Ingrese un Dato Valido
-                            </div>
-                        </div>
-
                         <div class="col-md-6 mb-3 ">
-                            <label class="mb-3 fw-bold for=" validationCustom01">CIUDAD:</label>
-                            <input type="text" class="form-control" id="ciudad" placeholder="Nuevo telefono" required>
+                            <label class="mb-3 fw-bold" for="validationCustom01">DIRECCION:</label>
+                            <input type="text" class="form-control" id="direccionempresa"  required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
@@ -86,11 +78,96 @@ include("inc/menuEmpresa.php");
 
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">TELEFONO:</label>
-                            <input type="number" class="form-control" id="telefonoempresa" placeholder="" required>
+                            <input type="number" class="form-control" id="telefonoempresa"  required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
                         </div>
+
+                        <div class="col-md-6 mb-3 ">
+                            <label class="mb-3 fw-bold" for="departamentoProfesional">DEPARTAMENTO:</label>
+                            <select class="form-control form-select" id="departamentoEmpresa" name="departamento"  >
+                                <option value=""></option>
+                                <option value="Amazonas">Amazonas</option>
+                                <option value="Antioquia">Antioquia</option>
+                                <option value="Arauca">Arauca</option>
+                                <option value="Atlántico">Atlántico</option>
+                                <option value="Bolívar">Bolívar</option>
+                                <option value="Boyacá">Boyacá</option>
+                                <option value="Caldas">Caldas</option>
+                                <option value="Caquetá">Caquetá</option>
+                                <option value="Casanare">Casanare</option>
+                                <option value="Cauca">Cauca</option>
+                                <option value="Cesar">Cesar</option>
+                                <option value="Chocó">Chocó</option>
+                                <option value="Córdoba">Córdoba</option>
+                                <option value="Cundinamarca">Cundinamarca</option>
+                                <option value="Guainía">Guainía</option>
+                                <option value="Guaviare">Guaviare</option>
+                                <option value="Huila">Huila</option>
+                                <option value="La Guajira">La Guajira</option>
+                                <option value="Magdalena">Magdalena</option>
+                                <option value="Meta">Meta</option>
+                                <option value="Nariño">Nariño</option>
+                                <option value="Norte de Santander">Norte de Santander</option>
+                                <option value="Putumayo">Putumayo</option>
+                                <option value="Quindío">Quindío</option>
+                                <option value="Risaralda">Risaralda</option>
+                                <option value="San Andrés y Providencia">San Andrés y Providencia</option>
+                                <option value="Santander">Santander</option>
+                                <option value="Sucre">Sucre</option>
+                                <option value="Tolima">Tolima</option>
+                                <option value="Valle del Cauca">Valle del Cauca</option>
+                                <option value="Vaupés">Vaupés</option>
+                                <option value="Vichada">Vichada</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Ingrese un Dato Valido
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3 ">
+                            <label for="ciudadProfesional" class="mb-3 fw-bold control-label">CIUDAD:</label>
+                            <select class="form-control form-select" id="ciudad" >
+                                <option value=""></option>
+                                <option value="Arauca">Arauca</option>
+                                <option value="Armenia">Armenia</option>
+                                <option value="Barranquilla">Barranquilla</option>
+                                <option value="Bogotá">Bogotá</option>
+                                <option value="Bucaramanga">Bucaramanga</option>
+                                <option value="Cali">Cali</option>
+                                <option value="Cartagena">Cartagena</option>
+                                <option value="Cúcuta">Cúcuta</option>
+                                <option value="Florencia">Florencia</option>
+                                <option value="Ibagué">Ibagué</option>
+                                <option value="Leticia">Leticia</option>
+                                <option value="Manizales">Manizales</option>
+                                <option value="Medellín">Medellín</option>
+                                <option value="Mitú">Mitú</option>
+                                <option value="Mocoa">Mocoa</option>
+                                <option value="Montería">Montería</option>
+                                <option value="Neiva">Neiva</option>
+                                <option value="Pasto">Pasto</option>
+                                <option value="Pereira">Pereira</option>
+                                <option value="Popayán">Popayán</option>
+                                <option value="Puerto Carreño">Puerto Carreño</option>
+                                <option value="Puerto Inírida">Puerto Inírida</option>
+                                <option value="Quibdó">Quibdó</option>
+                                <option value="Riohacha">Riohacha</option>
+                                <option value="San Andrés">San Andrés</option>
+                                <option value="San José del Guaviare">San José del Guaviare</option>
+                                <option value="Santa Marta">Santa Marta</option>
+                                <option value="Sincelejo">Sincelejo</option>
+                                <option value="Tunja">Tunja</option>
+                                <option value="Valledupar">Valledupar</option>
+                                <option value="Villavicencio">Villavicencio</option>
+                                <option value="Yopal">Yopal</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Ingrese un Dato Valido
+                            </div>
+                            </div>
+                        
 
                         <div style="display:flex m-2">
                             <button onclick="ConsultarPerfil();" class="btn btn-primary" type="submit">Ver perfil</button>
