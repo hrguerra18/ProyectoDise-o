@@ -211,6 +211,29 @@
   }
 }
 
+@media (max-width : 845px){
+  .formulario:before {
+    width: 70%;
+    left: 16%;
+  }
+  .formulario {
+    width: 70%;
+  }
+}
+@media (max-width : 844px){
+  .input-nombre {
+    margin-bottom: 10px!important;
+  }
+  .input-apellido {
+   
+    margin-bottom: 10px!important;
+  }
+  .input-formulario {
+    
+    margin-bottom: 10px !important;
+  }
+}
+
 @media (max-width: 817px) {
   .formulario:before {
     width: 50%;
