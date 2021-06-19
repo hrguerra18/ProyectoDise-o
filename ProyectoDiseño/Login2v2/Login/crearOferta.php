@@ -218,25 +218,25 @@ include("inc/menuEmpresa.php");
         </div>
     </div>
 
-    <!-- MODAL -->
+    <!-- MODAL 
 
     <div class="modal fade" id="exampleModal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <!-- <img class="img-ver-oferta" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Olimpical.png" class="card-img-top" alt="..."> -->
+                  <img class="img-ver-oferta" src="" class="card-img-top" alt="..."> 
                 </div>
                 <input type="hidden" class="form-control" id="IDoferta" placeholder="Ejemplo: Ingeniero de Sistemas" required>
                 <div class="modal-body">
-                    <h5 id="CargoOferta">Nombre del cargo:</h5>
-                    <h6 id="Vigenciaoferta">Vigencia de la oferta:</h6>
-                    <h6 id="CantidadAplicanteOferta">Numero maximo de aplicantes:</h6>
-                    <h6 id="DescripcionOferta">Descripcion del cargo:</h6>
-                    <h6 id="SectorOferta">Sector principal:</h6>
-                    <h6 id="ContratoOferta">Tipo de contrato:</h6>
-                    <h6 id="SalarioOferta">Salario:</h6>
-                    <h6 id="CondicionesOferta">Condiciones:</h6>
-                    <h6 id="HorarioOferta">Horario:</h6>
+                    <h5 id="CargoOferta">Nombre del cargo:  <?php //echo $_SESSION['Cargo']?></h5>
+                    <h6 id="Vigenciaoferta">Vigencia de la oferta: <?php // echo $_SESSION['Vigencia']?></h6>
+                    <h6 id="CantidadAplicanteOferta">Numero maximo de aplicantes: <?php // echo $_SESSION['numeroAplicantes']?></h6>
+                    <h6 id="DescripcionOferta">Descripcion del cargo: <?php // echo $_SESSION['descripcion']?></h6>
+                    <h6 id="SectorOferta">Sector principal: <?php // echo $_SESSION['sector']?></h6>
+                    <h6 id="ContratoOferta">Tipo de contrato: <?php // echo $_SESSION['tipoContrato']?></h6>
+                    <h6 id="SalarioOferta">Salario: <?php  //echo $_SESSION['salario']?></h6>
+                    <h6 id="CondicionesOferta">Condiciones: <?php  //echo $_SESSION['condicion']?></h6>
+                    <h6 id="HorarioOferta">Horario: <?php  //echo $_SESSION['horario']?></h6>
                     <h6 id="PerfilOferta">Perfil del profesional:</h6>
                 </div>
                 <div class="modal-footer">
@@ -248,7 +248,7 @@ include("inc/menuEmpresa.php");
         </div>
     </div>
 
-
+--->
 
 
 
@@ -279,7 +279,6 @@ include("inc/menuEmpresa.php");
     })();
 </script>
 
-<script src="/ProyectoDiseño/Login2v2/Login/inc/js/crearOferta.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <?php

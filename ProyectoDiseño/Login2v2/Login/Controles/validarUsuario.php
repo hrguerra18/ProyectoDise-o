@@ -57,14 +57,6 @@ function ConsultarInformacionEmpresa($ID)
     $nombre =  $row['nombre'];
     $_SESSION['IDusuario'] = $row['NIT'];
     $_SESSION['usuario'] = $nombre;
-    $_SESSION['servicio'] = $row['servicio'];
-    $_SESSION['direccion'] = $row['direccion'];
-    $_SESSION['telefono'] = $row['telefono'];
-    $_SESSION['pagina'] = $row['pagina'];
-    $_SESSION['cantidadEmpleado'] = $row['cantidadEmpleado'];
-    $_SESSION['descripcion'] = $row['descripcion'];
-    $_SESSION['ciudad'] = $row['ciudad'];
-    $_SESSION['correo'] = $row['correo'];
 }
 
 function ConsultarInformacionProfesional($ID)
@@ -76,7 +68,5 @@ function ConsultarInformacionProfesional($ID)
 
     $_SESSION['IDusuario'] = $row['Identidad'];
     $_SESSION['usuario'] = $row['nombre'] . '' . $row['apellido'];
-    $_SESSION['direccion'] = $row['direccion'];
-    $_SESSION['telefono'] = $row['telefono'];
-    $_SESSION['correo'] = $row['correo'];
+   
 }

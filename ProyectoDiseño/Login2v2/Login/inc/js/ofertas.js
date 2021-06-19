@@ -55,6 +55,7 @@ function AdicionarOferta() {
 function BuscarOferta() {
     $(".btnModal").click(function () {
         IDoferta = $(this).data("id");
+        alert(IDoferta);
         $.ajax({
             type: "POST",
             dataType: "json",
@@ -64,8 +65,6 @@ function BuscarOferta() {
                 IDoferta: IDoferta,
             },
             success: function (resp) {
-                $("#IDoferta").val(resp[0]['IDoferta']);
-                $("#CargoOferta").val$("#CargoOferta").val() + "" + (resp[0]['cargo']);
             }
         });
     });

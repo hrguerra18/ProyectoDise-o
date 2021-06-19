@@ -88,7 +88,7 @@ function ConsultarOferta($NITempresa)
             </div>";
         $contadorOfertas = $contadorOfertas + 1;
         $ContadorTarjetas = $ContadorTarjetas + 1;
-        if ($ContadorTarjetas == 4 || $contadorOfertas ==  $rowConteo['conteo']) {
+        if ($ContadorTarjetas == 3 || $contadorOfertas ==  $rowConteo['conteo']) {
             echo " </div>";
             $ContadorTarjetas = 0;
         }
@@ -102,17 +102,20 @@ function BuscarOferta()
     require "Conexion.php";
     $IDoferta = $_POST['IDoferta'];
     $sql = "SELECT  * FROM oferta WHERE IDoferta ='$IDoferta'";
-
-    if (!$result = mysqli_query($con, $sql)) die();
-
-    $ofertas = array();
-
-    while ($row = $result->fetch_assoc()) {
-        array_push($ofertas, $row);
-    }
-
-    $json_string = json_encode($ofertas);
-    echo $json_string;
+    $result = mysqli_query($con,$sql);
+    $row = mysqli_fetch_array($result);
+    
+    $_SESSION['IDoferta'] =  $IDoferta;
+    $_SESSION['Cargo'] = $row['cargo'];
+    $_SESSION['Vigencia'] = $row['vigencia'];
+    $_SESSION['numeroAplicantes'] = $row['numeroAplicantes'];
+    $_SESSION['descripcion'] = $row['descripcion'];
+    $_SESSION['sector'] = $row['sector'];
+    $_SESSION['tipoContrato'] = $row['tipoContrato'];
+    $_SESSION['salario'] = $row['salario'];
+    $_SESSION['horario'] = $row['horario'];
+    $_SESSION['condicion'] = $row['condicion'];
+    
 }
 
 function ModificarOferta()
