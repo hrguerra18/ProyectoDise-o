@@ -33,22 +33,22 @@
             <div class="inputs">
             <div class="grupo-nom-ape">
                     <div class="formulario-nombre borde-div">
-                        <input class="input-nombre " autocomplete="off" type="text" name="nombre" id="nombreempresa" placeholder="Nombre de la empresa" required>
+                        <input class="input-nombre form-control" autocomplete="off" type="text" name="nombre" id="nombreempresa" placeholder="Nombre de la empresa" required>
                     </div>
 
                     <div class="formulario-apellido borde-div">
-                        <input class="input-apellido " autocomplete="off" type="text" name="foto" id="fotoempresa" placeholder="Foto de la empresa" required>
+                        <input class="input-apellido form-control" autocomplete="off" type="text" name="foto" id="fotoempresa" placeholder="Foto de la empresa" required>
                     </div>
 
                 </div>
 
                 <div class="grupo-nom-ape">
                     <div class="formulario-nombre borde-div">
-                        <input class="input-nombre "autocomplete="off" type="text" name="Nit" id="Nitempresa" placeholder="Nit de la empresa" required>
+                        <input class="input-nombre form-control "autocomplete="off" type="text" name="Nit" id="Nitempresa" placeholder="Nit de la empresa" required>
                     </div>
 
                     <div class="formulario-apellido borde-div">
-                        <select class="input-apellido form-select"  name="servicio" id="servicioempresa"  required>
+                        <select class="input-apellido form-select "  name="servicio" id="servicioempresa"  required>
                         <option selected disabled value="">Servicio</option>
                         <option  value="">Servicio</option>
                         <option  value="">Servicio</option>
@@ -81,21 +81,21 @@
 
                 <div class="grupo-nom-ape">
                     <div class="formulario-nombre borde-div">
-                        <input class="input-nombre "autocomplete="off" type="text" name="direccion" id="direccionempresa" placeholder="Direccion" required>
+                        <input class="input-nombre form-control"autocomplete="off" type="text" name="direccion" id="direccionempresa" placeholder="Direccion" required>
                     </div>
 
                     <div class="formulario-apellido borde-div">
-                        <input class="input-apellido "autocomplete="off" type="number" name="telefono" id="telefonoempresa" placeholder="Telefono" required>
+                        <input class="input-apellido form-control"autocomplete="off" type="number" name="telefono" id="telefonoempresa" placeholder="Telefono" required>
                     </div>
 
                 </div>
 
                 <div class="formulario-correo borde-correo">
-                    <input class="input-formulario" type="email"autocomplete="off" name="email" id="emailempresa" placeholder="Correo electronico" required>
+                    <input class="input-formulario form-control" type="email"autocomplete="off" name="email" id="emailempresa" placeholder="Correo electronico" required>
                 </div>
 
                 <div class="formulario-contra borde-correo">
-                    <input class="input-formulario"autocomplete="off" type="password" name="contraseña" id="contraseñaempresa" placeholder="Contraseña" required>
+                    <input class="input-formulario form-control"autocomplete="off" type="password" name="contraseña" id="contraseñaempresa" placeholder="Contraseña" required>
                 </div>
             </div>
 

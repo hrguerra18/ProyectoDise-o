@@ -11,6 +11,8 @@
 	<link href="http://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -33,43 +35,43 @@
             <div class="inputs">
             <div class="grupo-nom-ape">
                     <div class="formulario-nombre borde-div">
-                        <input class="input-nombre " type="text" name="identidad" id="identidad" placeholder="Identidad" required>
+                        <input class="input-nombre form-control"autocomplete="off" type="text" name="identidad" id="identidad" placeholder="Identidad" required>
                     </div>
 
                     <div class="formulario-apellido borde-div">
-                        <input class="input-apellido " type="text" name="foto" id="foto" placeholder="Foto" required>
+                        <input class="input-apellido form-control" autocomplete="off"type="text" name="foto" id="foto" placeholder="Foto" required>
                     </div>
 
                 </div>
 
                 <div class="grupo-nom-ape">
                     <div class="formulario-nombre borde-div">
-                        <input class="input-nombre " type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                        <input class="input-nombre form-control" autocomplete="off"type="text" name="nombre" id="nombre" placeholder="Nombre" required>
                     </div>
 
                     <div class="formulario-apellido borde-div">
-                        <input class="input-apellido " type="text" name="apellido" id="apellido" placeholder="Apellido" required>
+                        <input class="input-apellido form-control" autocomplete="off"type="text" name="apellido" id="apellido" placeholder="Apellido" required>
                     </div>
 
                 </div>
 
                 <div class="grupo-nom-ape">
                     <div class="formulario-nombre borde-div">
-                        <input class="input-nombre " type="text" name="direccion" id="direccion" placeholder="Direccion" required>
+                        <input class="input-nombre form-control" autocomplete="off"type="text" name="direccion" id="direccion" placeholder="Direccion" required>
                     </div>
 
                     <div class="formulario-apellido borde-div">
-                        <input class="input-apellido " type="number" name="telefono" id="telefono" placeholder="Telefono" required>
+                        <input class="input-apellido form-control"autocomplete="off"type="number" name="telefono" id="telefono" placeholder="Telefono" required>
                     </div>
 
                 </div>
 
                 <div class="formulario-correo borde-correo">
-                    <input class="input-formulario" type="email" name="email" id="email" placeholder="Correo electronico" required>
+                    <input class="input-formulario form-control" autocomplete="off"type="email" name="email" id="email" placeholder="Correo electronico" required>
                 </div>
 
                 <div class="formulario-contra borde-correo">
-                    <input class="input-formulario" type="password" name="contraseña" id="contraseña" placeholder="Contraseña" required>
+                    <input class="input-formulario form-control" autocomplete="off"type="password" name="contraseña" id="contraseña" placeholder="Contraseña" required>
                 </div>
             </div>
 

@@ -177,7 +177,7 @@
     text-decoration: none;
     width: 100%;
     
-	color: #000;
+	color: rgb(223, 223, 223);
 	font-size: 12px;
 	font-weight: bold;
     letter-spacing: 1px;
@@ -323,7 +323,7 @@
 
 .borde-div{
     z-index: 2;
-    border-bottom: 2px solid rgb(134, 130, 130);
+    
     width: 50%;
 }
 
@@ -333,7 +333,7 @@
     height: 30px;
     background: 0 0;
     color: #fff;
-    opacity: 0.8;
+    
 }
 
 .inputs{
@@ -360,7 +360,7 @@
     
     background: 0 0;
     color: #fff;
-    opacity: 0.8;
+    
     
 }
 
@@ -372,7 +372,6 @@
     
     background: 0 0;
     color: #fff;
-    opacity: 0.8;
 }
 
 .formulario-correo{
@@ -384,7 +383,7 @@
 
 .borde-correo{
     z-index: 2;
-    border-bottom: 2px solid rgb(134, 130, 130);
+  
     width: 100%;
     margin-top: 25px;
 }
