@@ -61,9 +61,10 @@
   align-items: center;
   border-radius: 20px;
   padding: 30px;
+  background: linear-gradient(#6b0707, #412121);
 }
 
-.formulario:before {
+/* .formulario:before {
   content: "";
   width: 30%;
   min-height: 80vh;
@@ -73,7 +74,7 @@
   border-radius: 20px;
 
   background: linear-gradient(#6b0707, #412121);
-}
+} */
 
 .formulario .imagen {
   position: absolute;
