@@ -15,6 +15,7 @@ function ConsultarPerfil() {
             NIT: NIT,
         },
         success: function (resp) {
+            console.log(resp);
             $("#nombreempresa").val(resp[0]['nombre']);
             $("#categoriaempresa").val(resp[0]['servicio']);
             $("#direccionempresa").val(resp[0]['direccion']);

@@ -57,8 +57,8 @@ function ConsultarInformacionEmpresa($ID)
     $nombre =  $row['nombre'];
     $_SESSION['IDusuario'] = $row['NIT'];
     $_SESSION['usuario'] = $nombre;
-<<<<<<< HEAD
-=======
+
+
     $_SESSION['servicio'] = $row['servicio'];
     $_SESSION['direccion'] = $row['direccion'];
     $_SESSION['telefono'] = $row['telefono'];
@@ -67,7 +67,7 @@ function ConsultarInformacionEmpresa($ID)
     $_SESSION['descripcion'] = $row['descripcionEmpresa'];
     $_SESSION['ciudad'] = $row['ciudad'];
     $_SESSION['correo'] = $row['correo'];
->>>>>>> 250dedfdea2bd758fcb250d2736e1fedbaa4d262
+
 }
 
 function ConsultarInformacionProfesional($ID)
@@ -78,10 +78,10 @@ function ConsultarInformacionProfesional($ID)
     $row = mysqli_fetch_array($result);
 
     $_SESSION['IDusuario'] = $row['Identidad'];
-<<<<<<< HEAD
+
     $_SESSION['usuario'] = $row['nombre'] . '' . $row['apellido'];
    
-=======
+
     $_SESSION['usuario'] = $row['nombre'] . ' ' . $row['apellido'];
     $_SESSION['nombre'] = $row['nombre'];
     $_SESSION['apellido'] = $row['apellido'];
@@ -89,5 +89,5 @@ function ConsultarInformacionProfesional($ID)
     $_SESSION['telefono'] = $row['telefono'];
     $_SESSION['correo'] = $row['correo'];
     $_SESSION['sobreMiProfesional'] = $row['sobreMi'];
->>>>>>> 250dedfdea2bd758fcb250d2736e1fedbaa4d262
+
 }
