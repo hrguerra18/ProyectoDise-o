@@ -30,7 +30,7 @@ if ($_SESSION['validar'] == true) {
 
 					<li class="sidebar-item color-fondo ">
 						<a class="sidebar-link color-fondo-a " href="indexProfesional.php">
-							<i class="align-middle color-iconos" data-feather="home"></i> <span class="align-middle ">Inicio</span>
+							<i class="align-middle color-iconos" data-feather="home"></i> <span class="align-middle ">Inicio - Buscar ofertas</span>
 						</a>
 					</li>
 

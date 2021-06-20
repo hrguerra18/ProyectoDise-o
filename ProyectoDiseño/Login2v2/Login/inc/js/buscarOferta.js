@@ -125,11 +125,21 @@ function RegistrarPostulacion(IDoferta,IdEmpresaOProfesional) {
         IdEmpresaOProfesional:IdEmpresaOProfesional
       },
       success:function(resp){
-        alert("se ha registrado correctamente");
+        return Swal.fire({
+          icon: 'success',
+          title: 'Postulado...',
+          text: 'Usted se acaba de postular a esta vacante!',
+          footer: ''
+        })
       }
     })
    }else{
-     alert("ya se encuentra registrado a esta oferta");
+    return Swal.fire({
+      icon: 'warning',
+      title: 'Cancelado...',
+      text: 'Ya se encuentra registrado a esta oferta!',
+      footer: ''
+    })
    }
  
   
