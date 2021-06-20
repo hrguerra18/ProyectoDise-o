@@ -3,18 +3,18 @@ $(document).ready(function(){
     
 });
 
-var idEmpresa = document.querySelector(".idEmpresa").value;
+var idEmpresa = document.querySelector(".idEmpresa");
 var tarjetas = document.querySelector(".tarjetas");
 
 function ConsultarOfertasPostuladas(){
-    if(idEmpresa != ""){
+    if(idEmpresa.value != ""){
         $.ajax({
             type : "POST",
             dateType : "json",
             url : "Controles/historialEmpresa.php",
             data : {
                 accion : "consultarOfertas",
-                idEmpresa : idEmpresa
+                idEmpresa : idEmpresa.value
             },
             success : function(resp){
                 
@@ -22,7 +22,7 @@ function ConsultarOfertasPostuladas(){
                 datos = JSON.parse(datos);
                 console.log(resp)
                 datos.forEach((elemento) => {
-                    let t = crearTarjeta(elemento);
+                    let t = crearTarjetaHistorial(elemento);
                     var div = document.createElement("DIV");
                     div.innerHTML = t;
                     tarjetas.appendChild(div);
@@ -34,7 +34,7 @@ function ConsultarOfertasPostuladas(){
 
 
 
-function crearTarjeta(elemento){
+function crearTarjetaHistorial(elemento){
     tarjeta = `<div class='row m-2'>
                     <div class='card mb-5 tarjeta-historial-empresa' style='width: 18rem;'>
                             <div class='img-tarjeta'>
@@ -51,14 +51,27 @@ function crearTarjeta(elemento){
                                 <li class='list-group-item tamaño-fuente-salario'><b>Tipo de contrato:</b> ${elemento.tipoContrato}</li>
                                 <li class='list-group-item tamaño-fuente-salario'><b>Maximo de aplicantes:</b> ${elemento.numeroAplicantes}</li>
                             </ul>
-                            <button data-id=" . $row["IDoferta"] . "  onclick='BuscarOferta();' type='button' class='btnModal boton-ver-postulados'>
-                                Ver  postulados    
-                            </button>
+                            <a href="verPostuladosOferta.php">
+                            <div class=' mt-1'>
+                            <button data-id="${elemento.IDoferta}"   onclick='agregarDatoLocal(${elemento.IDoferta});' type='button' class='btnModal boton-ver-postulados'>
+                            Ver  postulados    
+                        </button></a>
+                        <button data-id=" . $row["IDoferta"] . "  onclick='BuscarOferta();' type='button' class='btnModal boton-ver-postulados'>
+                            Modificar    
+                        </button>
+                            </div>
+                            
                         </div>
                    
                   
                         </div>`;
 
+                        
+
                         return tarjeta
+}
+
+function agregarDatoLocal(idOferta){
+    localStorage.setItem('idOfertaEnviada', idOferta);
 }
 

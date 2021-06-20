@@ -5,10 +5,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-  overflow-y: hidden;
-  overflow-x: hidden;
-}
+
 
 .card-edit{
   z-index: 2;
