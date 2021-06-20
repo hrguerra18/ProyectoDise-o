@@ -5,7 +5,7 @@ include("inc/head.php");
 ?>
 
 
-<body style="overflow-y: hidden;">
+<body>
 <nav class="navbar navbar-expand-lg navbar-light  navegacion" style="background: #f5f5f5">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Empresas Cesar</a>
