@@ -1,0 +1,18 @@
+.navegacion{
+    z-index: 2;
+    width: 100%;
+    
+   
+   
+}
+
+.enlaces-nav{
+  right: 20px !important;
+  flex-grow: inherit !important;
+ 
+}
+
+/* .div-img-carrusel{
+   max-height:  1331px !important;
+} */
+
