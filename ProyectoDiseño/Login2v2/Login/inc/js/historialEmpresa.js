@@ -47,8 +47,8 @@ function crearTarjetaHistorial(elemento){
                             </div>
                             <ul class=list-group list-group-flush'>
                                 <li class='list-group-item tamaño-fuente-salario'><b>Salario:</b> ${elemento.salario}</li>
-                                <li class='list-group-item tamaño-fuente-salario'><b>Sector:</b> ${elemento.sector}</li>
-                                <li class='list-group-item tamaño-fuente-salario'><b>Tipo de contrato:</b> ${elemento.tipoContrato}</li>
+                                
+                              
                                 <li class='list-group-item tamaño-fuente-salario'><b>Maximo de aplicantes:</b> ${elemento.numeroAplicantes}</li>
                             </ul>
                             <a href="verPostuladosOferta.php">
@@ -56,19 +56,14 @@ function crearTarjetaHistorial(elemento){
                             <button data-id="${elemento.IDoferta}"   onclick='agregarDatoLocal(${elemento.IDoferta});' type='button' class='btnModal boton-ver-postulados'>
                             Ver  postulados    
                         </button></a>
-                        <button data-id=" . $row["IDoferta"] . "  onclick='BuscarOferta();' type='button' class='btnModal boton-ver-postulados'>
+                        <a href="informacionOferta.php">
+                        <button data-id=" ${elemento.IDoferta}"  onclick='BuscarOferta();' type='button' class='btnModal boton-ver-postulados'>
                             Modificar    
-                        </button>
+                        </button></a>
                             </div>
-                            
                         </div>
-                   
-                  
                         </div>`;
-
-                        
-
-                        return tarjeta
+     return tarjeta
 }
 
 function agregarDatoLocal(idOferta){

@@ -164,7 +164,7 @@ flex-grow: inherit !important;
   z-index: 2;
   border-radius: 5px;
   border: 1px solid #2c3857;
-  background-color: #2c3857 !important;
+  background-color: #2c3857 ;
   color: rgb(255, 255, 255);
   font-size: 12px;
   font-weight: bold;
