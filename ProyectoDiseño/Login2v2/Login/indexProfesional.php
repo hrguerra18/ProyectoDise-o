@@ -32,8 +32,7 @@ include("inc/menuProfesional.php");
     </div>
   </div>
 
-
-
+	<script type="text/javascript" src="inc/js/buscarOferta.js"></script>
 </main>
 
 <?php

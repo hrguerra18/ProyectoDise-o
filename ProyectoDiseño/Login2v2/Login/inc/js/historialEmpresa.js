@@ -1,6 +1,5 @@
 $(document).ready(function(){
     ConsultarOfertasPostuladas();
-    
 });
 
 var idEmpresa = document.querySelector(".idEmpresa");
@@ -57,7 +56,7 @@ function crearTarjetaHistorial(elemento){
                             Ver  postulados    
                         </button></a>
                         <a href="informacionOferta.php">
-                        <button data-id=" ${elemento.IDoferta}"  onclick='BuscarOferta();' type='button' class='btnModal boton-ver-postulados'>
+                        <button data-id=" ${elemento.IDoferta}"  onclick='agregarDatoLocal(${elemento.IDoferta});' type='button' class='btnModal boton-ver-postulados'>
                             Modificar    
                         </button></a>
                             </div>

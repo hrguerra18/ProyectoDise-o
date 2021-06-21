@@ -169,7 +169,7 @@ include("inc/menuEmpresa.php");
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Modificar</button>
+                        <button type="submit" onclick="ModificarInformacionOferta();" class="btn btn-primary">Modificar</button>
                     </div>
                 </form>
 
@@ -179,7 +179,7 @@ include("inc/menuEmpresa.php");
 
         </div>
 
-        <script type="text/javascript" src="inc/js/verPostuladosOferta.js"></script>
+        <script type="text/javascript" src="inc/js/informacionOferta.js"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 

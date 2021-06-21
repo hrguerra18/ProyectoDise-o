@@ -134,17 +134,6 @@ function ModificarOferta()
     $condicion = $_POST['condicion'];
     $IDoferta = $_POST['IDoferta'];
 
-    // $cargo = "Asistente";
-    // $Vigencia ="22-07-2021";
-    // $numeroAplicantes = "49";
-    // $descripcion = "Ayudar al jefe";
-    // $sector = "Logistica";
-    // $tipoContrato = "Tiempo Completo";
-    // $salario ="4000000";
-    // $horario = "Intensivo";
-    // $NITempresa = "999999999999";
-    // $condicion = "1. un año de experiencia 2. tecnico en gerencias";
-    // $IDoferta = "1";
     if ($NITempresa != "") {
 
         $sqlOferta = "UPDATE oferta SET cargo = '$cargo',vigencia = ' $Vigencia',numeroAplicantes = '$numeroAplicantes',
