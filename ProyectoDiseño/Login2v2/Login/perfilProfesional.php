@@ -178,10 +178,8 @@ include("inc/menuProfesional.php");
         </div>
     </div>
 
-    <script type="text/javascript" src="inc/js/perfilempresa.js"></script>
+    <script type="text/javascript" src="inc/js/perfilProfesional.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
-
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function() {

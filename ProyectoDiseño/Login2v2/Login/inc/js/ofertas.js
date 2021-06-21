@@ -22,18 +22,12 @@ function AdicionarOferta() {
     // var checkBoxcualquiera = document.getElementById("cualquiera");
     
 
-    if (IDoferta === "") {
-        var accion = "adicionar";
-    } else {
-        var accion = "Modificar";
-    }
-
     $.ajax({
         type: "POST",
         dataType: "json",
         url: "Controles/ofertas.php",
         data: {
-            accion:accion,
+            accion:"adicionar",
             Cargo: Cargo,
             vigencia: vigencia,
             numeroAplicantes: numeroAplicantes,
@@ -52,39 +46,4 @@ function AdicionarOferta() {
     
 }
 
-function BuscarOferta() {
-    $(".btnModal").click(function () {
-        IDoferta = $(this).data("id");
-        alert(IDoferta);
-        $.ajax({
-            type: "POST",
-            dataType: "json",
-            url: "Controles/ofertas.php",
-            data: {
-                accion: "BuscarOferta",
-                IDoferta: IDoferta,
-            },
-            success: function (resp) {
-            }
-        });
-    });
 
-}
-
-function ModificarOferta(){
-    var IDoferta = $("#IDoferta").val();
-    alert(Modifico);
-    $.ajax({
-        type: "POST",
-        dataType: "json",
-        url: "Controles/ofertas.php",
-        data: {
-            accion: "BuscarOferta",
-            IDoferta: IDoferta,
-        },
-        success: function (resp) {
-            $("#IDoferta").val(resp[0]['IDoferta']);
-            $("#nombreCargo").val(resp[0]['cargo']).trim();
-        }
-    });
-}

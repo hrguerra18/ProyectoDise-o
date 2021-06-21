@@ -57,7 +57,7 @@ include("inc/menuEmpresa.php");
     </script>
 
 
-
+<script src="inc/js/historialEmpresa.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </main>
 

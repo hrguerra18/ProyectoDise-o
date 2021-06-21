@@ -4,7 +4,6 @@ if (empty($_POST['accion'])) {
 }
 
 
-// $_POST['accion'] = "buscar";
 switch ($_POST['accion']) {
 
     case "buscar":
