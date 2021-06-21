@@ -84,9 +84,10 @@ function RegistrarPostulacion(){
 
     $IDoferta = $_POST['IDoferta'];
     $IdEmpresaOProfesional = $_POST['IdEmpresaOProfesional'];
+    $estadoProOfert = "Activo";
 
     if($IDoferta != "" && $IdEmpresaOProfesional != ""){
-        $sql = "INSERT INTO pro_ofert (idProOfert,idProfesional,idOferta) VALUES (default,'$IdEmpresaOProfesional','$IDoferta')";
+        $sql = "INSERT INTO pro_ofert (idProOfert,idProfesional,idOferta,estadoProOfert) VALUES (default,'$IdEmpresaOProfesional','$IDoferta','$estadoProOfert')";
 
         if(mysqli_query($con,$sql)){
             $respuesta = array("mensaje"=> "Se ha registrado correctamente la postulacion a la oferta");

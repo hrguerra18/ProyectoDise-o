@@ -9,6 +9,9 @@ include("inc/menuProfesional.php");
     <div class="container-fluid p-0">
         <div class="card">
             <div class="card-body">
+            <input id="idProfesional" type="hidden" value = "<?php echo $_SESSION['IDusuario'] ?>">
+
+            <div class="tarjetas tarjetaVerOfertasAlasQueMePostule"></div>
                
 
 

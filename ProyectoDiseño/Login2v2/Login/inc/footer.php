@@ -7,6 +7,7 @@
 <script src="inc/js/perfilProfesional.js"></script>
 <script src="inc/js/historialEmpresa.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="inc/js/historialProfesional.js"></script>
 
 </body>
 

@@ -15,8 +15,9 @@ function ConsultarPostuladosOferta(){
     require "Conexion.php";
 
     $idOferta = $_POST['idOfertaRecibida'];
+    $estado = "Activo";
 
-    $sql = "SELECT * FROM pro_ofert o JOIN profesional p ON(o.idProfesional = p.Identidad)JOIN usuario u ON(p.IDusuario = u.ID) where o.idOferta = '$idOferta'";
+    $sql = "SELECT * FROM pro_ofert o JOIN profesional p ON(o.idProfesional = p.Identidad)JOIN usuario u ON(p.IDusuario = u.ID) where o.idOferta = '$idOferta' AND o.estadoProOfert = '$estado'";
 
     if(!$result = mysqli_query($con,$sql)) die();
 
