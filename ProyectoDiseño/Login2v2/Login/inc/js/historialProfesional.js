@@ -60,29 +60,40 @@ function crearTarjetaOfertaALaQueMePostule(elemento) {
 
 function EliminarOferta(idOferta, idProfesional) {
     let botonEstado = document.getElementById("boton-estado");
+    valor = ConsultarEstado(idOferta,idProfesional);
     
-        let confirmacion = confirm("Seguro que quieres eliminar esta oferta");
-        if (confirmacion) {
-          botonEstado.classList.remove("activo");
-          botonEstado.classList.add("inactivo");
-          $.ajax({
-            type: "POST",
-            dateType: "json",
-            url: "Controles/historialProfesional.php",
-            async : false,
-            data: {
-              accion: "eliminarPostulacion",
-              idOferta: idOferta,
-              idProfesional: idProfesional,
-            },
-            success: function (resp) {
-               
-              
-              location.reload()
+    if(valor == "Activo"){
+      let confirmacion = confirm("Seguro que quieres eliminar esta oferta");
+      if (confirmacion) {
+        botonEstado.classList.remove("activo");
+        botonEstado.classList.add("inactivo");
+        $.ajax({
+          type: "POST",
+          dateType: "json",
+          url: "Controles/historialProfesional.php",
+          async : false,
+          data: {
+            accion: "eliminarPostulacion",
+            idOferta: idOferta,
+            idProfesional: idProfesional,
           },
-          });
-      
-        }
+          success: function (resp) {
+             
+            
+            location.reload()
+        },
+        });
+    
+      }
+    }else{
+      Swal.fire({
+        icon: 'error',
+        title: 'Error...',
+        text: 'No se puede eliminar una oferta que ya esta inactiva!',
+        footer: ''
+      })
+    }
+        
   
   
 }
