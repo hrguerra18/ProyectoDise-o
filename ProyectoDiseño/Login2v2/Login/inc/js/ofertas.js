@@ -21,28 +21,32 @@ function AdicionarOferta() {
     // var checkBoxdoctorado = document.getElementById("doctorado");
     // var checkBoxcualquiera = document.getElementById("cualquiera");
     
-
-    $.ajax({
-        type: "POST",
-        dataType: "json",
-        url: "Controles/ofertas.php",
-        data: {
-            accion:"adicionar",
-            Cargo: Cargo,
-            vigencia: vigencia,
-            numeroAplicantes: numeroAplicantes,
-            descripcion: descripcion,
-            sector: sector,
-            tipoContrato: tipoContrato,
-            salario: salario,
-            horario: horario,
-            condiciones: condiciones,
-            NIT: NIT,
-            IDoferta: IDoferta,
-        },
-        success: function (resp) {
-        }
-    });
+    if(numeroAplicantes > 0){
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "Controles/ofertas.php",
+            data: {
+                accion:"adicionar",
+                Cargo: Cargo,
+                vigencia: vigencia,
+                numeroAplicantes: numeroAplicantes,
+                descripcion: descripcion,
+                sector: sector,
+                tipoContrato: tipoContrato,
+                salario: salario,
+                horario: horario,
+                condiciones: condiciones,
+                NIT: NIT,
+                IDoferta: IDoferta,
+            },
+            success: function (resp) {
+            }
+        });
+    }else{
+        alert("La cantidad minima de aplicantes tiene que ser 1")
+    }
+    
     
 }
 

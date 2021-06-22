@@ -34,7 +34,7 @@ function ConsultarOfertasPostuladas(){
 
 
 function crearTarjetaHistorial(elemento){
-    tarjeta = `<div class='row m-2'>
+    tarjeta = `<div class='row m-2 '>
                     <div class='card mb-5 tarjeta-historial-empresa' style='width: 18rem;'>
                             <div class='img-tarjeta'>
                             <button class='activo'>Activo</button>
