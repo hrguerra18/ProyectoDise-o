@@ -18,6 +18,9 @@ switch ($_POST['accion']) {
     case "NoPermitirDobleRegistro":
         NoPermitirDobleRegistro();
     break;
+    case "ConsultarTodasLasOfertas":
+        ConsultarTodasLasOfertas();
+    break;
 }
 
 function BuscarOfertas()
@@ -136,6 +139,27 @@ function NoPermitirDobleRegistro(){
         $json_string = json_encode($respuesta);
         echo $json_string;
     }
+
+}
+
+
+function ConsultarTodasLasOfertas(){
+
+    session_start();
+    require "Conexion.php";
+
+    $sql = "SELECT * FROM oferta";
+
+    if(!$result = mysqli_query($con,$sql)) die();
+
+    $ofertas = array();
+
+    while($row = $result->fetch_assoc()){
+        array_push($ofertas,$row);
+    }
+
+    $json_string = json_encode($ofertas);
+    echo $json_string;
 
 }
 

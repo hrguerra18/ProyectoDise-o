@@ -164,3 +164,30 @@ function NoPermitirDobleRegistro(IDoferta,IdEmpresaOProfesional){
   })
 return retornar;
 }
+
+
+// function ConsultarOfertasDeTrabajo(){
+//   datoClases = recibirDatos();
+      
+//     $.ajax({
+//       type : "POST",
+//       dateType : "json",
+//       url : "Controles/buscarOfertas.php",
+//       data : {
+//         accion : "ConsultarTodasLasOfertas"
+//       },
+//       success : function(resp){
+//         var datos = resp;     
+        
+//         datos.forEach((elemento) => {
+//           var t = crearTarjeta(elemento,datoClases.IdEmpresaOProfesional);
+//           var div = document.createElement("DIV");
+//           div.innerHTML = t;
+//           datoClases.tarjeta.appendChild(div);
+          
+//         });
+//       }
+//     });
+   
+//   }
+  
