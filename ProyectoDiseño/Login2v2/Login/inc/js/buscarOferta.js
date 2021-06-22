@@ -114,6 +114,7 @@ function InfoEmpresa(NITempresa){
 }
 
 function RegistrarPostulacion(IDoferta,IdEmpresaOProfesional) {
+  alert("entro")
    if(NoPermitirDobleRegistro(IDoferta,IdEmpresaOProfesional)){
     $.ajax({
       type: "POST",

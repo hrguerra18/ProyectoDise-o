@@ -55,6 +55,7 @@ function ConsultarInformacionEmpresa($ID)
     $result = mysqli_query($con, $sql);
     $row = mysqli_fetch_array($result);
     $nombre =  $row['nombre'];
+    $nombre = ucwords($nombre);
     $_SESSION['IDusuario'] = $row['NIT'];
     $_SESSION['usuario'] = $nombre;
 
