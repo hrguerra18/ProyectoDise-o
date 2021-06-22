@@ -19,8 +19,9 @@ function ConsultarOfertas(){
 
     $sql = "SELECT * FROM empresa e JOIN oferta o ON(e.NIT = o.NITempresa) JOIN usuario u ON(e.IDusuario = u.ID) WHERE e.NIT = '$idEmpresa'";
     if(!$result = mysqli_query($con,$sql)) die();
-
+    
     $ofertas = array();
+    
 
     while($row = $result->fetch_assoc()){
         array_push($ofertas,$row);

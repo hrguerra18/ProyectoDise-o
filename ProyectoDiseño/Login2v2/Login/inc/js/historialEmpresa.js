@@ -1,6 +1,8 @@
-$(document).ready(function(){
-    ConsultarOfertasPostuladas();
-});
+// $(document).ready(function(){
+//     ConsultarOfertasPostuladas();
+// });
+
+window.onload = ConsultarOfertasPostuladas;
 
 var idEmpresa = document.querySelector(".idEmpresa");
 var tarjetas = document.querySelector(".tarjetas");
@@ -17,9 +19,9 @@ function ConsultarOfertasPostuladas(){
             },
             success : function(resp){
                 
-                var datos = resp;
-                datos = JSON.parse(datos);
-                console.log(resp)
+                datos = resp;
+                 datos = JSON.parse(datos);
+                console.log(datos)
                 datos.forEach((elemento) => {
                     let t = crearTarjetaHistorial(elemento);
                     var div = document.createElement("DIV");
