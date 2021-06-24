@@ -50,7 +50,7 @@ include("inc/menuProfesional.php");
                                 Ingrese un Dato Valido
                             </div>
                         </div>
-                        <button onclick="CambiarContraseña();" class="btn-configuracion " type="submit">Cambiar contraseña</button>
+                        <button onclick="CambiarContraseñaProfesional();" class="btn-configuracion " type="submit">Cambiar contraseña</button>
                     </div>
 
 

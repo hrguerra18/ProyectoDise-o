@@ -84,3 +84,42 @@ function MensajeDeModificacionCorreo(){
         footer: ''
       });
 }
+
+
+
+function CambiarContraseñaProfesional(){
+    let correo = document.getElementById("correo").value;
+    let contraseñaProfesional1 = document.getElementById("contraseñaProfesional1").value;
+    let contraseñaProfesional2 = document.getElementById("contraseñaProfesional2").value;
+
+    if( correo != "" && contraseñaProfesional1 != "" && contraseñaProfesional2 != ""){
+            if(contraseñaProfesional1 == contraseñaProfesional2){
+                $.ajax({
+                    type : "POST",
+                    dateType : "json",
+                    url : "Controles/configuracionProfesional.php",
+                    async : false,
+                    data : {
+                        accion : "cambiarContraseña",
+                        correo : correo,
+                        contraseñaProfesional1 : contraseñaProfesional1,
+                        contraseñaProfesional2 : contraseñaProfesional2,
+                    },
+                    success : function(resp){
+                        mensaje = JSON.parse(resp);
+                         if(mensaje.mensaje == 'Se modifico correctamente'){
+                            alert("Se ha modificado correctamente la contraseña de su usuario");
+                         }else if(mensaje.mensaje == 'Error'){
+                            alert("Ocurrio un error mientras intentavas cambiar la contraseña, intente dentro de un rato");
+                         }
+                    }
+                })
+            }else{
+                 alert("Asegurese de que las contraseñas coincidan");
+            }
+    }else{
+        MensajeDatosVacios();
+    }
+
+
+}

@@ -1,5 +1,5 @@
 <?php 
- $_POST['accion'] = "cambiarCorreo";
+ 
 if(empty($_POST['accion'])){
     $_POST['accion'] = "General";
 }
@@ -7,6 +7,9 @@ if(empty($_POST['accion'])){
 switch($_POST['accion']){
     case "cambiarCorreo":
         CambiarCorreoProfesional();
+    break;
+    case "cambiarContraseña":
+        CambiarContraseñaProfesional();
     break;
 
 }
@@ -73,6 +76,27 @@ function ModificarCorreoUsuario($correoAnterior,$idUsuario,$correoNuevo1){
 
     return $resultado;
 
+}
+
+
+function CambiarContraseñaProfesional(){
+    session_start();
+    require "Conexion.php";
+    $correo = $_POST['correo'];
+    $contraseñaProfesional1 = $_POST['contraseñaProfesional1'];
+    $contraseñaProfesional2 = $_POST['contraseñaProfesional2'];
+
+    $sql = "UPDATE usuario SET contraseña = '$contraseñaProfesional1' WHERE correo='$correo'";
+     
+    if(mysqli_query($con,$sql)){
+        $resultado = array("mensaje"=> "Se modifico correctamente");
+        $json_string = json_encode($resultado);
+         echo $json_string;
+    }else{
+        $resultado = array("mensaje"=> "Error" . mysqli_error($con));
+        $json_string = json_encode($resultado);
+        echo $json_string;
+    }
 }
 
 
