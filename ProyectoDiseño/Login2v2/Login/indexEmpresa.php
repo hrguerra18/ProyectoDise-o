@@ -12,13 +12,12 @@ include("inc/menuEmpresa.php");
       <div class="card-body">
         <div class="row">
           <form class="d-flex centrar">
-            <input class="form-control me-2  w-100 edit-input" type="search" placeholder="Ejemplo: Ingeniero, Contador, Psicologo..." aria-label="Search">
+            <input class="form-control me-2 mb-3 w-100 edit-input" type="search" placeholder="Ejemplo: Ingeniero, Contador, Psicologo..." aria-label="Search">
             <button class=" edit-input boton" type="submit">Buscar</button>
           </form>
 
-          <div class="row">
-            <p class="p-consulta">Puedes realizar filtros para hacer la busqueda especifica</p>
-            <img class="img-consulta" src="inc/img/consulta2.png" alt="">
+          <div class="d-flex cargar-tarjetas-profesional">
+            
           </div>
         </div>
       </div>

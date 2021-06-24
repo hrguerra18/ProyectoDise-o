@@ -10,6 +10,7 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="inc/js/configuracionEmpresa.js"></script>
 <script src="inc/js/historialProfesional.js"></script>
+<script src="inc/js/indexEmpresa.js"></script>
 
 </body>
 

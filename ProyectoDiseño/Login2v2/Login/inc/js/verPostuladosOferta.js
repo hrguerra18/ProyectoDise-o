@@ -27,12 +27,13 @@ function ConsultarProfesionalesPostulados() {
             });
         }else{
             
-           return Swal.fire({
+            Swal.fire({
                 icon: 'info',
                 title: 'Aviso...',
                 text: 'No se encuentran profesionales registrados a la oferta!',
                 footer: ''
               })
+            setTimeout(EnviarAHistorialEmpresa,3000);
            
         }
       
@@ -72,4 +73,9 @@ function crearTarjetaProfesionalPostulado(elemento) {
                         </div>`;
 
   return tarjeta;
+}
+
+
+function EnviarAHistorialEmpresa(){
+  window.location = "historialEmpresa.php";
 }

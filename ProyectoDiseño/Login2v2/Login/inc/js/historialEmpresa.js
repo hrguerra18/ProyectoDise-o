@@ -2,7 +2,7 @@
 //     ConsultarOfertasPostuladas();
 // });
 
-window.onload = ConsultarOfertasPostuladas;
+// window.onload = ConsultarOfertasPostuladas;
 
 var idEmpresa = document.querySelector(".idEmpresa");
 var tarjetas = document.querySelector(".tarjetas");
