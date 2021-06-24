@@ -28,7 +28,7 @@ include("inc/menuProfesional.php");
                                 Ingrese un Dato Valido
                             </div>
                         </div>
-                        <button onclick="CambiarCorreoProfesional();" class="btn-configuracion btncambiarCorreo" type="submit">Cambiar correo</button>
+                        <input onclick="CambiarCorreoProfesional();" class="btn-configuracion btncambiarCorreo" value="Cambiar correo" type="button" >
                     </div>
                 </form>
 
@@ -50,7 +50,7 @@ include("inc/menuProfesional.php");
                                 Ingrese un Dato Valido
                             </div>
                         </div>
-                        <button onclick="CambiarContraseñaProfesional();" class="btn-configuracion " type="submit">Cambiar contraseña</button>
+                        <input onclick="CambiarContraseñaProfesional();" class="btn-configuracion " value="Cambiar contraseña" type="button">
                     </div>
 
 
