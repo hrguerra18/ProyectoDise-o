@@ -9,12 +9,7 @@ function CambiarCorreoProfesional() {
   let correoNuevo1Validado = ValidarCorreo(correoNuevo1);
   let correoNuevo2Validado = ValidarCorreo(correoNuevo2);
 
-  if (
-    idUsuario != "" &&
-    correo != "" &&
-    correoNuevo1 != "" &&
-    correoNuevo2 != ""
-  ) {
+  if (idUsuario != "" &&correoAnterior != "" &&correoNuevo1 != "" &&correoNuevo2 != "") {
     if (correoNuevo1Validado == true && correoNuevo2Validado == true) {
       if (correoNuevo1 == correoNuevo2) {
         $.ajax({
@@ -34,10 +29,7 @@ function CambiarCorreoProfesional() {
             if (mensaje.mensaje == "Se modifico correctamente") {
               MensajeDeModificacionCorreo();
               setTimeout(RecargarPagina, 2500);
-            } else if (
-              mensaje.mensaje ==
-              "Ya el correo se encuentra registrado, pruebe con otro"
-            ) {
+            } else if ( mensaje.mensaje =="Ya el correo se encuentra registrado, pruebe con otro" ) {
               MensajeCuandoElCorreoYaEstaRegistrado();
               setTimeout(RecargarPagina, 3000);
             }
@@ -136,13 +128,9 @@ function ExitoContraseña() {
 }
 
 function CambiarContraseñaProfesional() {
-  let correo = document.getElementById("correo").value;
-  let contraseñaProfesional1 = document.getElementById(
-    "contraseñaProfesional1"
-  ).value;
-  let contraseñaProfesional2 = document.getElementById(
-    "contraseñaProfesional2"
-  ).value;
+  let correo = document.getElementById("correo").value; 
+  let contraseñaProfesional1 = document.getElementById("contraseñaProfesional1").value;
+  let contraseñaProfesional2 = document.getElementById("contraseñaProfesional2").value;
 
   if (
     correo != "" &&

@@ -55,7 +55,7 @@ if ($_SESSION['validar'] == true) {
 						</a>
 					</li>
                     <li class="sidebar-item">
-						<a class="sidebar-link color-fondo-a" href="#">
+						<a class="sidebar-link color-fondo-a" href="configuracionEmpresa.php">
 							<i class="align-middle" data-feather="lock"></i> <span class="align-middle">Seguridad</span>
 						</a>
 					</li>
