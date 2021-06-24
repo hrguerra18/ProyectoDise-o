@@ -1,7 +1,7 @@
 .tarjetas{
     display: flex;
     flex-wrap: wrap;
-
+  justify-content: center;
 }
 
 .boton-ver-postulados{

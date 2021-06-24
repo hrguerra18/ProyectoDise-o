@@ -1,6 +1,7 @@
 .tarjetasProfesionalesPostulados{
     display: flex;
-    
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .tarjeta-historial-postulacionOfertas{

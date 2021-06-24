@@ -42,7 +42,7 @@ function crearTarjetaProfesionalesIndex(elemento){
             <ul class=list-group list-group-flush'>
                 <li class='list-group-item tamaño-fuente-salario'><b>Carrera:</b> ${elemento.carrera}</li>
                 <li class='list-group-item tamaño-fuente-salario'><b>Correo:</b> ${elemento.correo}</li>
-               
+                <li class='list-group-item tamaño-fuente-salario'><b>Telefono:</b> ${elemento.telefono}</li>
             </ul>
                
         

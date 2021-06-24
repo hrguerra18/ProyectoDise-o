@@ -11,7 +11,7 @@ include("inc/menuEmpresa.php");
                 <input class="idUsuario-verPostulados" type="hidden" value="<?php echo $_SESSION['IDusuario'] ?>">
                
 
-                <div class=" tarjetasProfesionalesPostulados">
+                <div class="tarjetasProfesionalesPostulados">
 
                 </div>
             </div>

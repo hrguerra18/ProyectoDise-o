@@ -55,16 +55,15 @@ function crearTarjetaProfesionalPostulado(elemento) {
                             <ul class=list-group list-group-flush'>
                                 <li class='list-group-item tamaño-fuente-salario'><b>Carrera:</b> ${elemento.carrera}</li>
                                 <li class='list-group-item tamaño-fuente-salario'><b>Correo:</b> ${elemento.correo}</li>
+                                <li class='list-group-item tamaño-fuente-salario'><b>Telefono:</b> ${elemento.telefono}</li>
                                
                             </ul>
-                            <a href="verPostuladosOferta.php">
+                            <a href="mostrarInformacionProfesional.php" target="_blank" >
                             <div class=' mt-1'>
-                            <button data-id="${elemento.IDoferta}"   onclick='agregarDatoLocal(${elemento.IDoferta});' type='button' class='btnModal boton-ver-postulados'>
-                            Ver  postulados    
+                            <button data-id="${elemento.IDoferta}"  type='button' class='btnModal boton-ver-postulados'>
+                            Ver  informacion del profesional   
                         </button></a>
-                        <button data-id=" . $row["IDoferta"] . "  onclick='BuscarOferta();' type='button' class='btnModal boton-ver-postulados'>
-                            Modificar    
-                        </button>
+                        
                             </div>
                             
                         </div>
