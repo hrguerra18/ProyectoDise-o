@@ -1,0 +1,25 @@
+.parrafo-1{
+    font-size: 22px;
+}
+
+.btn-configuracion{
+    height: 38px;
+    border: none;
+    width: 48% !important;
+    margin-left: 10px;
+    background: #6B0707;
+    border-radius: 5px;
+    color: #fff;
+    
+    font-size: 18px;
+}
+
+.btn-configuracion:hover{
+    background: #fff;
+    border-radius: 5px;
+    color: #6B0707;
+    border: 1px solid;
+    border-color: #6B0707 !important;
+    transition: all 200ms  ease;
+    font-size: 18px;
+}

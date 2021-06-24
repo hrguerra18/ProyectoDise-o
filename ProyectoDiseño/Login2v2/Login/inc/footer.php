@@ -6,6 +6,7 @@
 <script src="inc/js/buscarOferta.js"></script>
 <script src="inc/js/perfilProfesional.js"></script>
 <script src="inc/js/historialEmpresa.js"></script>
+<script src="inc/js/configuracionProfesional.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <script src="inc/js/historialProfesional.js"></script>
