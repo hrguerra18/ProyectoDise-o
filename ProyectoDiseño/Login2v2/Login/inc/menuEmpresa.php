@@ -67,7 +67,7 @@ if ($_SESSION['validar'] == true) {
 					</li>
 
                     <li class="sidebar-item">
-						<a class="sidebar-link color-fondo-a" href="controles/cerrar.php">
+						<a class="sidebar-link color-fondo-a" href="Controles/cerrar.php">
 							<i class="align-middle" data-feather="log-out"></i> <span class="align-middle">Cerrar sesion</span>
 						</a>
 					</li>

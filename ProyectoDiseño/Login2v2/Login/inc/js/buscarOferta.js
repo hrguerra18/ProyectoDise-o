@@ -80,7 +80,7 @@ function crearTarjeta(elemento,IdEmpresaOProfesional) {
                   <input type="file" class="botones-ofertas"  id="inputGroupFile02">
 
                   <a href="mostrarInformacionEmpresa.php" target="_blank">
-                    <button id="btn-info-empresa" onclick="InfoEmpresa(${elemento.NITempresa})" type='button' class='botones-ofertas'>
+                    <button id="btn-info-empresa" onclick="EnviarIDempresa(${elemento.NITempresa})" type='button' class='botones-ofertas'>
                       Informacion de la empresa
                     </button>
                   </a>
@@ -97,20 +97,8 @@ function removerImagenYParrafo(datoClases) {
     datoClases.p.remove();
 }
 
-function InfoEmpresa(NITempresa){
-  $.ajax({
-    type : "POST",
-    dataType : "json",
-    url : "Controles/buscarOfertas.php",
-    data : {
-      accion : "buscarInfoEmpresa",
-      NITempresa : NITempresa,
-    },
-    success: function(resp){
-      
-      // window.location = "mostrarInformacionEmpresa.php";
-    }
-  })
+function EnviarIDempresa(NITempresa){
+  localStorage.setItem('NITempresaEnviar',NITempresa)
 }
 
 function RegistrarPostulacion(IDoferta,IdEmpresaOProfesional) {

@@ -54,29 +54,18 @@ function BuscarInfoEmpresa(){
     require "Conexion.php";
     $NITempresa = $_POST['NITempresa'];
 
-    $sql = "SELECT count(*) as numusu,e.nombre,u.foto,e.telefono,e.direccion FROM empresa e JOIN usuario u ON(e.IDusuario = u.ID) WHERE NIT='$NITempresa'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_array($result);
+    $sql = "SELECT * FROM empresa e JOIN usuario u ON(e.IDusuario = u.ID) WHERE NIT='$NITempresa'";
+   
+    if (!$result = mysqli_query($con, $sql)) die();
+    $empresa = array();
 
-    $nombre = $row['nombre'];
-    $foto = $row['foto'];
-    $telefono = $row['telefono'];
-    $direccion = $row['direccion'];
-    $count = $row['numusu'];
-
-    if ($count > 0) {
-        $_SESSION['nombreMostrarInformacion']= $nombre;
-        $_SESSION['fotoMostrarInformacion']= $foto;
-        $_SESSION['telefonoMostrarInformacion']= $telefono;
-        $_SESSION['direccionMostrarInformacion']= $direccion;
-        $_SESSION['validarr'] = true;
-        $json_string = json_encode($_SESSION);
-        echo $json_string;
-    } else {
-        $respuesta = array("mensaje" => "Error" . mysqli_error($con));
-        $json_string = json_encode($respuesta);
-        echo $json_string;
+    while ($row = $result->fetch_assoc()) {
+        array_push($empresa, $row);
     }
+    $json_string = json_encode($empresa);
+    echo $json_string;
+
+    
 }
 
 

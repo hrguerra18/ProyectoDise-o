@@ -10,23 +10,23 @@ include("inc/menuProfesional.php");
               <div class="row row-completa">
                   <div class="row col-md-4 row-1-perfilEmpresa ">
                     
-                      <img class="img-row-1 mt-7 mb-5" src=<?php echo $_SESSION['fotoMostrarInformacion'] ?> alt="">
+                      <img class="img-row-1 mt-7 mb-5" id="fotoEmpresa" alt="">
                       
-                      <h4 class="h4-row-1"><?php echo $_SESSION['nombreMostrarInformacion'] ?></h4>
+                      <h4 class="h4-row-1" id="nombreDebajoDeFoto"></h4>
                   </div>
 
                   <div class="row col-md-8 row-2-perfilEmpresa card-mod">
 
                       <div class="col-md-12 mb-3 ">
                           <label class="mb-3 fw-bold" for="validationCustom01">NOMBRE DE LA EMPRESA:</label>
-                          <input type="text" class="form-control" disabled="disabled" id="nombreempresa"  value="<?php echo $_SESSION['nombreMostrarInformacion'] ?>" required>
+                          <input type="text" class="form-control" disabled="disabled" id="nombreempresa"   required>
                           <div class="invalid-feedback">
                               Ingrese un Dato Valido
                           </div>
                       </div>
                       <div class="col-md-6 mb-3 ">
                           <label class="mb-3 fw-bold" for="validationCustom01">PAGINA WEB:</label>
-                          <input type="text" class="form-control" id="paginaweb"  required>
+                          <input type="text" class="form-control"disabled="disabled" id="paginaweb"  required>
                           <div class="invalid-feedback">
                               Ingrese un Dato Valido
                           </div>
@@ -34,14 +34,14 @@ include("inc/menuProfesional.php");
                       
                       <div class="col-md-6 mb-3 ">
                           <label class="mb-3 fw-bold" for="validationCustom01">CATEGORIA:</label>
-                          <input type="text" class="form-control" id="categoriaempresa" placeholder="" required>
+                          <input type="text" class="form-control"disabled="disabled"id="categoriaempresa"  required>
                           <div class="invalid-feedback">
                               Ingrese un Dato Valido
                           </div>
                       </div>
                       <div class="col-md-6 mb-3 ">
                           <label class="mb-3 fw-bold" for="validationCustom01">CANTIDAD DE EMPLEADOS:</label>
-                          <input type="number" class="form-control" id="numeroempleado" placeholder="" required>
+                          <input type="number" class="form-control" disabled="disabled"id="numeroempleado"  required>
                           <div class="invalid-feedback">
                               Ingrese un Dato Valido
                           </div>
@@ -49,7 +49,7 @@ include("inc/menuProfesional.php");
 
                       <div class="col-md-12 mb-3 ">
                           <label class="fw-bold" for="validationCustom04">DESCRIPCION</label>
-                          <input type="text" class="form-control input-descripcion-perfil" id="descripcion" placeholder="" required>
+                          <input type="text" class="form-control input-descripcion-perfil"disabled="disabled" id="descripcion"  required>
 
                           <div class="invalid-feedback">
                               Ingrese un Dato Valido
@@ -60,14 +60,14 @@ include("inc/menuProfesional.php");
 
                       <div class="col-md-6 mb-3 ">
                           <label class="mb-3 fw-bold" for="validationCustom01">DIRECCION:</label>
-                          <input type="text" class="form-control" disabled="disabled" id="direccionempresa" placeholder="" value="<?php echo $_SESSION['direccionMostrarInformacion'] ?>" required>
+                          <input type="text" class="form-control" disabled="disabled" id="direccionempresa"   required>
                           <div class="invalid-feedback">
                               Ingrese un Dato Valido
                           </div>
                       </div>
                       <div class="col-md-6 mb-3 ">
                           <label class="mb-3 fw-bold" for="validationCustom01">TELEFONO:</label>
-                          <input type="number" disabled="disabled" class="form-control" id="telefonoempresa" placeholder="" value="<?php echo $_SESSION['telefonoMostrarInformacion'] ?>" required>
+                          <input type="number" disabled="disabled" class="form-control" id="telefonoempresa"  required>
                           <div class="invalid-feedback">
                               Ingrese un Dato Valido
                           </div>
@@ -75,7 +75,7 @@ include("inc/menuProfesional.php");
 
                       <div class="col-md-6 mb-3 ">
                           <label class="mb-3 fw-bold" for=" validationCustom01">DEPARTAMENTO:</label>
-                          <input type="text" class="form-control" id="departamentoEmpresa" placeholder="" required>
+                          <input type="text" class="form-control"disabled="disabled" id="departamentoEmpresa"  required>
                           <div class="invalid-feedback">
                               Ingrese un Dato Valido
                           </div>
@@ -83,7 +83,7 @@ include("inc/menuProfesional.php");
 
                       <div class="col-md-6 mb-3 ">
                           <label class="mb-3 fw-bold" for=" validationCustom01">CIUDAD:</label>
-                          <input type="text" class="form-control" id="ciudad" placeholder="" required>
+                          <input type="text" class="form-control"disabled="disabled" id="ciudad"  required>
                           <div class="invalid-feedback">
                               Ingrese un Dato Valido
                           </div>
@@ -101,7 +101,7 @@ include("inc/menuProfesional.php");
 
         <script type="text/javascript" src="inc/js/perfilempresa.js"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
+        <script src="inc/js/mostrarInformacionEmpresa.js"></script>
 
         <script>
             // Example starter JavaScript for disabling form submissions if there are invalid fields
