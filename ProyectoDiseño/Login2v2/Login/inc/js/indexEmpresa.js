@@ -46,9 +46,11 @@ function crearTarjetaProfesionalesIndex(elemento){
             </ul>
                
         
-        <button data-id=" . $row["IDoferta"] . "  onclick='BuscarOferta();' type='button' class='btnModal boton-ver-postulados'>
-            Modificar    
-        </button>
+            <a href="indexMostrarProfesional.php" target="_blank" >
+            <div class=' mt-1'>
+            <button data-id="${elemento.Identidad}" onclick="EnviarIDProfesionalIndex(${elemento.Identidad})" type='button' class='btnModal boton-ver-postulados'>
+            Ver  informacion del profesional   
+        </button></a>
             </div>
             
         </div>
@@ -57,4 +59,8 @@ function crearTarjetaProfesionalesIndex(elemento){
         </div>`;
 
 return tarjeta;
+}
+
+function EnviarIDProfesionalIndex(Identidad){
+    localStorage.setItem('idprofesionalIndex', Identidad);
 }

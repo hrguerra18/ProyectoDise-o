@@ -1,11 +1,12 @@
 $(document).ready(function(){
-    ConsultarDatosProfesional();
+    ConsultarProfesionalIndex();
 })
 
 
-function ConsultarDatosProfesional(){
-   let Identidad = localStorage.getItem('IdProfesionalEnviada');
-   
+function ConsultarProfesionalIndex(){
+   let Identidad = localStorage.getItem('idprofesionalIndex');
+   alert(Identidad)
+  
    if (Identidad != "") {
     $.ajax({
         type: "POST",
