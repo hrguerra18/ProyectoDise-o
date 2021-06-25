@@ -207,17 +207,8 @@ include("inc/menuEmpresa.php");
         </div>
     </div>
 
-    <div class="container-fluid p-0" style="align-items: center;">
-        <div class="card">
-            <div class="card-body">
-                <form class="needs-validation mostrarOfertas" novalidate>
-                    <?php
-                    require("Controles/ofertas.php");
-                    ConsultarOferta($_SESSION['IDusuario']);
-                    ?>
-                </form>
-            </div>
-        </div>
+    <div class="ultima-oferta">
+        
     </div>
 
     <!-- MODAL 
