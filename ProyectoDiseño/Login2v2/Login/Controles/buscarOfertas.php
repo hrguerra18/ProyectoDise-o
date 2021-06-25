@@ -30,11 +30,11 @@ function BuscarOfertas()
     mysqli_set_charset($con, "utf8");
 
     // $buscarOferta = 'ing';
-
+    $estadoOferta = "Activo";
     
     $sql = "SELECT o.IDoferta,o.cargo,o.vigencia,o.numeroAplicantes,o.descripcion,o.sector,o.tipoContrato,o.salario,o.horario,
     o.NITempresa, o.condicion,u.foto,e.nombre FROM oferta o JOIN empresa e ON(o.NITempresa = e.NIT) JOIN usuario u ON(e.IDusuario = u.ID)
-     WHERE o.cargo LIKE '%$buscarOferta%'";
+     WHERE o.cargo LIKE '%$buscarOferta%' AND o.estadoOferta='$estadoOferta'";
 
     if (!$result = mysqli_query($con, $sql)) die();
 

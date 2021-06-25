@@ -11,6 +11,12 @@ function AdicionarOferta() {
     var horario = $("#horario").val().trim();
     var condiciones = $("#condiciones").val().trim();
     var IDoferta = $("#IDoferta").val();
+    
+    alert(vigencia);
+
+    fechaHoy = hoyFecha();
+    alert(fechaHoy)
+ 
     // var checkBoxpracticante = document.getElementById("practicante");
     // var checkBoxtecnico = document.getElementById("tecnico");
     // var checkBoxtecnologo = document.getElementById("tecnologo");
@@ -22,27 +28,38 @@ function AdicionarOferta() {
     // var checkBoxcualquiera = document.getElementById("cualquiera");
     
     if(numeroAplicantes > 0){
-        $.ajax({
-            type: "POST",
-            dataType: "json",
-            url: "Controles/ofertas.php",
-            data: {
-                accion:"adicionar",
-                Cargo: Cargo,
-                vigencia: vigencia,
-                numeroAplicantes: numeroAplicantes,
-                descripcion: descripcion,
-                sector: sector,
-                tipoContrato: tipoContrato,
-                salario: salario,
-                horario: horario,
-                condiciones: condiciones,
-                NIT: NIT,
-                IDoferta: IDoferta,
-            },
-            success: function (resp) {
-            }
-        });
+        if(vigencia > fechaHoy){
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: "Controles/ofertas.php",
+                data: {
+                    accion:"adicionar",
+                    Cargo: Cargo,
+                    vigencia: vigencia,
+                    numeroAplicantes: numeroAplicantes,
+                    descripcion: descripcion,
+                    sector: sector,
+                    tipoContrato: tipoContrato,
+                    salario: salario,
+                    horario: horario,
+                    condiciones: condiciones,
+                    NIT: NIT,
+                    IDoferta: IDoferta,
+                },
+                success: function (resp) {
+                }
+            });
+        }else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Error...',
+                text: 'La fecha de vigencia no puede ser menor a la actual!',
+                footer: ''
+              })
+              setInterval(RecargarOfertas,2700)
+        }
+       
     }else{
         Swal.fire({
             icon: 'error',
@@ -60,4 +77,21 @@ function RecargarOfertas(){
     window.location = "crearOferta.php";
 }
 
+function hoyFecha(){
+    var hoy = new Date();
+        var dd = hoy.getDate();
+        var mm = hoy.getMonth()+1;
+        var yyyy = hoy.getFullYear();
+        
+        dd = addZero(dd);
+        mm = addZero(mm);
 
+        return yyyy+'-'+mm+'-'+dd;
+}
+
+function addZero(i) {
+    if (i < 10) {
+        i = '0' + i;
+    }
+    return i;
+}
