@@ -30,11 +30,13 @@ function AgregarOferta()
     $horario = $_POST['horario'];
     $NITempresa = $_POST['NIT'];
     $condicion = $_POST['condiciones'];
+    $estadoOferta = "Activo";
+    $fechaActual = $_POST['fechaHoy'];
 
     if ($NITempresa != "") {
 
-        $sqlOferta = "INSERT INTO oferta (IDoferta,cargo,vigencia,numeroAplicantes,descripcion,sector,tipoContrato,salario,horario,NITempresa,condicion) 
-        VALUES (default,'$cargo','$Vigencia','$numeroAplicantes','$descripcion','$sector','$tipoContrato','$salario','$horario','$NITempresa','$condicion')";
+        $sqlOferta = "INSERT INTO oferta (IDoferta,cargo,vigencia,numeroAplicantes,descripcion,sector,tipoContrato,salario,horario,NITempresa,condicion,estadoOferta,fechaOfertaCreada) 
+        VALUES (default,'$cargo','$Vigencia','$numeroAplicantes','$descripcion','$sector','$tipoContrato','$salario','$horario','$NITempresa','$condicion','$estadoOferta','$fechaActual')";
         if (mysqli_query($con, $sqlOferta)) {
             $respuesta = array("mensaje" => "Se ha registrado los datos de manera correcta");
             $json_string = json_encode($respuesta);

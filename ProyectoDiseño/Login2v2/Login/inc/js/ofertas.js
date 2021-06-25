@@ -46,6 +46,7 @@ function AdicionarOferta() {
                     condiciones: condiciones,
                     NIT: NIT,
                     IDoferta: IDoferta,
+                    fechaHoy,fechaHoy
                 },
                 success: function (resp) {
                 }
