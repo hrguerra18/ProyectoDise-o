@@ -10,27 +10,26 @@ include("inc/menuEmpresa.php");
           <div class="row row-completa">
                     <div class="row col-md-4 row-1-perfilEmpresa ">
                         <p class="p-row-1">Arrastra tu archivo de logo aqui</p>
-                        <img class="img-row-1" src=<?php echo $_SESSION['foto'] ?> alt="">
+                        <img class="img-row-1" id="fotoProfesional"  alt="">
                         <div class="input-group mb-3 mt-4 archivo">
-                            <input type="file" class="form-control" id="inputGroupFile02">
 
                         </div>
-                        <h4 class="h4-row-1"><?php echo $_SESSION['usuario'] ?></h4>
+                        <h4 class="h4-row-1 " id="nombreDebajoDeFoto"></h4>
                     </div>
 
                     <div class="row col-md-8 row-2-perfilEmpresa card-mod">
 
                         <div class="col-md-12 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">CARRERA:</label>
-                            <input  type="hidden" class="form-control" id="identidadProfesional" value="<?php echo $_SESSION['IDusuario'] ?>" >
-                            <input type="text" class="form-control" id="carreraProfesional" placeholder="" >
+                            <input  type="hidden" class="form-control"disabled="disabled" id="identidadProfesional" value="" >
+                            <input type="text" class="form-control"disabled="disabled" id="carreraProfesional" placeholder="" >
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
                         </div>
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">FECHA NACIMIENTO:</label>
-                            <input type="date" class="form-control" id="fechaNacimientoProfesional" placeholder="" >
+                            <input type="date" class="form-control" disabled="disabled" id="fechaNacimientoProfesional" placeholder="" >
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
@@ -44,14 +43,14 @@ include("inc/menuEmpresa.php");
                         </div>
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">NOMBRE:</label>
-                            <input type="text" class="form-control" id="nombreProfesional" placeholder="Nombre" required >
+                            <input type="text" class="form-control" disabled="disabled"id="nombreProfesional" placeholder="Nombre" required >
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
                         </div>
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">APELLIDO:</label>
-                            <input type="text" class="form-control" id="apellidoProfesional" placeholder="Apellido" required >
+                            <input type="text" class="form-control"disabled="disabled" id="apellidoProfesional" placeholder="Apellido" required >
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
@@ -59,7 +58,7 @@ include("inc/menuEmpresa.php");
 
                         <div class="col-md-12 mb-3 ">
                             <label class="fw-bold" for="validationCustom04">SOBRE MI:</label>
-                            <input type="text" class="form-control" id="sobreMiProfesional"  >
+                            <input type="text" class="form-control"disabled="disabled" id="sobreMiProfesional"  >
 
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
@@ -70,7 +69,7 @@ include("inc/menuEmpresa.php");
 
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">DIRECCION:</label>
-                            <input type="text" class="form-control" id="direccionProfesional"  required >
+                            <input type="text" class="form-control"disabled="disabled" id="direccionProfesional"  required >
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
@@ -78,7 +77,7 @@ include("inc/menuEmpresa.php");
 
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">TELEFONO:</label>
-                            <input type="number" class="form-control" id="telefonoProfesional"  required >
+                            <input type="number" class="form-control"disabled="disabled" id="telefonoProfesional"  required >
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
@@ -86,7 +85,7 @@ include("inc/menuEmpresa.php");
 
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="departamentoProfesional">DEPARTAMENTO:</label>
-                            <select class="form-control form-select" id="departamentoProfesional" name="departamento"  >
+                            <select class="form-control form-select"disabled="disabled" id="departamentoProfesional" name="departamento"  >
                                 <option value=""></option>
                                 <option value="Amazonas">Amazonas</option>
                                 <option value="Antioquia">Antioquia</option>
@@ -128,7 +127,7 @@ include("inc/menuEmpresa.php");
 
                         <div class="col-md-6 mb-3 ">
                             <label for="ciudadProfesional" class="mb-3 fw-bold control-label">CIUDAD:</label>
-                            <select class="form-control form-select" id="ciudadProfesional" >
+                            <select class="form-control form-select"disabled="disabled" id="ciudadProfesional" >
                                 <option value=""></option>
                                 <option value="Arauca">Arauca</option>
                                 <option value="Armenia">Armenia</option>
@@ -169,7 +168,6 @@ include("inc/menuEmpresa.php");
                         </div>
                         <div style="display:flex m-2">
                         <!-- <button onclick="ConsultarPerfil();" class="btn btn-primary" type="submit">Ver perfil</button> -->
-                        <button  onclick="ModificarPerfilProfesional();" class="btn btn-primary" type="submit">Guardar cambios</button>
                     </div>
                     </div>
                 </div>
@@ -181,7 +179,7 @@ include("inc/menuEmpresa.php");
 
         <script type="text/javascript" src="inc/js/perfilempresa.js"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
+        <script src="inc/js/mostrarInformacionProfesional.js"></script>
 
         <script>
             // Example starter JavaScript for disabling form submissions if there are invalid fields

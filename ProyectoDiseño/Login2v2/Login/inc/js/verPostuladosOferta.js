@@ -60,7 +60,7 @@ function crearTarjetaProfesionalPostulado(elemento) {
                             </ul>
                             <a href="mostrarInformacionProfesional.php" target="_blank" >
                             <div class=' mt-1'>
-                            <button data-id="${elemento.IDoferta}"  type='button' class='btnModal boton-ver-postulados'>
+                            <button data-id="${elemento.Identidad}" onclick="EnviarIDProfesional(${elemento.Identidad})" type='button' class='btnModal boton-ver-postulados'>
                             Ver  informacion del profesional   
                         </button></a>
                         
@@ -74,7 +74,10 @@ function crearTarjetaProfesionalPostulado(elemento) {
   return tarjeta;
 }
 
-
 function EnviarAHistorialEmpresa(){
   window.location = "historialEmpresa.php";
+}
+
+function EnviarIDProfesional(identidad){
+  localStorage.setItem('IdProfesionalEnviada',identidad)
 }

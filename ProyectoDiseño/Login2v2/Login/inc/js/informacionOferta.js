@@ -19,7 +19,7 @@ function ConsultarOferta() {
                 $("#vigenciaOferta").val(resp[0]['vigencia']);
                 $("#idOferta").val(resp[0]['IDoferta']);
                 $("#aplicantesOferta").val(resp[0]['numeroAplicantes']);
-                $("#sectorOferta").val(resp[0]['secrtor']);
+                $("#sectorOferta").val(resp[0]['sector']);
                 $("#contratoOferta").val(resp[0]['tipoContrato']);
                 $("#salarioOferta").val(resp[0]['salario']);
                 $("#horarioOferta").val(resp[0]['horario']);
