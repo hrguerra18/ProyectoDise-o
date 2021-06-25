@@ -39,7 +39,7 @@ function crearTarjetaHistorial(elemento){
     tarjeta = `<div class='row m-2 '>
                     <div class='card mb-5 tarjeta-historial-empresa' style='width: 18rem;'>
                             <div class='img-tarjeta'>
-                            <button class='activo'>Activo</button>
+                            <input class='activo'id="eliminar-oferta" type="button" value="${ConsultarEstadoOferta(elemento.IDoferta)}" onclick="EliminarOfertaLadoEmpresa(${elemento.IDoferta})">
                             <img src=" ${elemento.foto} " class='card-img-top img-tarjeta' alt='...'>
                             </div>
                             <div class='card-body'>
@@ -71,3 +71,68 @@ function agregarDatoLocal(idOferta){
     localStorage.setItem('idOfertaEnviada', idOferta);
 }
 
+function EliminarOfertaLadoEmpresa(IDoferta){
+    let botonEstado = document.getElementById("eliminar-oferta");
+    valor = ConsultarEstadoOferta(IDoferta);
+    
+    if(valor == "Activo"){
+      let confirmacion = confirm("Seguro que quieres eliminar esta oferta");
+      if (confirmacion) {
+        botonEstado.classList.remove("activo");
+        botonEstado.classList.add("inactivo");
+        $.ajax({
+          type: "POST",
+          dateType: "json",
+          url: "Controles/historialEmpresa.php",
+          async : false,
+          data: {
+            accion: "eliminarOferta",
+            IDoferta: IDoferta,
+          },
+          success: function (resp) {
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Exito...",
+                text: "Se ha modificado correctamente!",
+                showConfirmButton: false,
+                timer: 2500,
+              });
+              setInterval(Recargar,2500);
+            
+            
+        },
+        });
+    
+      }
+    }else{
+      Swal.fire({
+        icon: 'error',
+        title: 'Error...',
+        text: 'No se puede eliminar una oferta que ya esta inactiva!',
+        footer: ''
+      })
+    }
+}
+
+function Recargar(){
+    window.location = "historialEmpresa.php";
+}
+
+
+function ConsultarEstadoOferta(idOferta){
+    var retornar;
+    $.ajax({
+        type: "POST",
+        url: "Controles/historialEmpresa.php",
+        async : false,
+        data: {
+          accion: "consultarEstado",
+          idOferta: idOferta,
+        },
+        success : function(resp){
+          retornar = resp;
+        }
+      })
+      return retornar;
+}
