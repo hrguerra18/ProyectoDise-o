@@ -199,7 +199,7 @@ include("inc/menuEmpresa.php");
 
 
                     </div>
-                    <button onclick="AdicionarOferta();" class="btn btn-primary color-boton btnCrearOferta" type="submit">Crear Oferta</button>
+                    <input onclick="AdicionarOferta();" class="btn btn-primary color-boton btnCrearOferta" value="Crear Oferta" type="button">
 
                     
                 </form>

@@ -44,10 +44,20 @@ function AdicionarOferta() {
             }
         });
     }else{
-        alert("La cantidad minima de aplicantes tiene que ser 1")
+        Swal.fire({
+            icon: 'error',
+            title: 'Error...',
+            text: 'La cantidad minima de aplicantes es 1!',
+            footer: ''
+          })
+          setInterval(RecargarOfertas,2700)
     }
     
     
+}
+
+function RecargarOfertas(){
+    window.location = "crearOferta.php";
 }
 
 
