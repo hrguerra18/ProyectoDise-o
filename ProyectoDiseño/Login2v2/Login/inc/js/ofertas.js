@@ -16,10 +16,8 @@ function AdicionarOferta() {
     var condiciones = $("#condiciones").val().trim();
     var IDoferta = $("#IDoferta").val();
     
-    alert(vigencia);
-
     fechaHoy = hoyFecha();
-    alert(fechaHoy)
+    
  
     // var checkBoxpracticante = document.getElementById("practicante");
     // var checkBoxtecnico = document.getElementById("tecnico");

@@ -9,15 +9,17 @@ include("inc/menuEmpresa.php");
         <div class="card ">
             <div class="card-body">
                 <input class="idUsuario-verPostulados" type="hidden" value="<?php echo $_SESSION['IDusuario'] ?>">
-               
 
+                <div class="d-flex cuantos-postulados">
+
+                </div>
                 <div class="tarjetasProfesionalesPostulados">
 
                 </div>
             </div>
 
         </div>
-        
+
         <script type="text/javascript" src="inc/js/verPostuladosOferta.js"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
@@ -43,7 +45,7 @@ include("inc/menuEmpresa.php");
                 }, false);
             })();
         </script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 </main>
 

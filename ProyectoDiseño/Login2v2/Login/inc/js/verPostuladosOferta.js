@@ -4,6 +4,7 @@ $(document).ready(function () {
 
 function ConsultarProfesionalesPostulados() {
   var tarjetas = document.querySelector(".tarjetasProfesionalesPostulados");
+  var divCuantosPostulados = document.querySelector(".cuantos-postulados");
   var idOfertaRecibida = localStorage.getItem("idOfertaEnviada");
 
   $.ajax({
@@ -17,8 +18,9 @@ function ConsultarProfesionalesPostulados() {
     success: function (resp) {
         if(resp != ""){
             var datos = resp;
-            // datos = JSON.parse(datos);
-            // console.log(resp)
+            var contador = resp.length;
+            var cuantosPostulados = `<h2>En esta oferta se encuentran actualmente ${contador} postulado</h2></br>`;
+            divCuantosPostulados.innerHTML = cuantosPostulados;
             datos.forEach((elemento) => {
               let t = crearTarjetaProfesionalPostulado(elemento);
               var div = document.createElement("DIV");
