@@ -11,6 +11,11 @@ include("inc/menuProfesional.php");
             <div class="card-body">
             <input id="idProfesional" type="hidden" value = "<?php echo $_SESSION['IDusuario'] ?>">
 
+
+            <div class="d-flex texto-1">
+            
+            </div>
+
             <div class="tarjetas tarjetaVerOfertasAlasQueMePostule"></div>
                
 

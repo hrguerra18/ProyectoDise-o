@@ -4,9 +4,9 @@ $(document).ready(function () {
 
 function ConsultarOfertasALasQueMePostule() {
   let idProfesional = document.getElementById("idProfesional").value;
-  var divTarjetas = document.querySelector(
-    ".tarjetaVerOfertasAlasQueMePostule"
-  );
+  var divTarjetas = document.querySelector(".tarjetaVerOfertasAlasQueMePostule");
+  var divTextoUno = document.querySelector(".texto-1");
+
 
   if (idProfesional != "") {
     $.ajax({
@@ -21,7 +21,8 @@ function ConsultarOfertasALasQueMePostule() {
         var datos = resp;
         datos = JSON.parse(datos);
         console.log(datos)
-
+        textoUno = `<h2>Aqui se encuentran todos tus registros a postulaciones de ofertas</h2>`;
+        divTextoUno.innerHTML = textoUno;
         datos.forEach((elemento) => {
           let t = crearTarjetaOfertaALaQueMePostule(elemento);
           var div = document.createElement("DIV");

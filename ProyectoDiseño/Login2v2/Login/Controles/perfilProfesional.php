@@ -28,13 +28,18 @@ function ModificarDatosProfesional()
     $departamentoProfesional = $_POST['departamentoProfesional'];
     $ciudadProfesional = $_POST['ciudadProfesional'];
     $telefonoProfesional = $_POST['telefonoProfesional'];
+    
+
+
 
     $sql = "UPDATE profesional SET fechaNacimiento='$fechaNacimiento',nombre='$nombreProfesional',apellido='$apellidoProfesional',
     sobreMi='$sobreMiProfesional',direccion='$direccionProfesional',departamentoProfesional='$departamentoProfesional',
     ciudadProfesional='$ciudadProfesional',telefono='$telefonoProfesional',carrera='$carreraProfesional' WHERE Identidad = '$identidad'";
 
     if (mysqli_query($con, $sql)) {
-        echo "Cliente Modificado";
+        $resultado = array("mensaje"=> "Se modifico correctamente");
+        $json_string = json_encode($resultado);
+        echo $json_string;
     } else {
         echo "Error: " . $sql;
         echo mysqli_error($con);

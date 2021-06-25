@@ -170,7 +170,7 @@ include("inc/menuProfesional.php");
                         </div>
                         <div style="display:flex m-2">
                         <!-- <button onclick="ConsultarPerfil();" class="btn btn-primary" type="submit">Ver perfil</button> -->
-                        <button  onclick="ModificarPerfilProfesional();" class="btn btn-primary" type="submit">Guardar cambios</button>
+                        <input  onclick="ModificarPerfilProfesional();" class="btn btn-primary" value="Guardar cambios" type="button">
                     </div>
                     </div>
                 </div>

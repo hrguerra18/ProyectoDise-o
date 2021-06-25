@@ -63,9 +63,24 @@ function ModificarPerfilProfesional(){
             ciudadProfesional : ciudadProfesional,
         },
         success : function(resp) {
-            alert("se guardo correctamente");
-            ConsultarPerfilProfesional();
+            
+           
+           if(resp.mensaje == "Se modifico correctamente"){
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Confirmado...",
+                text: "Se han modificado los datos correctamente",
+                showConfirmButton: false,
+                timer: 2500,
+              });
+              setInterval(RecargarPerfilProfesional,2500);
+           }
         }
     })
     
+}
+
+function RecargarPerfilProfesional(){
+    window.location = "perfilProfesional.php"
 }
