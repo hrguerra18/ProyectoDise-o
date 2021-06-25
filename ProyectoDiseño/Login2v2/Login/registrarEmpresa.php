@@ -129,7 +129,7 @@
                 </div>
             </div>
 
-            <button onclick="AdicionarEmpresa();" class="btn btn-primary" type="submit">Registrarse</button>
+            <input onclick="AdicionarEmpresa();" class="btn btn-primary" value="Registrarse" type="button">
 
             <span class="span-politica">Al hacer clic en "registrarse", aceptas nuestra <a class="a-condiciones" href="#"> Condicion de Poliicas y Privacidad</a></span>
 

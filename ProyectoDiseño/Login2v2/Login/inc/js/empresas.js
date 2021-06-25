@@ -26,7 +26,15 @@ function AdicionarEmpresa() {
                 contraseña: contraseña,
             },
             success: function (resp) {
-                limpiar();
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Exito...",
+                    text: "Registro exitoso, ahora podra ingresar!",
+                    showConfirmButton: false,
+                    timer: 2500,
+                  });
+                  setInterval(mandarAlLogin,2500);
             }
         });
     }else{
@@ -39,6 +47,11 @@ function AdicionarEmpresa() {
     }
    
     
+}
+
+
+function mandarAlLogin(){
+    window.location = "login.php"
 }
 
 function limpiar() {

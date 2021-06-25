@@ -5,7 +5,6 @@ $(document).ready(function(){
 
 function ConsultarProfesionalIndex(){
    let Identidad = localStorage.getItem('idprofesionalIndex');
-   alert(Identidad)
   
    if (Identidad != "") {
     $.ajax({

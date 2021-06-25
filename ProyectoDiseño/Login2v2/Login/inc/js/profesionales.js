@@ -29,7 +29,16 @@ function AdicionarProfesional() {
                 contraseña: contraseña,
             },
             success: function (resp) {
-               
+                 Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Exito...",
+                    text: "Usted se acaba de registrar!",
+                    showConfirmButton: false,
+                    timer: 2500,
+                  });
+                  setInterval(mandarAlLogin,2500);
+
             }
         });
     }else{
@@ -43,6 +52,10 @@ function AdicionarProfesional() {
 
    
 }
+function mandarAlLogin(){
+    window.location = "login.php"
+}
+
 
 function Limpiar() {
     $("#identidad").val() = "";

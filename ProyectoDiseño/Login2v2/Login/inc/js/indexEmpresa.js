@@ -32,7 +32,7 @@ function crearTarjetaProfesionalesIndex(elemento){
     tarjeta = `<div class=' m-2 '>
     <div class='card mb-5 tarjeta-historial-postulacionOfertas' style='width: 18rem;'>
             <div class='img-tarjeta'>
-            <button class='activo'>Activo</button>
+            
             <img src=" ${elemento.foto} " class='card-img-top  foto-profesional' alt='...'>
             </div>
             <div class='card-body'>
