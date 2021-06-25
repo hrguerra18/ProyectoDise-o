@@ -34,6 +34,43 @@ function ConsultarOfertasALasQueMePostule() {
   }
 }
 
+function ConsultarPostulacionesHistorialProfesional(){
+  let dato = document.getElementById("seleccionarFiltro").value;
+  let idProfesional = document.getElementById("idProfesional").value;
+  var divTarjetas2 = document.querySelector(".tarjetaVerOfertasAlasQueMePostule");
+  var divTextoUno = document.querySelector(".texto-1");
+
+  if(dato == "todas"){  accion = "consultarOfertas"; }
+  if(dato == "Activo"){  accion = "consultarActivasOInactivas"; }
+  if(dato == "Inactivo"){  accion = "consultarActivasOInactivas"; }
+
+  
+  $.ajax({
+    type: "POST",
+    dateType: "json",
+    url: "Controles/historialProfesional.php",
+    data: {
+      accion: accion,
+      idProfesional: idProfesional,
+      dato : dato
+    },
+    success: function (resp) {
+      var datos = JSON.parse(resp);
+      console.log(datos)
+      textoUno = `<h2>Aqui se encuentran todos tus registros a postulaciones de ofertas</h2>`;
+      divTextoUno.innerHTML = textoUno;
+      divTarjetas2.innerHTML="";
+      datos.forEach((elemento) => {
+        let t = crearTarjetaOfertaALaQueMePostule(elemento);
+        var div = document.createElement("DIV");
+        div.innerHTML = t;
+        divTarjetas2.appendChild(div);
+      });
+    },
+  });
+  
+}
+
 function crearTarjetaOfertaALaQueMePostule(elemento) {
   tarjeta = `<div class='row m-2'>
     <div class='card mb-5 tarjeta-historial-profesional' style='width: 18rem;'>

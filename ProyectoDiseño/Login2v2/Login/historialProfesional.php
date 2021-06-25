@@ -5,33 +5,43 @@ include("inc/menuProfesional.php");
 <link rel="stylesheet" href="Css/style-profesional.css">
 
 <main class="content">
-    
+
     <div class="container-fluid p-0">
         <div class="card">
             <div class="card-body">
-            <input id="idProfesional" type="hidden" value = "<?php echo $_SESSION['IDusuario'] ?>">
+                <input id="idProfesional" type="hidden" value="<?php echo $_SESSION['IDusuario'] ?>">
 
+                <div class="d-flex texto-1">
 
-            <div class="d-flex texto-1">
-            
-            </div>
+                </div>
 
-            <div class="tarjetas tarjetaVerOfertasAlasQueMePostule"></div>
-               
+                <div class="div-seleccionar">
+                    <p class="parrafo-select">SELECCIONE EL FILTRO:</p>
+                    <select class="form-control form-select seleccionar" id="seleccionarFiltro">
+                        <option disabled value="">Seleccione el filtro</option>
+                        <option value="todas">Todas</option>
+                        <option value="Activo">Activas</option>
+                        <option value="Inactivo">Inactivas</option>
+                    </select>
+                    <input  id="botonBuscarOferta" onclick="ConsultarPostulacionesHistorialProfesional()" class="edit-input-historial boton" value="Buscar" type="button">
+
+                </div>
+                <div class="tarjetas tarjetaVerOfertasAlasQueMePostule"></div>
+
 
 
             </div>
         </div>
-</div>
-
-
-  
-
-  
+    </div>
 
 
 
-    
+
+
+
+
+
+
 
 
 
@@ -59,7 +69,7 @@ include("inc/menuProfesional.php");
 
 
 
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </main>
 
 

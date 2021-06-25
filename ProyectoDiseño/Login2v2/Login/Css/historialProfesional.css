@@ -9,3 +9,38 @@
     font-size: 30px;
     color: rgb(247, 244, 244);
 }
+
+.div-seleccionar{
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.seleccionar{
+    width: 200px !important;
+}
+
+.parrafo-select{
+   
+   font-weight: bold;
+  margin:  auto 0;
+  margin-right: 10px;
+    
+}
+
+.edit-input-historial{
+    padding: 10px;
+    margin-left: 10px;
+    background: #6B0707;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+}
+
+.edit-input-historial:hover{
+    padding: 9px;
+   border: 1px solid ;
+    background: #fff;
+    color: #6B0707;
+    
+}

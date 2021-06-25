@@ -18,6 +18,10 @@ switch($_POST['accion']){
         ConsultarEstado();
 
     break;
+    case "consultarActivasOInactivas" :
+        ConsultarActivasOInactivas();
+
+    break;
 }
 
 function ConsultarOfertasALasQueMePostule(){
@@ -75,6 +79,27 @@ function  ConsultarEstado(){
         echo $estado;
     }
 
+}
+
+function ConsultarActivasOInactivas(){
+    session_start();
+    require "Conexion.php";
+
+    $idProfesional = $_POST['idProfesional'];
+    $dato = $_POST['dato'];
+
+    $sql = "SELECT * FROM pro_ofert pf JOIN oferta o ON(pf.idOferta=o.IDoferta) JOIN empresa e ON(e.NIT = o.NITempresa) 
+    JOIN usuario u ON(e.IDusuario = u.ID) where idProfesional = '$idProfesional' AND estadoProOfert = '$dato'";
+    if(!$result = mysqli_query($con,$sql)) die();
+
+    $ofertas = array();
+
+    while($row = $result->fetch_assoc()){
+        array_push($ofertas,$row);
+    }
+
+    $json_string = json_encode($ofertas);
+    echo $json_string;
 }
 
 
