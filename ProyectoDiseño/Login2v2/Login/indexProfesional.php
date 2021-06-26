@@ -16,10 +16,7 @@ include("inc/menuProfesional.php");
             <input id="IdEmpresaOProfesional" type="hidden" value="<?php echo $_SESSION['IDusuario'] ?>">
             <button  id="botonBuscarOferta" class="edit-input boton" type="submit">Buscar</button>
           </form>
-          <div id="row-principal" class="row">
-            <p id="p-index" class="p-consulta">Puedes realizar filtros para hacer la busqueda especifica</p>
-            <img id="imagen" class="img-consulta" src="inc/img/consulta2.png" alt="">
-          </div>
+          
 
     
         </div>
@@ -32,7 +29,7 @@ include("inc/menuProfesional.php");
     </div>
   </div>
 
-	<script type="text/javascript" src="inc/js/buscarOferta.js"></script>
+
 </main>
 
 <?php

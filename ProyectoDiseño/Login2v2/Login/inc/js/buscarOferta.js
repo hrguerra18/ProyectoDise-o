@@ -1,5 +1,9 @@
 let boton = document.querySelector(".boton");
 
+$(document).ready(function(){
+  ConsultarOfertasDeTrabajoindex();
+});
+
 
 boton.addEventListener("click", (e) => {
   let datoClases = recibirDatos();
@@ -14,11 +18,8 @@ boton.addEventListener("click", (e) => {
         filtroOferta: datoClases.filtroOferta,
       },
       success: function (resp) {
-       if(datoClases.imagen !=null && datoClases.p !=null){
-        removerImagenYParrafo(datoClases)
-       }
         var datos = resp;     
-        datoClases.tarjeta.innerHTML="";
+        datoClases.tarjeta.innerHTML = "";
         datos.forEach((elemento) => {
           let t = crearTarjeta(elemento,datoClases.IdEmpresaOProfesional);
           var div = document.createElement("DIV");
@@ -37,16 +38,12 @@ boton.addEventListener("click", (e) => {
 function recibirDatos() {
   let filtroOferta = document.getElementById("inputBuscarOferta").value;
   let tarjeta = document.querySelector(".row-filtros");
-  let imagen = document.getElementById("imagen");
-  let p = document.getElementById("p-index");
   var IdEmpresaOProfesional = document.getElementById("IdEmpresaOProfesional").value;
   
 
   clases = {
     filtroOferta: filtroOferta,
     tarjeta: tarjeta,
-    imagen: imagen,
-    p: p,
     IdEmpresaOProfesional : IdEmpresaOProfesional,
   };
 
@@ -74,11 +71,7 @@ function crearTarjeta(elemento,IdEmpresaOProfesional) {
                </ul>
                <div class="d-flex flex-wrap">
                   <input  onclick="RegistrarPostulacion(${elemento.IDoferta},${IdEmpresaOProfesional})" value="Postularme" type="button" class='botones-ofertas'>
-                      
-                  
-
-                  <input type="file" class="botones-ofertas"  id="inputGroupFile02">
-
+           
                   <a href="mostrarInformacionEmpresa.php" target="_blank">
                     <button id="btn-info-empresa" onclick="EnviarIDempresa(${elemento.NITempresa})" type='button' class='botones-ofertas'>
                       Informacion de la empresa
@@ -92,10 +85,6 @@ function crearTarjeta(elemento,IdEmpresaOProfesional) {
             </div>`;
 }
 
-function removerImagenYParrafo(datoClases) {
-    datoClases.imagen.remove();
-    datoClases.p.remove();
-}
 
 function EnviarIDempresa(NITempresa){
   localStorage.setItem('NITempresaEnviar',NITempresa)
@@ -156,28 +145,28 @@ return retornar;
 }
 
 
-// function ConsultarOfertasDeTrabajo(){
-//   datoClases = recibirDatos();
-      
-//     $.ajax({
-//       type : "POST",
-//       dateType : "json",
-//       url : "Controles/buscarOfertas.php",
-//       data : {
-//         accion : "ConsultarTodasLasOfertas"
-//       },
-//       success : function(resp){
-//         var datos = resp;     
-        
-//         datos.forEach((elemento) => {
-//           var t = crearTarjeta(elemento,datoClases.IdEmpresaOProfesional);
-//           var div = document.createElement("DIV");
-//           div.innerHTML = t;
-//           datoClases.tarjeta.appendChild(div);
+function ConsultarOfertasDeTrabajoindex(){
+  var tarjeta = document.querySelector(".row-filtros");
+  var IdEmpresaOProfesional = document.getElementById("IdEmpresaOProfesional").value;
+    $.ajax({
+      type : "POST",
+      dateType : "json",
+      url : "Controles/buscarOfertas.php",
+      data : {
+        accion : "ConsultarTodasLasOfertas"
+      },
+      success : function(resp){
+        var datos = resp;  
+        datos = JSON.parse(datos);
+        datos.forEach((elemento) => {
+          var t = crearTarjeta(elemento,IdEmpresaOProfesional);
+          var div = document.createElement("DIV");
+          div.innerHTML = t;
+          tarjeta.appendChild(div);
           
-//         });
-//       }
-//     });
+        });
+      }
+    });
    
-//   }
+  }
   
