@@ -84,3 +84,26 @@ function ModificarPerfilProfesional(){
 function RecargarPerfilProfesional(){
     window.location = "perfilProfesional.php"
 }
+
+
+// function SubirArchivo(){
+   
+//     alert("entro")
+//     var parametros = new FormData($("#formulario-envia")[0]);
+    
+//         $.ajax({
+//             type : "POST",
+//             url : "Controles/hojaDeVida.php",
+//             data :
+//                 parametros,
+            
+//             contentType: false,
+//             processData:false,
+//             beforesend : function(){},
+//             success : function(resp) {
+
+//                alert(resp)
+//             }
+//         })
+    
+// }

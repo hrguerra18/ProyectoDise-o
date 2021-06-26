@@ -10,6 +10,9 @@ switch ($_POST['accion']) {
     case "consultarperfil":
             ConsultarPerfil();
      break;
+//      case "subirArchivo":
+//         SubirArchivo();
+//  break;
 }
 
 
@@ -63,3 +66,19 @@ function ConsultarPerfil(){
     $json_string = json_encode($profesionales);
     echo $json_string;
 }
+
+// function SubirArchivo(){
+//     session_start();
+//     require "Conexion.php";
+//     $archivo2 = $_POST['archivo'];
+//     $archivo = (isset($_FILES['archivo'])) ? $_FILES['archivo'] : null;
+//     if ($archivo) {
+//        $extension = pathinfo($archivo['name'], PATHINFO_EXTENSION);
+//        $extension = strtolower($extension);
+//        $extension_correcta = ($extension == 'jpg' or $extension == 'jpeg' or $extension == 'gif' or $extension == 'png');
+//        if ($extension_correcta) {
+//           $ruta_destino_archivo = "Controles/HojasDeVidas/{$archivo['name']}";
+//           $archivo_ok = move_uploaded_file($archivo['tmp_name'], $ruta_destino_archivo);
+//        }
+//     }
+// }

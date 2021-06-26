@@ -167,21 +167,22 @@ include("inc/menuProfesional.php");
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
+                        </div>
+                        <!-- <label for="ciudadProfesional" class="mb-3 fw-bold control-label">ADJUNTAR HOJA DE VIDA:</label>   -->
+                       <!-- <form class="archivo" name="formulario-envia" id="formulario-envia" enctype="multipart/form-data" method="post">
+                         
+                           <input type="file"   id="file">
+                           <input type="button" value="Subir" onclick="SubirArchivo()" class="botones-ofertas-adjuntar"  id="inputGroupFile02">
+                        </form> -->
+                        <div class="col-md-3 mb-3 ">
+                            
+                           
                             
                         </div>
-                        <div class="col-md-6 mb-3 ">
-                            <label for="ciudadProfesional" class="mb-3 fw-bold control-label">ADJUNTAR HOJA DE VIDA:</label>
-                            <input type="file" class="botones-ofertas"  id="inputGroupFile02">
-                            <div class="invalid-feedback">
-                                Ingrese un Dato Valido
-                            </div>
-                            
-                        </div>
-                        
                         <div style="display:flex m-2">
                         
                         <!-- <button onclick="ConsultarPerfil();" class="btn btn-primary" type="submit">Ver perfil</button> -->
-                        <input  onclick="ModificarPerfilProfesional();" class="botones-ofertas" value="Guardar cambios" type="button">
+                        <input  onclick="ModificarPerfilProfesional();" class="btn btn-primary" value="Guardar cambios" type="button">
                     </div>
                     </div>
                 </div>

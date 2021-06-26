@@ -54,3 +54,29 @@
   .botones-ofertas:focus{
     border-color: #6B0707 !important;
   }
+
+  .botones-ofertas-adjuntar{
+    color: rgb(250, 250, 250);
+  border: 1px solid #6B0707;
+  background: #6B0707 ;
+  height: 32px;
+  border-radius: 3px;
+  width: 10%;
+  margin:0px auto;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.botones-ofertas-adjuntar:hover{
+    color: #6B0707;
+    border: 1px solid #6B0707;
+    background: rgb(250, 250, 250);
+    transition: all 200ms ease;
+    box-shadow: 0 0 1px  #b4b4b4;
+  }
+
+
+  
+
+
