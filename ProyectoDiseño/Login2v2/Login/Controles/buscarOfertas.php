@@ -76,26 +76,40 @@ function RegistrarPostulacion(){
     $IDoferta = $_POST['IDoferta'];
     $IdEmpresaOProfesional = $_POST['IdEmpresaOProfesional'];
     $estadoProOfert = "Activo";
+    
 
+    $cantidadPostulados = ContarCuantosPostuladosTieneLaOferta($IDoferta);
+    $cantidadDeAplicantes = CantidadDeAplicantes($IDoferta);
+    
     if($IDoferta != "" && $IdEmpresaOProfesional != ""){
-        $sql = "INSERT INTO pro_ofert (idProOfert,idProfesional,idOferta,estadoProOfert) VALUES (default,'$IdEmpresaOProfesional','$IDoferta','$estadoProOfert')";
-
-        if(mysqli_query($con,$sql)){
-            $respuesta = array("mensaje"=> "Se ha registrado correctamente la postulacion a la oferta");
-            $json_string = json_encode($respuesta);
-            echo $json_string;
+        if($cantidadDeAplicantes > $cantidadPostulados){
+            $sql = "INSERT INTO pro_ofert (idProOfert,idProfesional,idOferta,estadoProOfert) VALUES (default,'$IdEmpresaOProfesional','$IDoferta','$estadoProOfert')";
+    
+            if(mysqli_query($con,$sql)){
+                $cantidadPostuladosValidarUltimo = ContarCuantosPostuladosTieneLaOferta($IDoferta);
+                if($cantidadDeAplicantes == $cantidadPostuladosValidarUltimo){
+                    CambiarEstadoOfertaInactivo($IDoferta);
+                }
+                $respuesta = array("mensaje"=> "Se ha registrado");
+                $json_string = json_encode($respuesta);
+                echo $json_string;
+            }else{
+                $respuesta = array("mensaje"=> "Error" . mysqli_error($con));
+                $json_string = json_encode($respuesta);
+                echo $json_string;
+            }
         }else{
-            $respuesta = array("mensaje"=> "Error" . mysqli_error($con));
+            $respuesta = array("mensaje" => "La oferta ya tiene su capacidad llena");
             $json_string = json_encode($respuesta);
             echo $json_string;
         }
-
-
     }else{
         $respuesta = array("mensaje"=> "Error, campos vacios");
         $json_string = json_encode($respuesta);
         echo $json_string;
     }
+
+    
 
     
 }
@@ -152,3 +166,41 @@ function ConsultarTodasLasOfertas(){
 
 }
 
+function ContarCuantosPostuladosTieneLaOferta($IDoferta){
+    session_start();
+    require "Conexion.php";
+    $estado = "Activo";
+    $sql = "SELECT count(*) as contador FROM pro_ofert WHERE idOferta = '$IDoferta' AND estadoProOfert ='$estado'" ;
+    $result = mysqli_query($con,$sql);
+    $row = mysqli_fetch_array($result);
+
+    $contador = $row['contador'];
+    
+    return $contador;
+   
+}
+
+
+function CantidadDeAplicantes($IDoferta){
+    session_start();
+    require "Conexion.php";
+
+    $sql = "SELECT numeroAplicantes  FROM oferta WHERE IDoferta = '$IDoferta'" ;
+    $result = mysqli_query($con,$sql);
+    $row = mysqli_fetch_array($result);
+
+    $cantidadAplicantes = $row['numeroAplicantes'];
+    
+    return $cantidadAplicantes;
+}
+
+function CambiarEstadoOfertaInactivo($IDoferta){
+    session_start();
+    require "Conexion.php";
+    $cambiarEstadoOferta = "Inactivo";
+    $sql = "UPDATE oferta SET estadoOferta ='$cambiarEstadoOferta' WHERE IDoferta = '$IDoferta'";
+    
+    mysqli_query($con,$sql);
+        
+    
+}

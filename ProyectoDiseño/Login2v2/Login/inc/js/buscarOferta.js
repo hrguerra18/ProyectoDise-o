@@ -73,9 +73,9 @@ function crearTarjeta(elemento,IdEmpresaOProfesional) {
                    <li class='list-group-item'><b>Condiciones:</b> ${elemento.condicion}</li>
                </ul>
                <div class="d-flex flex-wrap">
-                  <button  onclick="RegistrarPostulacion(${elemento.IDoferta},${IdEmpresaOProfesional})"  type='button' class='botones-ofertas'>
-                      Postularme
-                  </button>
+                  <input  onclick="RegistrarPostulacion(${elemento.IDoferta},${IdEmpresaOProfesional})" value="Postularme" type="button" class='botones-ofertas'>
+                      
+                  
 
                   <input type="file" class="botones-ofertas"  id="inputGroupFile02">
 
@@ -102,7 +102,6 @@ function EnviarIDempresa(NITempresa){
 }
 
 function RegistrarPostulacion(IDoferta,IdEmpresaOProfesional) {
-  alert("entro")
    if(NoPermitirDobleRegistro(IDoferta,IdEmpresaOProfesional)){
     $.ajax({
       type: "POST",
@@ -114,12 +113,14 @@ function RegistrarPostulacion(IDoferta,IdEmpresaOProfesional) {
         IdEmpresaOProfesional:IdEmpresaOProfesional
       },
       success:function(resp){
-        return Swal.fire({
-          icon: 'success',
-          title: 'Postulado...',
-          text: 'Usted se acaba de postular a esta vacante!',
-          footer: ''
-        })
+        alert("se ha postulado")
+        
+          Swal.fire({
+            icon: 'success',
+            title: 'Postulado...',
+            text: 'Usted se acaba de postular a esta vacante!',
+            footer: ''
+          })
       }
     })
    }else{
