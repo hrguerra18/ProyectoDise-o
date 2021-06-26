@@ -6,7 +6,7 @@
 
 var idEmpresa = document.querySelector(".idEmpresa");
 var tarjetas = document.querySelector(".tarjetas");
-
+var divTextoUno = document.querySelector(".texto-1");
 function ConsultarOfertasPostuladas(){
     if(idEmpresa.value != ""){
         $.ajax({
@@ -18,6 +18,8 @@ function ConsultarOfertasPostuladas(){
                 idEmpresa : idEmpresa.value
             },
             success : function(resp){
+              textoUno = `<h2>Aqui se encuentran todas tus ofertas registradas</h2>`;
+      divTextoUno.innerHTML = textoUno;
                 datos = resp;
                  datos = JSON.parse(datos);
                 datos.forEach((elemento) => {
@@ -197,4 +199,41 @@ function addZeroHistorialEmpresa(i) {
       i = '0' + i;
   }
   return i;
+}
+
+function ConsultarPostulacionesHistorialEmpresa(){
+  let dato = document.getElementById("seleccionarFiltroHistorialEmpresa").value;
+  let idEmpresa = document.getElementById("idEmpresa").value;
+  var divTarjetas2 = document.querySelector(".tarjetas");
+  var divTextoUno = document.querySelector(".texto-1");
+
+  if(dato == "todas"){  accion = "consultarOfertas"; }
+  if(dato == "Activo"){  accion = "consultarActivasOInactivas"; }
+  if(dato == "Inactivo"){  accion = "consultarActivasOInactivas"; }
+
+  
+  $.ajax({
+    type: "POST",
+    dateType: "json",
+    url: "Controles/historialEmpresa.php",
+    data: {
+      accion: accion,
+      idEmpresa: idEmpresa,
+      dato : dato
+    },
+    success: function (resp) {
+      var datos = JSON.parse(resp);
+      console.log(datos)
+      textoUno = `<h2>Aqui se encuentran todas tus ofertas registradas</h2>`;
+      divTextoUno.innerHTML = textoUno;
+      divTarjetas2.innerHTML="";
+      datos.forEach((elemento) => {
+        let t = crearTarjetaHistorial(elemento);
+        var div = document.createElement("DIV");
+        div.innerHTML = t;
+        divTarjetas2.appendChild(div);
+      });
+    },
+  });
+  
 }

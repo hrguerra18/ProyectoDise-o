@@ -5,32 +5,47 @@ include("inc/menuEmpresa.php");
 <link rel="stylesheet" href="Css/style-profesional.css">
 
 <main class="content">
-    
+
     <div class="container-fluid p-0">
         <div class="card">
             <div class="card-body tres-columnas">
                 <form class="needs-validation" novalidate>
-                <input class="idEmpresa" type="hidden" value = "<?php echo $_SESSION['IDusuario'] ?>">
-                    <div class="tarjetas">
-                       
+                    <input class="idEmpresa" id="idEmpresa" type="hidden" value="<?php echo $_SESSION['IDusuario'] ?>">
+                    <div class="d-flex texto-1">
+
                     </div>
-                    
+
+                    <div class="div-seleccionar">
+                        <p class="parrafo-select">SELECCIONE EL FILTRO:</p>
+                        <select class="form-control form-select seleccionar" id="seleccionarFiltroHistorialEmpresa">
+                            <option disabled value="">Seleccione el filtro</option>
+                            <option value="todas">Todas</option>
+                            <option value="Activo">Activas</option>
+                            <option value="Inactivo">Inactivas</option>
+                        </select>
+                        <input id="botonBuscarOferta" onclick="ConsultarPostulacionesHistorialEmpresa()" class="edit-input-historial boton" value="Buscar" type="button">
+
+                    </div>
+                    <div class="tarjetas">
+
+                    </div>
+
 
                 </form>
 
 
             </div>
         </div>
-</div>
-
-
-  
-
-  
+    </div>
 
 
 
-    
+
+
+
+
+
+
 
 
 
@@ -57,8 +72,8 @@ include("inc/menuEmpresa.php");
     </script>
 
 
-<script src="inc/js/historialEmpresa.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="inc/js/historialEmpresa.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </main>
 
 
