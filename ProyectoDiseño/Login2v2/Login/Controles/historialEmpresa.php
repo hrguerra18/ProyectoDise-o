@@ -13,7 +13,12 @@ switch ($_POST["accion"]){
     break;
     case "eliminarOferta" :
         EliminarOferta();
-
+    break;
+    case "validarVigencia" :
+        ValidarVigencia();
+    break;
+    case "consultarTodasLasOfertas" :
+        ConsultarTodasLasOfertas();
     break;
 }
 
@@ -71,6 +76,49 @@ function EliminarOferta(){
         echo "Error: " . $sql;
         echo mysqli_error($con);
     }
+}
+
+
+function ValidarVigencia(){
+    session_start();
+    require "Conexion.php";
+    $ofertas = json_decode($_POST['array'],true);
+    $fechaHoy = $_POST['fechaHoy'];
+    $Inactivo = "Inactivo";
+
+    
+
+    foreach($ofertas as $value){
+        if($value['vigencia'] < $fechaHoy){
+            $IDoferta = $value['IDoferta'];
+
+            $sql = "UPDATE oferta SET estadoOferta = '$Inactivo' WHERE IDoferta = '$IDoferta'";
+            if(mysqli_query($con,$sql)){
+                echo " cambio estado ";
+            }
+        }else{
+            echo " no le cambio el estado ";
+        }
+    }
+}
+
+function ConsultarTodasLasOfertas(){
+    session_start();
+    require "Conexion.php";
+    
+
+    $sql = "SELECT * FROM oferta ";
+    if(!$result = mysqli_query($con,$sql)) die();
+    
+    $ofertas = array();
+    
+
+    while($row = $result->fetch_assoc()){
+        array_push($ofertas,$row);
+    }
+
+    $json_string = json_encode($ofertas);
+    echo $json_string;
 }
 
 

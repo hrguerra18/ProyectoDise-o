@@ -18,10 +18,8 @@ function ConsultarOfertasPostuladas(){
                 idEmpresa : idEmpresa.value
             },
             success : function(resp){
-                
                 datos = resp;
                  datos = JSON.parse(datos);
-                console.log(datos)
                 datos.forEach((elemento) => {
                     let t = crearTarjetaHistorial(elemento);
                     var div = document.createElement("DIV");
@@ -135,4 +133,68 @@ function ConsultarEstadoOferta(idOferta){
         }
       })
       return retornar;
+}
+
+
+function ConsultarTodasLasOfertas() {
+  var ofertas;
+  if (idEmpresa.value != "") {
+    $.ajax({
+      type: "POST",
+      dateType: "json",
+      async : false,
+      url: "Controles/historialEmpresa.php",
+      data: {
+        accion: "consultarTodasLasOfertas",
+      },
+      success: function (resp) {
+          ofertas = resp;
+      
+      },
+    });
+  }
+  return ofertas;
+}
+
+function ValidarVigencia(){
+  
+  ofertas = ConsultarTodasLasOfertas();
+  console.log(ofertas);
+  
+  fechaHoy = hoyFechaHistorialEmpresa();
+  
+  $.ajax({
+    type: "POST",
+      dateType: "json",
+      url: "Controles/historialEmpresa.php",
+      data: {
+        accion: "validarVigencia",
+        fechaHoy:fechaHoy,
+        array : ofertas
+      },
+      success: function (resp) {
+         console.log(resp);
+      
+      },
+  })
+  
+}
+
+function hoyFechaHistorialEmpresa(){
+  var hoy = new Date();
+      var dd = hoy.getDate();
+      var mm = hoy.getMonth()+1;
+      var yyyy = hoy.getFullYear();
+      
+      dd = addZeroHistorialEmpresa(dd);
+      mm = addZeroHistorialEmpresa(mm);
+
+      return yyyy+'-'+mm+'-'+dd;
+}
+
+function addZeroHistorialEmpresa(i) {
+  if (i < 10) {
+      i = '0' + i;
+  }
+  return i;
 }

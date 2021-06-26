@@ -3,6 +3,7 @@ window.onload = CargarFunciones;
 function CargarFunciones(){
     ConsultarProfesionalesEnIndex();
     ConsultarOfertasPostuladas();
+    ValidarVigencia();
 }
 
 function ConsultarProfesionalesEnIndex() {
