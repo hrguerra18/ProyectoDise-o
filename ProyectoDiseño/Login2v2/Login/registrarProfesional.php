@@ -26,8 +26,7 @@
                 </button>
                 <div class="collapse navbar-collapse enlaces-nav" id="navbarNavAltMarkup">
                     <div class="navbar-nav ">
-                        <a class="nav-link " href="login.php">Iniciar sesion</a>
-                        <li class="nav-item dropdown">
+                    <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Registrarme
                             </a>
@@ -41,6 +40,8 @@
                                 
                             </ul>
                         </li>
+                        <a class="nav-link " href="login.php">Iniciar sesion</a>
+                       
                         
                     </div>
                 </div>

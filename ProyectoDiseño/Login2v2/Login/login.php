@@ -14,8 +14,7 @@ include("inc/head.php");
                 </button>
                 <div class="collapse navbar-collapse enlaces-nav" id="navbarNavAltMarkup">
                     <div class="navbar-nav ">
-                        <a class="nav-link " href="login.php">Iniciar sesion</a>
-                        <li class="nav-item dropdown">
+					<li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Registrarme
                             </a>
@@ -29,6 +28,8 @@ include("inc/head.php");
                                 
                             </ul>
                         </li>
+                        <a class="nav-link " href="login.php">Iniciar sesion</a>
+                       
                         
                     </div>
                 </div>
@@ -37,7 +38,7 @@ include("inc/head.php");
 	<main class="d-flex w-100 cuerpo">
 		
 		<div class="container d-flex flex-column ">
-			<div class="row vh-100">
+			<div class="row ">
 				<div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
 					<div class="d-table-cell align-middle">
 						<div id="mensajeno"></div>
