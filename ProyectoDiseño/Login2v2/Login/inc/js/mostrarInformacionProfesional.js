@@ -30,6 +30,11 @@ function ConsultarDatosProfesional(){
             $("#telefonoProfesional").val(resp[0]['telefono']);
             $("#departamentoProfesional").val(resp[0]['departamentoProfesional']);
             $("#ciudadProfesional").val(resp[0]['ciudadProfesional']);
+            $("#nivelAcademico").val(resp[0]['nivelAcademico']);
+            $("#institucionEstudio").val(resp[0]['institucionEstudio']);
+            $("#empresaLaboraste").val(resp[0]['empresaLaboraste']);
+            $("#experienciaLaboral").val(resp[0]['experienciaLaboral']);
+            $("#aspiracionSalarial").val(resp[0]['aspiracionSalarial']);
             img = document.getElementById("fotoProfesional");
             img.src = resp[0]['foto'];  
             h4 = document.getElementById("nombreDebajoDeFoto");
