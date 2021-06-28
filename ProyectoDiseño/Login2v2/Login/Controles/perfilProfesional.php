@@ -31,13 +31,18 @@ function ModificarDatosProfesional()
     $departamentoProfesional = $_POST['departamentoProfesional'];
     $ciudadProfesional = $_POST['ciudadProfesional'];
     $telefonoProfesional = $_POST['telefonoProfesional'];
+    $nivelAcademico = $_POST['nivelAcademico'];
+    $institucionEstudio = $_POST['institucionEstudio'];
+    $empresaLaboraste = $_POST['empresaLaboraste'];
+    $experienciaLaboral = $_POST['experienciaLaboral'];
+    $aspiracionSalarial = $_POST['aspiracionSalarial'];
     
-
+    
 
 
     $sql = "UPDATE profesional SET fechaNacimiento='$fechaNacimiento',nombre='$nombreProfesional',apellido='$apellidoProfesional',
     sobreMi='$sobreMiProfesional',direccion='$direccionProfesional',departamentoProfesional='$departamentoProfesional',
-    ciudadProfesional='$ciudadProfesional',telefono='$telefonoProfesional',carrera='$carreraProfesional' WHERE Identidad = '$identidad'";
+    ciudadProfesional='$ciudadProfesional',telefono='$telefonoProfesional',carrera='$carreraProfesional',nivelAcademico='$nivelAcademico',institucionEstudio='$institucionEstudio',empresaLaboraste='$empresaLaboraste',experienciaLaboral='$experienciaLaboral',aspiracionSalarial='$aspiracionSalarial' WHERE Identidad = '$identidad'";
 
     if (mysqli_query($con, $sql)) {
         $resultado = array("mensaje"=> "Se modifico correctamente");

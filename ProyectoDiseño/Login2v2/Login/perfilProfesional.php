@@ -313,7 +313,54 @@ include("inc/menuProfesional.php");
                         </div>
                         <div class="col-md-6 mb-3 ">
                             <label class="mb-3 fw-bold" for="validationCustom01">INSTITUCIÓN DONDE ESTUDIASTE:</label>
-                            <input type="text"  class="form-control" id="nombreInstitucion">
+                            <input type="text"  class="form-control" id="institucionEstudio">
+                            <div class="invalid-feedback">
+                                Ingrese un Dato Valido
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3 ">
+                            <label class="mb-3 fw-bold" for="validationCustom01">EMPRESA DONDE LABORASTE:</label>
+                            <input type="text"  class="form-control" id="empresaLaboraste">
+                            <div class="invalid-feedback">
+                                Ingrese un Dato Valido
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3 ">
+                            <label for="ciudadProfesional" class="mb-3 fw-bold control-label">EXPERIENCIA LABORAL:</label>
+                            <select class="form-control form-select" id="experienciaLaboral">
+                                <option disabled selected value=""></option>
+                                <option value="1 Año">1 Año</option>
+                                <option value="2 Años">2 Años</option>
+                                <option value="3 Años">3 Años</option>
+                                <option value="4 Años">4 Años</option>
+                                <option value="5 Años">5 Años</option>
+                                <option value="6 Años">6 Años</option>
+                                <option value="7 Años">7 Años</option>
+                                <option value="8 Años">8 Años</option>
+                                <option value="9 Años">9 Años</option>
+                                <option value="10 Años">10 Años</option>
+                                <option value="11 Años">11 Años</option>
+                                <option value="12 Años">12 Años</option>
+                                <option value="13 Años">13 Años</option>
+                                <option value="14 Años">14 Años</option>
+                                <option value="15 Años">15 Años</option>
+                                <option value="16 Años">16 Años</option>
+                                <option value="17 Años">17 Años</option>
+                                <option value="18 Años">18 Años</option>
+                                <option value="19 Años">19 Años</option>
+                                <option value="20 Años">20 Años</option>
+                                <option value="21 Años">21 Años</option>
+                                <option value="22 Años">22 Años</option>
+                                <option value="23 Años">23 Años</option>
+                                <option value="24 Años">24 Años</option>
+                                <option value="25 Años">25 Años</option>
+                                <option value="26 Años">26 Años</option>
+                                <option value="27 Años">27 Años</option>
+                                <option value="28 Años">28 Años</option>
+                                <option value="29 Años">29 Años</option>
+                                <option value="30 Años">30 Años</option>
+                                
+                            </select>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>

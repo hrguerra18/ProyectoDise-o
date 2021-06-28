@@ -26,6 +26,11 @@ function ConsultarPerfilProfesional() {
             $("#telefonoProfesional").val(resp[0]['telefono']);
             $("#departamentoProfesional").val(resp[0]['departamentoProfesional']);
             $("#ciudadProfesional").val(resp[0]['ciudadProfesional']);
+            $("#nivelAcademico").val(resp[0]['nivelAcademico']);
+            $("#institucionEstudio").val(resp[0]['institucionEstudio']);
+            $("#empresaLaboraste").val(resp[0]['empresaLaboraste']);
+            $("#experienciaLaboral").val(resp[0]['experienciaLaboral']);
+            $("#aspiracionSalarial").val(resp[0]['aspiracionSalarial']);
         }
     });
 }
@@ -44,7 +49,14 @@ function ModificarPerfilProfesional(){
     let telefonoProfesional = document.getElementById("telefonoProfesional").value.trim();
     let departamentoProfesional = document.getElementById("departamentoProfesional").value.trim();
     let ciudadProfesional = document.getElementById("ciudadProfesional").value.trim();
-
+    let nivelAcademico = document.getElementById("nivelAcademico").value.trim();
+    let institucionEstudio = document.getElementById("institucionEstudio").value.trim();
+    let empresaLaboraste = document.getElementById("empresaLaboraste").value.trim();
+    let experienciaLaboral = document.getElementById("experienciaLaboral").value.trim();
+    let aspiracionSalarial = document.getElementById("aspiracionSalarial").value.trim();
+   
+  
+    
     $.ajax({
         type : "POST",
         dataType : "json",
@@ -61,6 +73,11 @@ function ModificarPerfilProfesional(){
             telefonoProfesional : telefonoProfesional,
             departamentoProfesional : departamentoProfesional,
             ciudadProfesional : ciudadProfesional,
+            nivelAcademico : nivelAcademico,
+            institucionEstudio : institucionEstudio,
+            empresaLaboraste : empresaLaboraste,
+            experienciaLaboral : experienciaLaboral,
+            aspiracionSalarial : aspiracionSalarial
         },
         success : function(resp) {
             
