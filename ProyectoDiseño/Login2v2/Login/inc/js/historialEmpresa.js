@@ -39,7 +39,7 @@ function crearTarjetaHistorial(elemento){
     tarjeta = `<div class='row m-2 '>
                     <div class='card mb-5 tarjeta-historial-empresa' style='width: 18rem;'>
                             <div class='img-tarjeta'>
-                            <input class='activo' type="button" value="${ConsultarEstadoOferta(elemento.IDoferta)}" onclick="EliminarOfertaLadoEmpresa(${elemento.IDoferta})">
+                            <input class='activo eliminar-oferta' type="button"   value="${ConsultarEstadoOferta(elemento.IDoferta)}" onclick="EliminarOfertaLadoEmpresa(${elemento.IDoferta})">
                             <img src=" ${elemento.foto} " class='card-img-top img-tarjeta' alt='...'>
                             </div>
                             <div class='card-body'>
@@ -72,14 +72,16 @@ function agregarDatoLocal(idOferta){
 }
 
 function EliminarOfertaLadoEmpresa(IDoferta){
-    let botonEstado = document.getElementById("eliminar-oferta");
+    let botonEstado = document.querySelector(".eliminar-oferta");
     valor = ConsultarEstadoOferta(IDoferta);
+    
     
     if(valor == "Activo"){
       let confirmacion = confirm("Seguro que quieres eliminar esta oferta");
       if (confirmacion) {
         botonEstado.classList.remove("activo");
         botonEstado.classList.add("inactivo");
+        alert("paso el if")
         $.ajax({
           type: "POST",
           dateType: "json",
@@ -90,6 +92,7 @@ function EliminarOfertaLadoEmpresa(IDoferta){
             IDoferta: IDoferta,
           },
           success: function (resp) {
+            alert("llego")
             Swal.fire({
                 position: "top-end",
                 icon: "success",

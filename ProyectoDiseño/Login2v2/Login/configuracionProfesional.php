@@ -38,14 +38,14 @@ include("inc/menuProfesional.php");
                     <div class="row p-4 pt-1">
                         <div class="col-md-4 mb-3 w-50 ">
                             <label class="mb-3 " for="validationCustom02">CONTRASEÑA NUEVA:</label>
-                            <input type="text" class="form-control"  autocomplete="off" id="contraseñaProfesional1" required>
+                            <input type="password" class="form-control"  autocomplete="off" id="contraseñaProfesional1" required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
                         </div>
                         <div class="col-md-4 mb-3 w-50">
                             <label class="mb-3 " for="validationCustom02">REPETIR CONTRASEÑA:</label>
-                            <input type="text" class="form-control"  autocomplete="off" id="contraseñaProfesional2" required>
+                            <input type="password" class="form-control"  autocomplete="off" id="contraseñaProfesional2" required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
