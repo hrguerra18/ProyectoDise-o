@@ -52,42 +52,90 @@ function ModificarInformacionOfertaHistorialEmpresa(){
     var condiciones = document.getElementById("condicionesOferta").value;
     var IDoferta = document.getElementById("idOferta").value;
     var estado =  document.getElementById("estadoOferta").value;
-    
-    $.ajax({
-        type: "POST",
-        dataType: 'json',
-        url: "Controles/informacionOferta.php",
-        data: {
-            accion:"Modificar",
-            Cargo: Cargo,
-            vigencia: vigencia,
-            numeroAplicantes: numeroAplicantes,
-            descripcion: descripcion,
-            sector: sector,
-            tipoContrato: tipoContrato,
-            salario: salario,
-            horario: horario,
-            condiciones: condiciones,
-            NIT: NIT,
-            IDoferta: IDoferta,
-            estado : estado,
-        },
-        success: function (resp) {
-            if(resp.mensaje == "Se modifico"){
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Exito...',
-                    text: "Se ha modificado correctamente la oferta",
-                    footer: ''
-                });
-                setInterval(RecargarInformacionOferta,2500)
-            }
-            
+
+    fechaHoy = hoyFechaInformacionOferta();
+
+    if(vigencia >= fechaHoy){
+        if(numeroAplicantes > 0){
+            $.ajax({
+                type: "POST",
+                dataType: 'json',
+                url: "Controles/informacionOferta.php",
+                data: {
+                    accion:"Modificar",
+                    Cargo: Cargo,
+                    vigencia: vigencia,
+                    numeroAplicantes: numeroAplicantes,
+                    descripcion: descripcion,
+                    sector: sector,
+                    tipoContrato: tipoContrato,
+                    salario: salario,
+                    horario: horario,
+                    condiciones: condiciones,
+                    NIT: NIT,
+                    IDoferta: IDoferta,
+                    estado : estado,
+                },
+                success: function (resp) {
+                    if(resp.mensaje == "Se modifico"){
+                        Swal.fire({
+                            position: "top-end",
+                            icon: "success",
+                            title: "Confirmado...",
+                            text: "La oferta se modifico correctamente",
+                            showConfirmButton: false,
+                            timer: 2500,
+                        });
+                        setInterval(RecargarInformacionOferta,2500)
+                    }
+                    
+                }
+            });
+        }else{
+            Swal.fire({
+                icon: "error",
+                title: "Error...",
+                text: "El numero de aplicantes tiene que ser mayor a cero",
+                showConfirmButton: false,
+                timer: 2500,
+            });
+            setInterval(RecargarInformacionOferta,2500)
         }
-    });
+        
+    }else{
+        Swal.fire({
+            icon: "error",
+            title: "Error...",
+            text: "La vigencia que quiere introducir no se puede",
+            showConfirmButton: false,
+            timer: 2500,
+        });
+        setInterval(RecargarInformacionOferta,2500)
+    }
+    
+    
     
 }
 
 function RecargarInformacionOferta(){
     window.location = "informacionOferta.php";
+}
+
+function hoyFechaInformacionOferta(){
+    var hoy = new Date();
+        var dd = hoy.getDate();
+        var mm = hoy.getMonth()+1;
+        var yyyy = hoy.getFullYear();
+        
+        dd = addZeroInformacionOferta(dd);
+        mm = addZeroInformacionOferta(mm);
+
+        return yyyy+'-'+mm+'-'+dd;
+}
+
+function addZeroInformacionOferta(i) {
+    if (i < 10) {
+        i = '0' + i;
+    }
+    return i;
 }
