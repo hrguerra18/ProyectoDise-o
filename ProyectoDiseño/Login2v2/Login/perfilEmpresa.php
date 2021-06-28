@@ -170,8 +170,8 @@ include("inc/menuEmpresa.php");
                         
 
                         <div style="display:flex m-2">
-                            <button onclick="ConsultarPerfil();" class="btn btn-primary" type="submit">Ver perfil</button>
-                            <button onclick="ModificarPerfil();" class="btn btn-primary" type="submit">Modificar</button>
+                            
+                            <button onclick="ModificarPerfil();" class="btn btn-primary" type="submit">GUARDAR CAMBIOS</button>
                         </div>
 
                     </div>

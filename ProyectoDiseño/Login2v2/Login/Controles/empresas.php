@@ -6,10 +6,13 @@ if (empty($_POST['accion'])) {
 
 
 switch ($_POST['accion']) {
-
+    
     case "adicionar":
         AgregarEmpresa();
-        break;
+     break;
+    case "buscarLegabilidad":
+        BuscarLegabilidad();
+     break;
 }
 
 function AgregarEmpresa()
@@ -57,3 +60,28 @@ function AgregarEmpresa()
         echo $json_string;
     }
 }
+
+
+function BuscarLegabilidad(){
+    require "Conexion.php";
+    $NIT = $_POST['NIT'];
+   
+      $sqlEmpresa = "SELECT count(*) as contador FROM camaracomercio WHERE nitEmpresa = '$NIT'";
+      $result = mysqli_query($con, $sqlEmpresa);
+      $row = mysqli_fetch_array($result);
+
+      $contador = $row['contador'];
+       
+      if($contador == 1){
+        $respuesta = array("mensaje"=>true);
+        $json_string = json_encode($respuesta);
+        echo $json_string;
+      }
+      else{
+        $respuesta = array("mensaje"=>false);
+        $json_string = json_encode($respuesta);
+        echo $json_string;
+      }
+        
+      
+ }

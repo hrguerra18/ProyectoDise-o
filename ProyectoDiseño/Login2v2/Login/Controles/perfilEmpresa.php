@@ -50,9 +50,12 @@ function  ModificarEmpresa()
     cantidadEmpleado = '$cantidadEmpleado', descripcionEmpresa = '$descripcion', ciudad = '$ciudad',departamentoEmpresa = '$departamento' WHERE NIT = '$NIT'";
 
     if (mysqli_query($con, $sql)) {
-        echo "Cliente Modificado";
+        $respuesta = array("mensaje"=>"Se modifico");
+        $json_string = json_encode($respuesta);
+        echo $json_string;
     } else {
-        echo "Error: " . $sql;
-        echo mysqli_error($con);
+        $respuesta = array("mensaje"=>"Error");
+        $json_string = json_encode($respuesta);
+        echo $json_string;
     }
 }

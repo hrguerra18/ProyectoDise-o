@@ -45,7 +45,7 @@ function ModificarPerfil() {
     
     $.ajax({
         type: 'POST',
-        dataType: 'json',
+        dataType: "json",
         url: 'Controles/perfilEmpresa.php',
         data: {
             accion: "modificar",
@@ -61,10 +61,23 @@ function ModificarPerfil() {
             departamento,departamento
         },
         success: function (resp) {
-            limpiar();
-            ConsultarPerfil();
+            if(resp.mensaje == "Se modifico"){
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Exito...",
+                    text: "Se ha modificado el perfil correctamente!",
+                    showConfirmButton: false,
+                    timer: 2500,
+                  });
+                  setInterval(RecargarPerfilEmpresa,2500);
+            }
+            
         }
     });
+}
+function RecargarPerfilEmpresa(){
+    window.location = "perfilEmpresa.php";
 }
 
 function limpiar() {

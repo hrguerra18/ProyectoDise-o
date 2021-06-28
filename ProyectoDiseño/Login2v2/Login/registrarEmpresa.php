@@ -104,7 +104,8 @@
                             <option value="Cine">Cine</option>
                             <option value="Discoteca">Discoteca</option>
                             <option value="Restaurante">Restaurante</option>
-                            <option value="">Servicio</option>
+                            <option value="Ventas">Ventas</option>
+                            <option value="Servicios">Servicios</option>
                         </select>
                     </div>
 
