@@ -100,7 +100,7 @@ function RegistrarPostulacion(IDoferta,IdEmpresaOProfesional) {
         IdEmpresaOProfesional:IdEmpresaOProfesional
       },
       success:function(resp){
-        alert("se ha postulado")
+        a
         
           Swal.fire({
             icon: 'success',

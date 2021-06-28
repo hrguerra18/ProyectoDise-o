@@ -14,7 +14,7 @@ include("inc/menuEmpresa.php");
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom01" class="fw-bold">Nombre del cargo</label>
                             <input type="hidden" class="form-control" id="nitempresaOferta" placeholder="Ejemplo: Ingeniero de Sistemas" value=<?php echo $_SESSION['IDusuario'] ?> required>
-                            <input type="text" class="form-control" id="nombreCargo" placeholder="Ejemplo: Ingeniero de Sistemas" required>
+                            <input type="text" class="form-control" autocomplete="off" id="nombreCargo" placeholder="Ejemplo: Ingeniero de Sistemas" required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>

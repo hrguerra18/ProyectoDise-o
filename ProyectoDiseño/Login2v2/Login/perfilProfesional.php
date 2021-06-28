@@ -25,7 +25,7 @@ include("inc/menuProfesional.php");
                             <label class="mb-3 fw-bold" for="validationCustom01">CARRERA:</label>
                             <input type="hidden" class="form-control" id="identidadProfesional" value="<?php echo $_SESSION['IDusuario'] ?>">
                             <select class="form-control form-select" id="carreraProfesional">
-                                <option disabled value="">SELECCIONE SU CARRERA</option>
+                                <option disabled value=""></option>
                                 <option value="Administración">Administración y afines</option>
                                 <option value="Agronomía">Agronomía</option>
                                 <option value="Antropología">Antropología</option>
