@@ -13,8 +13,45 @@
 }
 
 .logo{
-  width: 100px !important;
+  width: 50px !important;
 }
+
+.Banner-uno{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+  text-align: center;
+  height: 400px;
+  background: #ffffff;
+}
+
+.Banner-dos{
+  background: #F5F4F6;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.h2-banner-uno{
+  margin: auto;
+}
+
+.banner-dos-uno{
+  display: flex;
+  justify-content: center;
+}
+
+.contenido-banner-dos-uno{
+  justify-content: center;
+}
+
+.img-banner-dos-dos{
+  width: 600px;
+  box-shadow: 0px 0px 20px #474242;
+}
+
+
 
 /* .div-img-carrusel{
    max-height:  1331px !important;

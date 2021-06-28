@@ -9,8 +9,8 @@ include("inc/head.php");
 <nav class="navbar navbar-expand-lg navbar-light  navegacion" style="background: #f5f5f5">
             <div class="container-fluid">
 			<div class="d-flex">
-        <img src="inc/img/logo.png" class="logo" alt="">
-            <a class="navbar-brand" href="#">Empresas Cesar</a>
+			<img src="https://images.vexels.com/media/users/3/142749/isolated/preview/1a69d982c9d6d078dcf687fdd6f47273-isotipo-de-origami-letra-e-by-vexels.png" class="logo" alt="">
+                <a class="navbar-brand" href="index.php">mpresas del Cesar</a>
         </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -74,7 +74,7 @@ include("inc/head.php");
 									</div>
 									<div class="text-center mt-3">
 										<!--<a href="index.html" class="btn btn-lg btn-primary">Ingresar</a> -->
-										<button type="submit" class="btn btn-lg btn-primary" id="botoningresar">Ingresar</button>
+										<button type="submit" class="btn btn-lg btn-danger" id="botoningresar">Ingresar</button>
 									</div>
 
 								</div>

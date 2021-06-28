@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Css/style-profesional.css">
-    <title>Empresa</title>
+    <title>Empresas del Cesar</title>
+    <link rel="shortcut icon" href="inc/img/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="http://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="Css/style-index.css">
@@ -21,8 +22,8 @@
         <nav class="navbar navbar-expand-lg navbar-light  navegacion" style="background: #f5f5f5">
             <div class="container-fluid">
             <div class="">
-        <img src="inc/img/logo.png" class="logo" alt="">
-            <a class="navbar-brand" href="#">Empresas Cesar</a>
+            <img src="https://images.vexels.com/media/users/3/142749/isolated/preview/1a69d982c9d6d078dcf687fdd6f47273-isotipo-de-origami-letra-e-by-vexels.png" class="logo" alt="">
+                <a class="navbar-brand" href="index.php">mpresas del Cesar</a>
         </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -135,7 +136,7 @@
                 </div>
             </div>
 
-            <input onclick="AdicionarEmpresa();" class="btn btn-primary" value="Registrarse" type="button">
+            <input onclick="AdicionarEmpresa();" class="btn btn-danger" value="Registrarse" type="button">
 
             <span class="span-politica">Al hacer clic en "registrarse", aceptas nuestra <a class="a-condiciones" href="#"> Condicion de Poliicas y Privacidad</a></span>
 
