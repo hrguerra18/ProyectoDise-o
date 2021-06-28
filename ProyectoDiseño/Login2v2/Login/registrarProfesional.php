@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Css/style-profesional.css">
     <title>Empresas del Cesar</title>
-    <link rel="shortcut icon" href="inc/img/logo.png">
+    <link rel="shortcut icon" href="https://images.vexels.com/media/users/3/142749/isolated/preview/1a69d982c9d6d078dcf687fdd6f47273-isotipo-de-origami-letra-e-by-vexels.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="http://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="Css/style-index.css">

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Css/style-index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="shortcut icon" href="inc/img/logo.png">
+    <link rel="shortcut icon" href="https://images.vexels.com/media/users/3/142749/isolated/preview/1a69d982c9d6d078dcf687fdd6f47273-isotipo-de-origami-letra-e-by-vexels.png">
     <title>Empresas del Cesar</title>
 </head>
 
@@ -47,25 +47,25 @@
 
     <!-- CARRUSEL -->
 
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleCaptions" class="carousel slide carrusel" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active div-img-carrusel">
                 <img src="http://www.emergya.com/sites/default/files/stories/teletrabajo-emergya.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-none d-md-block carrusel-texto">
                     <h5>Bienvenido a Empresas del Cesar</h5>
 
                     <p>¡Encuentra tu trabajo soñado.!</p>
                 </div>
             </div>
         </div>
-
+    </div>
         <div class="col-12 Banner-uno">
             <div class="col-6 banner-uno-otro">
                 <h2 class="col-12 h2-banner-uno">Déjanos ayudarte a encontrar el trabajo de tus sueños</h2>
-                <p>Encontrar el empleo ideal es muy fácil con Talentbox. Deja que miles de empresas te vean y te contacten de inmediato. Crea relevancia a tu hoja de vida y recibe las ofertas laborales que encajen contigo.</p>
+                <p>Encontrar el empleo ideal es muy fácil con Empresas del Cesar. Deja que miles de empresas te vean y te contacten de inmediato. Crea relevancia a tu hoja de vida y recibe las ofertas laborales que encajen contigo.</p>
             </div>
 
         </div>
@@ -137,7 +137,10 @@
 
 
 
-
+ <!--SCROLL REVEAL-->
+ <script src="https://unpkg.com/scrollreveal"></script>
+    <!--cUSTON JS--> 
+  <script src="inc/js/efectosIndex.js"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 

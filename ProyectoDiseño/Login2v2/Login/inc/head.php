@@ -20,7 +20,7 @@
 	<link rel="stylesheet" href="Css/indexEmpresa.css">
 	<link rel="stylesheet" href="Css/historialProfesional.css">
 	<title>Empresas del cesar</title>
-	<link rel="shortcut icon" href="inc/img/logo.png">
+	<link rel="shortcut icon" href="https://images.vexels.com/media/users/3/142749/isolated/preview/1a69d982c9d6d078dcf687fdd6f47273-isotipo-de-origami-letra-e-by-vexels.png">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 	<link href="Css/app.css" rel="stylesheet">
