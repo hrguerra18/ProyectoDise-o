@@ -13,36 +13,48 @@ function AdicionarEmpresa() {
     let correoNuevo1Validado = ValidarCorreoRegistroEmpresa(correo);
 
     if(NIT != "" && foto != "" && nombre != ""  && direccion != "" && telefono != "" && correo != "" && contraseña != "" && correoNuevo1Validado==true){
-        let legabilidad = BuscarLegabilidadEmpresa(NIT)
+        let legabilidad = BuscarLegabilidadEmpresa(NIT);
+        let existenciaCorreo = BuscarExistenciaCorreoEmpresa(correo);
         
         if(legabilidad == true){
-            $.ajax({
-                type: "POST",
-                dataType: "json",
-                url: "Controles/empresas.php",
-                data: {
-                    accion: "adicionar",
-                    NIT: NIT,
-                    foto: foto,
-                    nombre: nombre,
-                    servicio: servicio,
-                    direccion: direccion,
-                    telefono: telefono,
-                    correo: correo,
-                    contraseña: contraseña,
-                },
-                success: function (resp) {
-                    Swal.fire({
-                        position: "top-end",
-                        icon: "success",
-                        title: "Exito...",
-                        text: "Registro exitoso, ahora podra ingresar!",
-                        showConfirmButton: false,
-                        timer: 2500,
-                      });
-                      setInterval(mandarAlLogin,2500);
-                }
-            });
+            if(existenciaCorreo == true){
+                $.ajax({
+                    type: "POST",
+                    dataType: "json",
+                    url: "Controles/empresas.php",
+                    data: {
+                        accion: "adicionar",
+                        NIT: NIT,
+                        foto: foto,
+                        nombre: nombre,
+                        servicio: servicio,
+                        direccion: direccion,
+                        telefono: telefono,
+                        correo: correo,
+                        contraseña: contraseña,
+                    },
+                    success: function (resp) {
+                        Swal.fire({
+                            position: "top-end",
+                            icon: "success",
+                            title: "Exito...",
+                            text: "Registro exitoso, ahora podra ingresar!",
+                            showConfirmButton: false,
+                            timer: 2500,
+                          });
+                          setInterval(mandarAlLogin,2500);
+                    }
+                });
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error...',
+                    text: 'El correo ya se encuentra ocupado, ingrese otro correo!',
+                    footer: ''
+                  })
+                  setInterval(RecargarRegistroEmpresa,2500);
+            }
+           
         }else{
             Swal.fire({
                 icon: 'error',
@@ -114,4 +126,25 @@ function ValidarCorreoRegistroEmpresa(correo) {
     } else {
       return false;
     }
+  }
+
+  function BuscarExistenciaCorreoEmpresa(correo){
+    var existenciaCorreo;
+   
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "Controles/empresas.php",
+        async : false,
+        data: {
+            accion: "existenciaCorreo",
+            correo: correo,
+        },
+        success: function (resp) {
+            existenciaCorreo = resp.mensaje;
+            
+           console.log(resp)
+        }
+    });
+return existenciaCorreo;
   }

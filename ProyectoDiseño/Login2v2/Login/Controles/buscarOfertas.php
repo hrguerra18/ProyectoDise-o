@@ -76,7 +76,7 @@ function RegistrarPostulacion(){
     $IDoferta = $_POST['IDoferta'];
     $IdEmpresaOProfesional = $_POST['IdEmpresaOProfesional'];
     $estadoProOfert = "Activo";
-    // $IDoferta = "31";
+    // $IDoferta = "33";
     // $IdEmpresaOProfesional = "2341";
     // $estadoProOfert = "Activo";
     
@@ -118,7 +118,7 @@ function RegistrarPostulacion(){
 }
 
 function NoPermitirDobleRegistro(){
-    session_start();
+   
     require "Conexion.php";
 
     $IDoferta = $_POST['IDoferta'];

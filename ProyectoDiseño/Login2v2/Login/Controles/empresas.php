@@ -13,6 +13,9 @@ switch ($_POST['accion']) {
     case "buscarLegabilidad":
         BuscarLegabilidad();
      break;
+     case "existenciaCorreo":
+        ExistenciaCorreo();
+     break;
 }
 
 function AgregarEmpresa()
@@ -84,4 +87,26 @@ function BuscarLegabilidad(){
       }
         
       
+ }
+
+ function ExistenciaCorreo(){
+    require "Conexion.php";
+    $correo = $_POST['correo'];
+   
+    $sqlBuscarCorreo = "SELECT count(*) as contador FROM usuario WHERE correo = '$correo'";
+    $result = mysqli_query($con,$sqlBuscarCorreo);
+    $row = mysqli_fetch_array($result);
+
+     $contador = $row['contador'];
+       
+      if($contador == 0){
+        $respuesta = array("mensaje"=>true);
+        $json_string = json_encode($respuesta);
+        echo $json_string;
+      }
+      else{
+        $respuesta = array("mensaje"=>false);
+        $json_string = json_encode($respuesta);
+        echo $json_string;
+      }
  }
