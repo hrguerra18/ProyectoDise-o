@@ -3,7 +3,7 @@ if (empty($_POST['accion'])) {
     $_POST['accion'] = "General";
 }
 
-
+// $_POST['accion'] = "registrarPostulacion";
 switch ($_POST['accion']) {
 
     case "buscar":
@@ -76,6 +76,9 @@ function RegistrarPostulacion(){
     $IDoferta = $_POST['IDoferta'];
     $IdEmpresaOProfesional = $_POST['IdEmpresaOProfesional'];
     $estadoProOfert = "Activo";
+    // $IDoferta = "31";
+    // $IdEmpresaOProfesional = "2341";
+    // $estadoProOfert = "Activo";
     
 
     $cantidadPostulados = ContarCuantosPostuladosTieneLaOferta($IDoferta);
@@ -169,7 +172,7 @@ function ConsultarTodasLasOfertas(){
 }
 
 function ContarCuantosPostuladosTieneLaOferta($IDoferta){
-    session_start();
+   
     require "Conexion.php";
     $estado = "Activo";
     $sql = "SELECT count(*) as contador FROM pro_ofert WHERE idOferta = '$IDoferta' AND estadoProOfert ='$estado'" ;
@@ -184,7 +187,7 @@ function ContarCuantosPostuladosTieneLaOferta($IDoferta){
 
 
 function CantidadDeAplicantes($IDoferta){
-    session_start();
+    
     require "Conexion.php";
 
     $sql = "SELECT numeroAplicantes  FROM oferta WHERE IDoferta = '$IDoferta'" ;
@@ -197,7 +200,7 @@ function CantidadDeAplicantes($IDoferta){
 }
 
 function CambiarEstadoOfertaInactivo($IDoferta){
-    session_start();
+    
     require "Conexion.php";
     $cambiarEstadoOferta = "Inactivo";
     $sql = "UPDATE oferta SET estadoOferta ='$cambiarEstadoOferta' WHERE IDoferta = '$IDoferta'";

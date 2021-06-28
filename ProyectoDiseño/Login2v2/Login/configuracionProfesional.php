@@ -16,14 +16,14 @@ include("inc/menuProfesional.php");
                     <div class="row p-4 pt-1">
                         <div class="col-md-4 mb-3 w-50 ">
                             <label class="mb-3 " for="validationCustom01">CORREO NUEVO:</label>
-                            <input type="email" class="form-control" id="correoProfesional1" required>
+                            <input type="email" class="form-control"  autocomplete="off" id="correoProfesional1" required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
                         </div>
                         <div class="col-md-4 mb-3 w-50">
                             <label class="mb-3 " for="validationCustom01">REPETIR CORREO:</label>
-                            <input type="email" class="form-control" id="correoProfesional2" required>
+                            <input type="email" class="form-control"  autocomplete="off" id="correoProfesional2" required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
@@ -38,14 +38,14 @@ include("inc/menuProfesional.php");
                     <div class="row p-4 pt-1">
                         <div class="col-md-4 mb-3 w-50 ">
                             <label class="mb-3 " for="validationCustom02">CONTRASEÑA NUEVA:</label>
-                            <input type="text" class="form-control" id="contraseñaProfesional1" required>
+                            <input type="text" class="form-control"  autocomplete="off" id="contraseñaProfesional1" required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>
                         </div>
                         <div class="col-md-4 mb-3 w-50">
                             <label class="mb-3 " for="validationCustom02">REPETIR CONTRASEÑA:</label>
-                            <input type="text" class="form-control" id="contraseñaProfesional2" required>
+                            <input type="text" class="form-control"  autocomplete="off" id="contraseñaProfesional2" required>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>

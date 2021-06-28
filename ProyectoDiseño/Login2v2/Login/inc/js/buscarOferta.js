@@ -69,7 +69,7 @@ function crearTarjeta(elemento,IdEmpresaOProfesional) {
                    <li class='list-group-item'><b>Horario:</b> ${elemento.horario}</li>
                    <li class='list-group-item'><b>Condiciones:</b> ${elemento.condicion}</li>
                </ul>
-               <div class="d-flex flex-wrap">
+               <div class="div-botonoes-index-profesional">
                   <input  onclick="RegistrarPostulacion(${elemento.IDoferta},${IdEmpresaOProfesional})" value="Postularme" type="button" class='botones-ofertas'>
            
                   <a href="mostrarInformacionEmpresa.php" target="_blank">
@@ -77,8 +77,6 @@ function crearTarjeta(elemento,IdEmpresaOProfesional) {
                       Informacion de la empresa
                     </button>
                   </a>
-
-                 
                </div>
                
            </div>
@@ -113,7 +111,7 @@ function RegistrarPostulacion(IDoferta,IdEmpresaOProfesional) {
       }
     })
    }else{
-    return Swal.fire({
+     Swal.fire({
       icon: 'warning',
       title: 'Cancelado...',
       text: 'Ya se encuentra registrado a esta oferta!',

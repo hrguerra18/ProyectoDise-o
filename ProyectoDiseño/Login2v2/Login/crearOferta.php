@@ -36,7 +36,7 @@ include("inc/menuEmpresa.php");
 
                         <div class="col-md-8 mb-3">
                             <label for="validationCustom04" class="fw-bold">Breve descripcion del cargo</label>
-                            <input type="text" class="form-control" id="descripcion" placeholder="Breve descipcion" required>
+                            <input type="text" class="form-control"  autocomplete="off" id="descripcion" placeholder="Breve descipcion" required>
 
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
