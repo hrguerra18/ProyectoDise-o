@@ -3,12 +3,15 @@
 include("inc/head.php");
 
 ?>
-
+<link rel="stylesheet" href="Css/style-index.css">
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-light  navegacion" style="background: #f5f5f5">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Empresas Cesar</a>
+			<div class="d-flex">
+        <img src="inc/img/logo.png" class="logo" alt="">
+            <a class="navbar-brand" href="#">Empresas Cesar</a>
+        </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

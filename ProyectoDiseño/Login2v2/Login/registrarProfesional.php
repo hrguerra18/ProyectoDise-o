@@ -9,6 +9,7 @@
     <title>Profesional</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="http://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="Css/style-index.css">
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
@@ -20,7 +21,10 @@
     <section class="cuerpo">
     <nav class="navbar navbar-expand-lg navbar-light  navegacion" style="background: #f5f5f5">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Empresas Cesar</a>
+            <div class="">
+        <img src="inc/img/logo.png" class="logo" alt="">
+            <a class="navbar-brand" href="#">Empresas Cesar</a>
+        </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
