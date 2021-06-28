@@ -74,21 +74,64 @@
             <div class="col-6 banner-dos-uno">
                 <div class="col-8 contenido-banner-dos-uno">
                     <h4 class="mb-3">Usar Empresas del Cesar es muy fácil</h4>
-                    <h2 class="mb-3" style="color:#6B0707">Imagina un asistente personal trabajando 24/7 para ti</h2>
+                    <h2 class="mb-3" style="color:#DC3545">Imagina un asistente personal trabajando 24/7 para ti</h2>
                     <p class="mb-3">Procesamos cientos de ofertas al día, y somos la primera plataforma que sólo te invitará a postularte
                         a las vacantes que cumplan con tu experiencia, formación y expectativas salariales. De esta manera, garanti
                         zamos tanto para las empresas como para ti, un proceso mucho más acertado.
                     </p>
                     <a href="registrarProfesional.php"><button class="btn btn-danger">Quíero comenzar ahora</button></a>
                 </div>
-
-
             </div>
             <div class="col-6 banner-dos-dos">
                 <img class="img-banner-dos-dos" src="https://prnewswire.com.mx/wp-content/uploads/2019/02/rawpixel-metricas-midia-espontanea-unsplash-1.jpg" alt="">
             </div>
 
         </div>
+
+        <div class="col-12   flex-wrap: wrap Banner-tres">
+            <div class="col-6 banner-dos-uno">
+                <div class="col-8 contenido-banner-tres-uno">
+                    <img class="img-banner-tres" src="https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2016/10/10/14760917222258.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-6 banner-tres-dos">
+                <h4 class="mb-3" style="color: #FAFAFA;">Analizamos los datos</h4>
+                <h2 class="mb-3" style="color:#DC3545">Ordenamos tu perfil tomando en cuenta habilidades técnicas y personales</h2>
+                <p class="mb-3" style="color: #FAFAFA;">Muchas veces las empresas pasan por alto candidatos muy relevantes, por ello, nuest
+                    ro objetivo es combinar la mayor cantidad de información en el perfil del talento, para que así las compañías puedan valorar las h
+                    abilidades que complementarían extremadamente bien entre su empresa, la vacante y sus capacidades.
+                </p>
+                <a href="registrarProfesional.php"><button class="btn btn-danger">Quíero comenzar ahora</button></a>
+            </div>
+
+        </div>
+
+
+        <div class="col-12 opiniones">
+            <div class="col-4 opiniones-uno">
+                <h2 class="texto-opiniones" style="color: #DC3545;">Lo que las personas dicen de Empresas del Cesar</h2>
+                <p>Somos una plataforma que ayuda a conectar talentos con empresas de forma automatizada y en tiempo record.</p>
+            </div>
+            <div class="col-6  opiniones-dos">
+                <img class="opiniones-dos-img m-4" src="https://www.elmundo.com/assets/uploads/files/90168-maria_fernanda_suarez.jpg" alt="">
+                <p class="col-6"> <i>"De las mejores formas de crear tu perfil, de tener nuevas formas de búsqueda de empleo y s
+                        aber que hay ofertas increíbles .... eso es Empresas del Cesar."</i>
+                </p>
+            </div>
+        </div>
+
+        <footer class="col-12 footer-div">
+            <img class="img-footer" src="inc/img/servicio.png" alt="">
+            <p class="col-7">Vinculado a la red de prestadores del Servicio Público de Empleo. Autorizado por la Unidad Administrativa Especial del Servicio Público de Empleo según resolución No. 000382 del 2020.</p>
+           
+
+        </footer>
+
+        <div class="col-12 copy">
+        <p class="copy-r ">© 2021  Helder Guerra - Cristian Martinez.</p>
+        </div>
+
+
 
 
 
