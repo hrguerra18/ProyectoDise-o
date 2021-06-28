@@ -38,7 +38,7 @@ function ModificarOferta()
 {
     require "Conexion.php";
     $cargo = $_POST['Cargo'];
-    $Vigencia = $_POST['Vigencia'];
+    $Vigencia = $_POST['vigencia'];
     $numeroAplicantes = $_POST['numeroAplicantes'];
     $descripcion = $_POST['descripcion'];
     $sector = $_POST['sector'];
@@ -52,12 +52,12 @@ function ModificarOferta()
 
     if ($NITempresa != "") {
 
-        $sqlOferta = "UPDATE oferta SET cargo = '$cargo',vigencia = ' $Vigencia',numeroAplicantes = '$numeroAplicantes',
+        $sqlOferta = "UPDATE oferta SET cargo = '$cargo',vigencia = '$Vigencia',numeroAplicantes = '$numeroAplicantes',
         descripcion = '$descripcion',sector = '$sector',tipoContrato = '$tipoContrato',salario = '$salario',horario = '$horario',
         NITempresa = '$NITempresa',condicion = '$condicion', estadoOferta = '$estado' WHERE IDoferta = '$IDoferta'";
 
         if (mysqli_query($con, $sqlOferta)) {
-            $respuesta = array("mensaje" => "Se ha registrado los datos de manera correcta");
+            $respuesta = array("mensaje" => "Se modifico");
             $json_string = json_encode($respuesta);
             echo $json_string;
         } else {

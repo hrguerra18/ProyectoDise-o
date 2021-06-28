@@ -112,7 +112,7 @@ include("inc/menuEmpresa.php");
                         </div>
 
                         <div class="col-md-4 mb-3">
-                            <label for="validationCustom01" class="mb-3 fw-bold">Horario</label>
+                            <label for="validationCustom01" class="mb-3 fw-bold">HORARIO</label>
                             <select class="form-select" id="horarioOferta" aria-label="Default select example" required>
                                 <option selected disabled>Seleccionar horario</option>
                                 <option value="Regular">Regular</option>
@@ -140,10 +140,10 @@ include("inc/menuEmpresa.php");
 
                         <div class="col-md-4 mb-3 ">
                             <label class="mb-3 fw-bold" for="departamentoProfesional">ESTADO:</label>
-                            <select class="form-control form-select" id="estadoOferta" name="departamento">
-                                <option selected disabled>Seleccionar estado</option>
-                                <option value="Amazonas">Activo</option>
-                                <option value="Antioquia">Inactivo</option>
+                            <select class="form-control form-select" id="estadoOferta" >
+                                <option disabled value="">Seleccionar estado</option>
+                                <option value="Activo">Activo</option>
+                                <option value="Inactivo">Inactivo</option>
 
                             </select>
                             <div class="invalid-feedback">
@@ -152,7 +152,7 @@ include("inc/menuEmpresa.php");
                         </div>
 
                         <div class="col-md-8 mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label fw-bold">Condiciones</label>
+                            <label for="exampleFormControlTextarea1" class="form-label fw-bold">CONDICIONES</label>
                             <textarea class="form-control" id="condicionesOferta" rows="3" required></textarea>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
@@ -169,7 +169,7 @@ include("inc/menuEmpresa.php");
                             </div>
                         </div>
 
-                        <button type="submit" onclick="ModificarInformacionOferta();" class="btn btn-primary">Modificar</button>
+                        <input type="button" onclick="ModificarInformacionOfertaHistorialEmpresa();" value="Modificar" class="btn btn-primary">
                     </div>
                 </form>
 
@@ -179,7 +179,7 @@ include("inc/menuEmpresa.php");
 
         </div>
 
-        <script type="text/javascript" src="inc/js/informacionOferta.js"></script>
+        
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 

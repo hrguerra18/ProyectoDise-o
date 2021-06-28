@@ -1,9 +1,9 @@
 $(document).ready(function () {
-    ConsultarOferta();
+    ConsultarOfertaInformacionOferta();
 });
 
 
-function ConsultarOferta() {
+function ConsultarOfertaInformacionOferta() {
     var idOfertaRecibida = localStorage.getItem("idOfertaEnviada");
     if (idOfertaRecibida != "") {
         $.ajax({
@@ -24,7 +24,7 @@ function ConsultarOferta() {
                 $("#salarioOferta").val(resp[0]['salario']);
                 $("#horarioOferta").val(resp[0]['horario']);
                 $("#nitEmpresa").val(resp[0]['NITempresa']);
-                $("#estadoOferta").val(resp[0]['estado']);
+                $("#estadoOferta").val(resp[0]['estadoOferta']);
                 $("#condicionesOferta").val(resp[0]['condicion']);
                 $("#descripcionOferta").val(resp[0]['descripcion']);
             }
@@ -39,23 +39,23 @@ function ConsultarOferta() {
     }
 }
 
-function ModificarInformacionOferta(){
-
-    var NIT = $("#niteEmpresa").val().trim();
-    var Cargo = $("#cargoOferta").val().trim();
-    var vigencia = $("#vigenciaOferta").val().trim();
-    var numeroAplicantes = $("#aplicantesOferta").val().trim();
-    var descripcion = $("#descripcionOferta").val().trim();
-    var sector = $("#sectorOferta").val().trim();
-    var tipoContrato = $("#contratoOferta").val().trim();
-    var salario = $("#salarioOferta").val().trim();
-    var horario = $("#horarioOferta").val().trim();
-    var condiciones = $("#condicionesOferta").val().trim();
-    var IDoferta = $("#idOferta").val();
-    var estado =  $("#estadoOferta").val().trim();
+function ModificarInformacionOfertaHistorialEmpresa(){
+    var NIT = document.getElementById("nitEmpresa").value;
+    var Cargo = document.getElementById("cargoOferta").value;
+    var vigencia = document.getElementById("vigenciaOferta").value;
+    var numeroAplicantes = document.getElementById("aplicantesOferta").value;
+    var descripcion = document.getElementById("descripcionOferta").value;
+    var sector = document.getElementById("sectorOferta").value;
+    var tipoContrato = document.getElementById("contratoOferta").value;
+    var salario = document.getElementById("salarioOferta").value;
+    var horario = document.getElementById("horarioOferta").value;
+    var condiciones = document.getElementById("condicionesOferta").value;
+    var IDoferta = document.getElementById("idOferta").value;
+    var estado =  document.getElementById("estadoOferta").value;
+    
     $.ajax({
         type: "POST",
-        dataType: "json",
+        dataType: 'json',
         url: "Controles/informacionOferta.php",
         data: {
             accion:"Modificar",
@@ -73,14 +73,21 @@ function ModificarInformacionOferta(){
             estado : estado,
         },
         success: function (resp) {
-            datos = JSON.parse(resp);
-            return Swal.fire({
-                icon: 'info',
-                title: 'Aviso...',
-                text: datos.mensaje,
-                footer: ''
-            })
+            if(resp.mensaje == "Se modifico"){
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Exito...',
+                    text: "Se ha modificado correctamente la oferta",
+                    footer: ''
+                });
+                setInterval(RecargarInformacionOferta,2500)
+            }
+            
         }
     });
-    debugger
+    
+}
+
+function RecargarInformacionOferta(){
+    window.location = "informacionOferta.php";
 }

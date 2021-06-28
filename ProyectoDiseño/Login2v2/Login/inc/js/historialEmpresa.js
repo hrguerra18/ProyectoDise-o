@@ -39,7 +39,7 @@ function crearTarjetaHistorial(elemento){
     tarjeta = `<div class='row m-2 '>
                     <div class='card mb-5 tarjeta-historial-empresa' style='width: 18rem;'>
                             <div class='img-tarjeta'>
-                            <input class='activo'id="eliminar-oferta" type="button" value="${ConsultarEstadoOferta(elemento.IDoferta)}" onclick="EliminarOfertaLadoEmpresa(${elemento.IDoferta})">
+                            <input class='activo' type="button" value="${ConsultarEstadoOferta(elemento.IDoferta)}" onclick="EliminarOfertaLadoEmpresa(${elemento.IDoferta})">
                             <img src=" ${elemento.foto} " class='card-img-top img-tarjeta' alt='...'>
                             </div>
                             <div class='card-body'>
