@@ -183,7 +183,7 @@ include("inc/menuProfesional.php");
 
                         <div class="col-md-12 mb-3 ">
                             <label class="fw-bold" for="validationCustom04">SOBRE MI:</label>
-                            <input type="text" class="form-control" id="sobreMiProfesional">
+                            <input type="text" class="form-control" autocomplete="off" id="sobreMiProfesional">
 
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
