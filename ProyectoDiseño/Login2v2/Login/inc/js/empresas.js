@@ -115,8 +115,7 @@ function BuscarLegabilidadEmpresa(NIT){
            console.log(resp)
         }
     });
-    alert("lo que devolvio"+legabilidad);
-return legabilidad;
+    return legabilidad;
 
 }
 

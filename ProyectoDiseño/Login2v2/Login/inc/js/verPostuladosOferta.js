@@ -47,7 +47,7 @@ function crearTarjetaProfesionalPostulado(elemento) {
   tarjeta = `<div class='row m-2'>
                     <div class='card mb-5 tarjeta-historial-postulacionOfertas' style='width: 18rem;'>
                             <div class='img-tarjeta'>
-                            <button class='activo'>Activo</button>
+                            <button class='activo'>${ConsultarEstadoPostulado(elemento.idOferta,elemento.idProfesional)}</button>
                             <img src=" ${elemento.foto} " class='card-img-top  foto-profesional' alt='...'>
                             </div>
                             <div class='card-body'>
@@ -65,7 +65,9 @@ function crearTarjetaProfesionalPostulado(elemento) {
                             <button data-id="${elemento.Identidad}" onclick="EnviarIDProfesional(${elemento.Identidad})" type='button' class='btnModal boton-ver-postulados'>
                             Ver  informacion del profesional   
                         </button></a>
-                        
+                        <input data-id="${elemento.Identidad}" onclick="AceptarPostulado(${elemento.Identidad},${elemento.idOferta})" value="Aceptar postulado" type='button' class='btnModal boton-ver-postulados'>
+                         
+        
                             </div>
                             
                         </div>
@@ -82,4 +84,53 @@ function EnviarAHistorialEmpresa(){
 
 function EnviarIDProfesional(identidad){
   localStorage.setItem('IdProfesionalEnviada',identidad)
+}
+
+function ConsultarEstadoPostulado(idOferta,idProfesional){
+  var retornar;
+  $.ajax({
+      type: "POST",
+      url: "Controles/VerPostuladosOferta.php",
+      async : false,
+      data: {
+        accion: "consultarEstado",
+        idOferta: idOferta,
+        idProfesional : idProfesional,
+      },
+      success : function(resp){
+        retornar = resp;
+      }
+    })
+    return retornar;
+}
+
+function AceptarPostulado(Identidad,idOferta){
+  $.ajax({
+    type : "POST",
+    dataType : "json",
+    url : "Controles/VerPostuladosOferta.php",
+    data : {
+      accion : "AceptarPostulado",
+      idOferta: idOferta,
+      Identidad : Identidad,
+
+    },
+    success : function (resp){
+      if(resp.mensaje == "Se acepto la postulacion"){
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Confirmado...",
+          text: "Se ha aceptado la postulacion del profesional",
+          showConfirmButton: false,
+          timer: 2500,
+        });
+        setTimeout(RecargarVerPostulado,2500);
+      }
+    }
+  })
+}
+
+function RecargarVerPostulado(){
+  window.location = "verPostuladosOferta.php"
 }

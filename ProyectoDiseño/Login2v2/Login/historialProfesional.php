@@ -20,8 +20,10 @@ include("inc/menuProfesional.php");
                     <select class="form-control form-select seleccionar" id="seleccionarFiltro">
                         <option disabled value="">Seleccione el filtro</option>
                         <option value="todas">Todas</option>
-                        <option value="Activo">Activas</option>
-                        <option value="Inactivo">Inactivas</option>
+                        <option value="En espera">En espera</option>
+                        <option value="Aceptado">Aceptadas</option>
+                        <option value="Cancelada">Canceladas</option>
+
                     </select>
                     <input  id="botonBuscarOferta" onclick="ConsultarPostulacionesHistorialProfesional()" class="edit-input-historial boton" value="Buscar" type="button">
 

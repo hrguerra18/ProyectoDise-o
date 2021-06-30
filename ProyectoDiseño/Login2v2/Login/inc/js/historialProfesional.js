@@ -39,10 +39,12 @@ function ConsultarPostulacionesHistorialProfesional(){
   let idProfesional = document.getElementById("idProfesional").value;
   var divTarjetas2 = document.querySelector(".tarjetaVerOfertasAlasQueMePostule");
   var divTextoUno = document.querySelector(".texto-1");
+  alert(dato)
 
   if(dato == "todas"){  accion = "consultarOfertas"; }
-  if(dato == "Activo"){  accion = "consultarActivasOInactivas"; }
-  if(dato == "Inactivo"){  accion = "consultarActivasOInactivas"; }
+  if(dato == "En espera"){  accion = "consultarActivasOInactivas"; }
+  if(dato == "Aceptado"){  accion = "consultarActivasOInactivas";}
+  if(dato == "Cancelada"){  accion = "consultarActivasOInactivas";}
 
   
   $.ajax({
@@ -100,7 +102,7 @@ function EliminarOferta(idOferta, idProfesional) {
     let botonEstado = document.getElementById("boton-estado");
     valor = ConsultarEstado(idOferta,idProfesional);
     
-    if(valor == "Activo"){
+    if(valor == "En espera" || valor == "Aceptada"){
       let confirmacion = confirm("Seguro que quieres eliminar esta oferta");
       if (confirmacion) {
         botonEstado.classList.remove("activo");

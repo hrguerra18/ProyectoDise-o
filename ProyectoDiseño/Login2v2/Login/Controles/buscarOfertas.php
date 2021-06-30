@@ -75,7 +75,7 @@ function RegistrarPostulacion(){
 
     $IDoferta = $_POST['IDoferta'];
     $IdEmpresaOProfesional = $_POST['IdEmpresaOProfesional'];
-    $estadoProOfert = "Activo";
+    $estadoProOfert = "En espera";
     // $IDoferta = "33";
     // $IdEmpresaOProfesional = "2341";
     // $estadoProOfert = "Activo";

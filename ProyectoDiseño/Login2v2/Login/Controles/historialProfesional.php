@@ -49,7 +49,7 @@ function EliminarPostulacion(){
     require "Conexion.php";
     $idOferta = $_POST['idOferta'];
     $idProfesional = $_POST['idProfesional'];
-    $estado = "Inactivo";
+    $estado = "Cancelada";
     $sql = "UPDATE  pro_ofert SET estadoProOfert = '$estado' WHERE idOferta = '$idOferta' AND idProfesional = '$idProfesional'";
 
     if (mysqli_query($con, $sql)) {
