@@ -39,7 +39,7 @@ function ConsultarPostulacionesHistorialProfesional(){
   let idProfesional = document.getElementById("idProfesional").value;
   var divTarjetas2 = document.querySelector(".tarjetaVerOfertasAlasQueMePostule");
   var divTextoUno = document.querySelector(".texto-1");
-  alert(dato)
+  
 
   if(dato == "todas"){  accion = "consultarOfertas"; }
   if(dato == "En espera"){  accion = "consultarActivasOInactivas"; }

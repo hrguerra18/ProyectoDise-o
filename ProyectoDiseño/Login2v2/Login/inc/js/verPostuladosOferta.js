@@ -105,30 +105,40 @@ function ConsultarEstadoPostulado(idOferta,idProfesional){
 }
 
 function AceptarPostulado(Identidad,idOferta){
-  $.ajax({
-    type : "POST",
-    dataType : "json",
-    url : "Controles/VerPostuladosOferta.php",
-    data : {
-      accion : "AceptarPostulado",
-      idOferta: idOferta,
-      Identidad : Identidad,
-
-    },
-    success : function (resp){
-      if(resp.mensaje == "Se acepto la postulacion"){
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Confirmado...",
-          text: "Se ha aceptado la postulacion del profesional",
-          showConfirmButton: false,
-          timer: 2500,
-        });
-        setTimeout(RecargarVerPostulado,2500);
+  estadoPostulado = ConsultarEstadoPostulado(idOferta,Identidad)
+  if(estadoPostulado == "En espera"){
+    $.ajax({
+      type : "POST",
+      dataType : "json",
+      url : "Controles/VerPostuladosOferta.php",
+      data : {
+        accion : "AceptarPostulado",
+        idOferta: idOferta,
+        Identidad : Identidad,
+  
+      },
+      success : function (resp){
+        if(resp.mensaje == "Se acepto la postulacion"){
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Confirmado...",
+            text: "Se ha aceptado la postulacion del profesional",
+            showConfirmButton: false,
+            timer: 2500,
+          });
+          setTimeout(RecargarVerPostulado,2500);
+        }
       }
-    }
-  })
+    })
+  }else{
+    Swal.fire({
+      icon: "error",
+      title: "Error...",
+      text: "Ya se a aceptado a este postulado anteriormente...",
+    });
+  }
+ 
 }
 
 function RecargarVerPostulado(){

@@ -76,13 +76,14 @@ function RegistrarPostulacion(){
     $IDoferta = $_POST['IDoferta'];
     $IdEmpresaOProfesional = $_POST['IdEmpresaOProfesional'];
     $estadoProOfert = "En espera";
-    // $IDoferta = "33";
+    // $IDoferta = "42";
     // $IdEmpresaOProfesional = "2341";
-    // $estadoProOfert = "Activo";
+    // $estadoProOfert = "En espera";
     
 
     $cantidadPostulados = ContarCuantosPostuladosTieneLaOferta($IDoferta);
     $cantidadDeAplicantes = CantidadDeAplicantes($IDoferta);
+    
     
     if($IDoferta != "" && $IdEmpresaOProfesional != ""){
         if($cantidadDeAplicantes > $cantidadPostulados){
@@ -90,6 +91,7 @@ function RegistrarPostulacion(){
     
             if(mysqli_query($con,$sql)){
                 $cantidadPostuladosValidarUltimo = ContarCuantosPostuladosTieneLaOferta($IDoferta);
+               
                 if($cantidadDeAplicantes == $cantidadPostuladosValidarUltimo){
                     CambiarEstadoOfertaInactivo($IDoferta);
                 }
@@ -174,8 +176,9 @@ function ConsultarTodasLasOfertas(){
 function ContarCuantosPostuladosTieneLaOferta($IDoferta){
    
     require "Conexion.php";
-    $estado = "Activo";
-    $sql = "SELECT count(*) as contador FROM pro_ofert WHERE idOferta = '$IDoferta' AND estadoProOfert ='$estado'" ;
+    $estado = "En espera";
+    $estadoAceptado = "Aceptado";
+    $sql = "SELECT count(*) as contador FROM pro_ofert WHERE idOferta = '$IDoferta' OR estadoProOfert ='$estado' OR estadoProOfert = '$estadoAceptado'" ;
     $result = mysqli_query($con,$sql);
     $row = mysqli_fetch_array($result);
 
