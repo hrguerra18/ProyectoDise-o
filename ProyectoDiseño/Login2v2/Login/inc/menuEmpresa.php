@@ -20,7 +20,7 @@ if ($_SESSION['validar'] == true) {
 		<nav id="sidebar" class="sidebar color-fondo">
 			<div class="sidebar-content js-simplebar color-fondo">
 				<a class="sidebar-brand" href="inicioEmpresa.php">
-					<img class="img-logo" src=<?php echo $_SESSION['foto']?> alt="Nombre de la empresa">
+					<img class="img-logo" src=<?php echo $_SESSION['foto']?> alt="Foto">
 					
 				</a>
 				<span class="align-middle nombre-empresa"><?php echo $_SESSION['usuario']?></span>
@@ -98,7 +98,7 @@ if ($_SESSION['validar'] == true) {
 							</a>
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-								<img src= <?php echo $_SESSION['foto']?> class="avatar img-fluid rounded me-1" alt="Alex" /> <span class="text-dark"> <?php echo $_SESSION['usuario']?> </span>
+								<img src= <?php echo $_SESSION['foto']?> class="avatar img-fluid rounded me-1" alt="Foto" /> <span class="text-dark"> <?php echo $_SESSION['usuario']?> </span>
 							</a>
 							<div class="dropdown-menu dropdown-menu-end">
 								<a class="dropdown-item" href="controles/cerrar.php">Cerrar Session</a>

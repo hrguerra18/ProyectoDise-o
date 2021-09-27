@@ -31,19 +31,7 @@ function AgregarEmpresa()
     $correo = $_POST['correo'];
     $contraseña = $_POST['contraseña'];
     $IDUsuario = CrearUsuario($correo, $contraseña, "Empresa", $foto);
-
-    // $NIT = "123";
-    // $foto = "123";
-    // $nombre = "123";
-    // $servicio = "123";
-    // $direccion = "123";
-    // $telefono = "123";
-    // $correo = "123";
-    // $contraseña = "123";
-    // $IDUsuario = CrearUsuario($correo, $contraseña, "Empresa", $foto);
-
-    // echo "$IDUsuario";
-
+    
     if ($IDUsuario != "") {
 
         $sqlEmpresa = "INSERT INTO empresa (NIT,nombre,servicio,direccion,telefono,correo,IDusuario) 

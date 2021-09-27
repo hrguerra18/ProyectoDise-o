@@ -43,8 +43,9 @@ if ($username != "" && $password != "") {
         $json_string = json_encode($_SESSION);
         echo $json_string;
     } else {
-        session_destroy();
         $_SESSION['validar'] = false;
+        $json_string = json_encode($_SESSION);
+        echo $json_string;
     }
 }
 

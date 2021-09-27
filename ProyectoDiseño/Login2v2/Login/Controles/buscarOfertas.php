@@ -76,10 +76,6 @@ function RegistrarPostulacion(){
     $IDoferta = $_POST['IDoferta'];
     $IdEmpresaOProfesional = $_POST['IdEmpresaOProfesional'];
     $estadoProOfert = "En espera";
-    // $IDoferta = "42";
-    // $IdEmpresaOProfesional = "2341";
-    // $estadoProOfert = "En espera";
-    
 
     $cantidadPostulados = ContarCuantosPostuladosTieneLaOferta($IDoferta);
     $cantidadDeAplicantes = CantidadDeAplicantes($IDoferta);

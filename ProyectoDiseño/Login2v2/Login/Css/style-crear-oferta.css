@@ -65,17 +65,13 @@
 .img-tarjeta{
   width: 100%;
   height: 170px;
-  margin-top: 5px;
   display: flex;
-  
 }
 
 .foto-profesional{
   width: 100%;
   height: 170px;
-  margin-top: 5px;
-  border-radius: 50%;
-  display: flex;
+  display: inline-block;
 }
 
 .div-tarjeta{

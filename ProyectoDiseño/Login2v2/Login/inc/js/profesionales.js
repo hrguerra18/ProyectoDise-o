@@ -1,8 +1,6 @@
 
 
 function AdicionarProfesional() {
-    
-
     var identidad = $("#identidad").val();
     var foto = $("#foto").val();
     var nombre = $("#nombre").val();
@@ -11,12 +9,9 @@ function AdicionarProfesional() {
     var telefono = $("#telefono").val();
     var correo = $("#email").val();
     var contraseña = $("#contraseña").val();
-
-    expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-
-    let correoNuevo1Validado = ValidarCorreoRegistroProfesional(correo);
+    let validarDatos = ValidarRegistroProfesional(identidad,foto,nombre,apellido,direccion,telefono,correo,contraseña)
     
-    if(identidad != "" && foto != "" && nombre != "" && apellido != "" && direccion != "" && telefono != "" && correo != "" && contraseña != "" && correoNuevo1Validado== true){
+    if(validarDatos[0]){
         let existenciaCorreo = BuscarExistenciaCorreoProfesional(correo);
         if(existenciaCorreo == true){
             $.ajax({
@@ -58,16 +53,28 @@ function AdicionarProfesional() {
         }
         
     }else{
-         Swal.fire({
-            icon: 'error',
-            title: 'Error...',
-            text: 'Ingrese los datos correctamente!',
-            footer: ''
-          })
+         mensaje(validarDatos[1])
     }
 
    
 }
+
+const mensaje = (mensaje)=>{
+    Swal.fire({
+        icon: 'error',
+        title: 'Error...',
+        text: mensaje,
+        footer: ''
+      }).then((result) =>{
+        // if (result.isConfirmed) {
+        //     window.location = "registrarProfesional.php"
+        // }
+    })
+}
+
+
+
+
 function mandarAlLogin(){
     window.location = "login.php"
 }
@@ -76,13 +83,7 @@ function RecargarRegistroProfesional(){
     window.location = "registrarProfesional.php"
 }
 
-function ValidarCorreoRegistroProfesional(correo) {
-    if (expr.test(correo)) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+
 
   function BuscarExistenciaCorreoProfesional(correo){
     var existenciaCorreo;

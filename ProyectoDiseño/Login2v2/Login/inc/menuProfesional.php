@@ -19,7 +19,7 @@ if ($_SESSION['validar'] == true) {
 		<nav id="sidebar" class="sidebar color-fondo">
 			<div class="sidebar-content js-simplebar color-fondo">
 				<a class="sidebar-brand" href="index.html">
-					<img class="img-logo" src="<?php echo $_SESSION['foto']?>" alt="">
+					<img class="img-logo" src="<?php echo $_SESSION['foto']?>" alt="Foto">
 					
 				</a>
 				<span class="align-middle nombre-empresa"><?php echo $_SESSION['usuario']?></span>

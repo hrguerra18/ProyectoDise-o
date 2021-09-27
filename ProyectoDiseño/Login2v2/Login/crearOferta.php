@@ -134,7 +134,7 @@ include("inc/menuEmpresa.php");
 
                         </div>
 
-                        <div class="col-md-12 mb-3">
+                        <!-- <div class="col-md-12 mb-3">
                             <label for="validationCustom01" class="fw-bold">Perfil del profesional</label>
                             <div class="d-flex flex-wrap">
 
@@ -194,7 +194,7 @@ include("inc/menuEmpresa.php");
                                     </label>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
 
 

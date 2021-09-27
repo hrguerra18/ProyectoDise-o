@@ -144,6 +144,7 @@
         </form>
 
     </section>
+    <script src="inc/js/validaciones.js"></script>
     <script type="text/javascript" src="inc/js/empresas.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

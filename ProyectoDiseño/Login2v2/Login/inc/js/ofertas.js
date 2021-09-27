@@ -18,17 +18,6 @@ function AdicionarOferta() {
     
     fechaHoy = hoyFecha();
     
- 
-    // var checkBoxpracticante = document.getElementById("practicante");
-    // var checkBoxtecnico = document.getElementById("tecnico");
-    // var checkBoxtecnologo = document.getElementById("tecnologo");
-    // var checkBoxprofesional = document.getElementById("profesional");
-    // var checkBoxpostgrado = document.getElementById("postgrado");
-    // var checkBoxespecializacion = document.getElementById("especializacion");
-    // var checkBoxmaestria = document.getElementById("maestria");
-    // var checkBoxdoctorado = document.getElementById("doctorado");
-    // var checkBoxcualquiera = document.getElementById("cualquiera");
-    
     if(numeroAplicantes > 0){
         if(vigencia > fechaHoy){
             $.ajax({

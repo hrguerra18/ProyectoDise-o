@@ -43,8 +43,35 @@ include("inc/menuEmpresa.php");
                             </div>
                         </div>
                         <div class="col-md-6 mb-3 ">
-                            <label class="mb-3 fw-bold" for="validationCustom01">CATEGORIA:</label>
-                            <input type="text" class="form-control" id="categoriaempresa" required>
+                            <label class="mb-3 fw-bold" for="validationCustom01">SERVICIO:</label>
+                            <select class="input-apellido form-select " name="servicio" id="categoriaempresa" required>
+                            <option selected disabled value="">Servicio</option>
+                            <option value="Reparación">Reparación</option>
+                            <option value="Mantenimiento">Mantenimiento</option>
+                            <option value="Limpieza">Limpieza</option>
+                            <option value="Auditoría">Auditoría</option>
+                            <option value="Asesoría">Asesoría</option>
+                            <option value="Mensajería">Mensajería</option>
+                            <option value="Telefonía">Telefonía</option>
+                            <option value="Aseguradora">Aseguradora</option>
+                            <option value="Gestoría">Gestoría</option>
+                            <option value="Agua">Agua</option>
+                            <option value="Gas">Gas</option>
+                            <option value="Telecomunicación">Telecomunicación</option>
+                            <option value="Electricidad">Electricidad</option>
+                            <option value="Bancos">Bancos</option>
+                            <option value="Plomería">Plomería</option>
+                            <option value="Diseño">Diseño</option>
+                            <option value="Programación">Programación</option>
+                            <option value="Organización de eventos">Organización de eventos</option>
+                            <option value="Funeraria">Funeraria</option>
+                            <option value="Hotel">Hotel</option>
+                            <option value="Cine">Cine</option>
+                            <option value="Discoteca">Discoteca</option>
+                            <option value="Restaurante">Restaurante</option>
+                            <option value="Ventas">Ventas</option>
+                            <option value="Servicios">Servicios</option>
+                        </select>
                             <div class="invalid-feedback">
                                 Ingrese un Dato Valido
                             </div>

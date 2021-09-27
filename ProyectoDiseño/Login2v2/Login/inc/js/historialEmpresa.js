@@ -74,8 +74,6 @@ function agregarDatoLocal(idOferta){
 function EliminarOfertaLadoEmpresa(IDoferta){
     let botonEstado = document.querySelector(".eliminar-oferta");
     valor = ConsultarEstadoOferta(IDoferta);
-    
-    
     if(valor == "Activo"){
       let confirmacion = confirm("Seguro que quieres eliminar esta oferta");
       if (confirmacion) {
@@ -102,8 +100,6 @@ function EliminarOfertaLadoEmpresa(IDoferta){
                 timer: 2500,
               });
               setInterval(Recargar,2500);
-            
-            
         },
         });
     
@@ -162,12 +158,8 @@ function ConsultarTodasLasOfertas() {
 }
 
 function ValidarVigencia(){
-  
   ofertas = ConsultarTodasLasOfertas();
-  console.log(ofertas);
-  
   fechaHoy = hoyFechaHistorialEmpresa();
-  
   $.ajax({
     type: "POST",
       dateType: "json",
