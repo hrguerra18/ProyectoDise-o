@@ -80,6 +80,99 @@ function VerificarExistenciaServicio(servicio) {
     return resultado;
 }
 
+function VerificarExistenciaSectores(sector) {
+    let resultado; let i = 0; let encontro = false;
+    sectores = ['Ventas',
+        'Comercial',
+         'CallCenter',
+         'Telemercadeo',
+         'Almacen',
+         'Logistica',
+         'Atención al cliente',
+         'Soporte',
+         'Oficina',
+         'Administracion',
+         'Informatica',
+         'Telecomunicaciones',
+         'Salud',
+         'Reparaciones tecnicas',
+         'Mantenimiento',
+         'Contabilidad',
+         'Finanzas',
+         'Servicios generales',
+         'Aseos',
+         'Ingenieria',
+         'Energia',
+        'Quimica',
+         'Recursos Humanos',
+         'Arquitectura',
+         'Construcciones',
+         'Publicidad',
+         'Mercadeo',
+         'Hoteleria',
+         'Educacion',
+         'Diseño',
+         'Direccion gerencial',
+         'Transporte',
+         'Cuidado del hogar',
+         'Otros',
+    ];
+    while (i < sectores.length && encontro == false) {
+        if (sector == sectores[i]) {
+            resultado = true;
+            encontro = true;
+        }
+        else {
+            resultado = false;
+            i++;
+        }
+    }
+    return resultado;
+}
+function VerificarExistenciaHorario(horario) {
+    let resultado; let i = 0; let encontro = false;
+    horarios = ['Regular',
+        'Flexible',
+        'Intensivo',
+        'Fines de semana',
+        'Nocturno'        
+    ];
+    while (i < horarios.length && encontro == false) {
+        if (horario == horarios[i]) {
+            resultado = true;
+            encontro = true;
+        }
+        else {
+            resultado = false;
+            i++;
+        }
+    }
+    return resultado;
+}
+
+function VerificarExistenciaTipoContrato(tipoContrato) {
+    let resultado; let i = 0; let encontro = false;
+    contratos = [
+        'Tiempo completo',
+        'Medio tiempo',
+        'Obra/Labor',
+        'Pasantía',
+        'Por horas',
+    ];
+    while (i < contratos.length && encontro == false) {
+        if (tipoContrato == contratos[i]) {
+            resultado = true;
+            encontro = true;
+        }
+        else {
+            resultado = false;
+            i++;
+        }
+    }
+    return resultado;
+}
+
+
 //FORMULARIO REGISTRAR EMPRESA
 
 function ValidarRegistroEmpresa(nombre, foto, nit, servicio, direccion, telefono, correo, contraseña) {
@@ -263,6 +356,104 @@ function ValidarRegistroProfesional(identidad, foto, nombre, apellido, direccion
         respuestaRegistroProfesional = [false, "El campo identidad no puede estar vacio"]
     }
     return respuestaRegistroProfesional;
+}
+
+function ValidarCrearOferta(cargo,vigencia,numeroAplicantes,descripcion, sector, tipoContrato, salario, horario, condiciones){
+   respuestaCrearOferta = [];
+    if(cargo != ""){
+        if (cargo.length >= 1 && cargo.length <=250) {
+            if ( ValidarCaracteresAlfabeticos(cargo)) {
+                formatoFecha = Date.parse(vigencia)
+                if (!isNaN(formatoFecha)) {
+                    if (vigencia != "") {
+                        if (numeroAplicantes != "") {
+                            if (numeroAplicantes > 0) {
+                                if (ValidarSoloNumeros(numeroAplicantes)) {
+                                    if (descripcion != "") {
+                                        if (descripcion.length >= 1 && descripcion.length <= 500) {
+                                            if (sector != null) {
+                                                if (VerificarExistenciaSectores(sector)) {
+                                                    if (VerificarExistenciaTipoContrato(tipoContrato)) {
+                                                      if (tipoContrato != "") {
+                                                        if (salario > 0) {
+                                                            if (ValidarSoloNumeros(salario)) {
+                                                                if (salario != "") {
+                                                                    if (condiciones != "") {
+                                                                        if (condiciones.length >= 1 && condiciones.length <=200) {
+                                                                            if (VerificarExistenciaHorario(horario)) {
+                                                                                if (horario != "") {
+                                                                                    respuestaCrearOferta = [true,""]
+                                                                                } else {
+                                                                                    respuestaCrearOferta = [false, "El campo horario no puede quedar vacio"]
+
+                                                                                }
+                                                                            } else {
+                                                                                respuestaCrearOferta = [false, "El horario que desea registrar no existe en la lista"]
+
+                                                                            }
+                                                                        } else {
+                                                                            respuestaCrearOferta = [false, "Las condiciones no puede ser mayor a 200 caracteres"]
+                                                                        }
+                                                                    } else {
+                                                                        respuestaCrearOferta = [false, "El campo de las condiciones no puede quedar vacio"]
+                                                                       
+                                                                    }
+                                                                } else {
+                                                                    respuestaCrearOferta = [false, "Verifique que el salario no este vacio"]
+                                                                }
+                                                                
+                                                            } else {
+                                                                respuestaCrearOferta = [false, "El salario no puede contener caracteres. Solo numeros"]
+                                                            }
+                                                        } else {
+                                                            respuestaCrearOferta = [false, "Verifique que el salario sea mayor que 0"]
+                                                        }
+                                                      } else {
+                                                        respuestaCrearOferta = [false, "Verifique que el tipo de contrato no puede quedar vacio"]
+                                                      }
+                                                    } else {
+                                                        respuestaCrearOferta = [false, "Verifique que el tipo de contrato que digito se encuentre en la lista de tipo de contratos"]
+                                                    }
+                                                } else {
+                                                    respuestaCrearOferta = [false, "Verifique que el sector que digito se encuentre en la lista de sectores"]
+                                                }
+                                            } else {
+                                                respuestaCrearOferta = [false, "Verifique que el sector no se encuentre vacio"]
+                                            }
+                                        } else {
+                                            respuestaCrearOferta = [false, "Verifique que la descripcion tenga un rango de caracteres de 1 a 500"]
+                                        }
+                                    } else {
+                                        respuestaCrearOferta = [false, "Verifique que la descripcion no se encuentre vacia."]
+                                    }
+                                } else {
+                                    respuestaCrearOferta = [false, "El numero de aplicantes no puede contener caracteres"]
+                                }
+                            } else {
+                                respuestaCrearOferta = [false, "El numero de aplicantes tiene que ser mayor que 0"]
+                            }
+                        } else {
+                            respuestaCrearOferta = [false, "Tiene que especificar el numero de aplicantes, no puede quedar vacio"]
+                        }
+                    } else {
+                        respuestaCrearOferta = [false, "Tiene que selecciona la fecha de vigencia"]
+                    }
+                } else {
+                    respuestaCrearOferta = [false, "La fecha no cumple con el formato, verifique que seleccione la fecha bien"]
+                }
+            } else {
+                respuestaCrearOferta = [false, "El campo del cargo no puede contener numeros"]
+            }
+        } else {
+            respuestaCrearOferta = [false, "El campo del cargo tiene que tener como minimo 1 caracter y como maximo 250"]
+
+        }
+    }else{
+        respuestaCrearOferta = [false, "El campo del cargo no puede quedar vacio"]
+    }
+
+    return respuestaCrearOferta;
+
 }
 
 

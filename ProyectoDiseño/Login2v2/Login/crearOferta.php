@@ -211,42 +211,6 @@ include("inc/menuEmpresa.php");
         
     </div>
 
-    <!-- MODAL 
-
-    <div class="modal fade" id="exampleModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                  <img class="img-ver-oferta" src="" class="card-img-top" alt="..."> 
-                </div>
-                <input type="hidden" class="form-control" id="IDoferta" placeholder="Ejemplo: Ingeniero de Sistemas" required>
-                <div class="modal-body">
-                    <h5 id="CargoOferta">Nombre del cargo:  <?php //echo $_SESSION['Cargo']?></h5>
-                    <h6 id="Vigenciaoferta">Vigencia de la oferta: <?php // echo $_SESSION['Vigencia']?></h6>
-                    <h6 id="CantidadAplicanteOferta">Numero maximo de aplicantes: <?php // echo $_SESSION['numeroAplicantes']?></h6>
-                    <h6 id="DescripcionOferta">Descripcion del cargo: <?php // echo $_SESSION['descripcion']?></h6>
-                    <h6 id="SectorOferta">Sector principal: <?php // echo $_SESSION['sector']?></h6>
-                    <h6 id="ContratoOferta">Tipo de contrato: <?php // echo $_SESSION['tipoContrato']?></h6>
-                    <h6 id="SalarioOferta">Salario: <?php  //echo $_SESSION['salario']?></h6>
-                    <h6 id="CondicionesOferta">Condiciones: <?php  //echo $_SESSION['condicion']?></h6>
-                    <h6 id="HorarioOferta">Horario: <?php  //echo $_SESSION['horario']?></h6>
-                    <h6 id="PerfilOferta">Perfil del profesional:</h6>
-                </div>
-                <div class="modal-footer">
-                    <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Cerrar</button>
-                    <button type='button' onclick='ModificarOferta();' class='btn btn-primary color-boton-seleccionar-oferta '>Modificar</button>
-                    <button type='button' onclick='CancelarOferta();' class='btn btn-primary color-boton-seleccionar-oferta'>Cancelar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
---->
-
-
-
-
-
 </main>
 <script type="text/javascript" src="inc/js/ofertas.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -273,7 +237,7 @@ include("inc/menuEmpresa.php");
 </script>
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
+<script src="inc/js/validaciones.js"></script>
 <?php
 include("inc/footer.php");
 

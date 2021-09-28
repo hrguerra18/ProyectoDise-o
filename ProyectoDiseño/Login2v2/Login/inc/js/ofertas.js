@@ -4,21 +4,21 @@ $(document).ready(function(){
 
 function AdicionarOferta() {
     alerta = document.querySelector(".alerta");
-    var NIT = $("#nitempresaOferta").val().trim();
-    var Cargo = $("#nombreCargo").val().trim();
-    var vigencia = $("#vigenciaOferta").val().trim();
-    var numeroAplicantes = $("#numeroAplicantes").val().trim();
-    var descripcion = $("#descripcion").val().trim();
-    var sector = $("#sector").val().trim();
-    var tipoContrato = $("#tipoContrato").val().trim();
-    var salario = $("#salario").val().trim();
-    var horario = $("#horario").val().trim();
-    var condiciones = $("#condiciones").val().trim();
+    var NIT = $("#nitempresaOferta").val()
+    var Cargo = $("#nombreCargo").val()
+    var vigencia = $("#vigenciaOferta").val()
+    var numeroAplicantes = $("#numeroAplicantes").val()
+    var descripcion = $("#descripcion").val()
+    var sector = $("#sector").val()
+    var tipoContrato = $("#tipoContrato").val()
+    var salario = $("#salario").val()
+    var horario = $("#horario").val()
+    var condiciones = $("#condiciones").val()
     var IDoferta = $("#IDoferta").val();
-    
+    let validarDatos = ValidarCrearOferta(Cargo,vigencia,numeroAplicantes,descripcion,sector,tipoContrato,salario,horario,condiciones)
     fechaHoy = hoyFecha();
     
-    if(numeroAplicantes > 0){
+    if(validarDatos[0]){
         if(vigencia > fechaHoy){
             $.ajax({
                 type: "POST",
@@ -52,26 +52,27 @@ function AdicionarOferta() {
                 }
             });
         }else{
-            Swal.fire({
-                icon: 'error',
-                title: 'Error...',
-                text: 'La fecha de vigencia no puede ser menor a la actual!',
-                footer: ''
-              })
-              setInterval(RecargarOfertas,2700)
+            mensaje("La fecha de vigencia tiene que se mayor a a la actual")
         }
        
     }else{
-        Swal.fire({
-            icon: 'error',
-            title: 'Error...',
-            text: 'La cantidad minima de aplicantes es 1!',
-            footer: ''
-          })
-          setInterval(RecargarOfertas,2700)
+        mensaje(validarDatos[1]);
     }
     
     
+}
+
+const mensaje = (mensaje)=>{
+    Swal.fire({
+        icon: 'error',
+        title: 'Error...',
+        text: mensaje,
+        footer: ''
+      }).then((result) =>{
+        // if (result.isConfirmed) {
+        //     window.location = "registrarProfesional.php"
+        // }
+    })
 }
 
 function RecargarOfertas(){
@@ -161,8 +162,8 @@ function EliminarOfertaCreada(IDoferta){
                 IDoferta:IDoferta
             },
             success : function(resp){
-                mensaje = JSON.parse(resp);
-                if(mensaje.mensaje = "Se elimino correctamente"){
+                mensajeResp = JSON.parse(resp);
+                if(mensajeResp.mensaje = "Se elimino correctamente"){
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
