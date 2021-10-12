@@ -102,7 +102,7 @@ function EliminarOferta(idOferta, idProfesional) {
     let botonEstado = document.getElementById("boton-estado");
     valor = ConsultarEstado(idOferta,idProfesional);
     
-    if(valor == "En espera" || valor == "Aceptada"){
+    if(valor == "En espera" || valor == "Aceptado"){
       let confirmacion = confirm("Seguro que quieres eliminar esta oferta");
       if (confirmacion) {
         botonEstado.classList.remove("activo");
