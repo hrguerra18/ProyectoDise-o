@@ -5,7 +5,6 @@ if (empty($_POST['accion'])) {
 }
 
 switch ($_POST['accion']) {
-
     case "adicionar":
         AgregarProfesional();
         break;
@@ -17,10 +16,8 @@ switch ($_POST['accion']) {
 
 function AgregarProfesional()
 {
-    
     require "Conexion.php";
     require "usuarios.php";
-    
     $identidad = $_POST['identidad'];
     $foto = $_POST['foto'];
     $nombre = $_POST['nombre'];
@@ -29,13 +26,11 @@ function AgregarProfesional()
     $telefono = $_POST['telefono'];
     $correo = $_POST['correo'];
     $contraseña = $_POST['contraseña'];
-    
 
     $validarDatos = ValidarRegistroProfesional($identidad,$foto,$nombre,$apellido,$direccion,$telefono,$correo,$contraseña);
     if($validarDatos[0]){
         $IDUsuario = CrearUsuario($correo,$contraseña,"Profesional",$foto);
         if( $IDUsuario != ""){
-        
             $sqlProfesional = "INSERT INTO profesional (Identidad,nombre,apellido,direccion,telefono,correo,IDusuario) 
             VALUES ('$identidad','$nombre','$apellido','$direccion','$telefono','$correo','$IDUsuario')";
             if (mysqli_query($con, $sqlProfesional)) {

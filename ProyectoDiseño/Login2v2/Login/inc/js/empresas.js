@@ -9,11 +9,10 @@ function AdicionarEmpresa() {
     var correo = $("#emailempresa").val();
     var contraseña = $("#contraseñaempresa").val();
     let validarDatos = ValidarRegistroEmpresa(nombre,foto,NIT,servicio,direccion,telefono,correo,contraseña);
-    let legabilidad = BuscarLegabilidadEmpresa(NIT);
-    let existenciaCorreo = BuscarExistenciaCorreoEmpresa(correo);
-    
         if (validarDatos[0] == true) {
+            let legabilidad = BuscarLegabilidadEmpresa(NIT);
             if(legabilidad == true){
+                let existenciaCorreo = BuscarExistenciaCorreoEmpresa(correo);
                 if(existenciaCorreo == true){
                     $.ajax({
                         type: "POST",
@@ -76,9 +75,9 @@ const mensaje = (mensaje)=>{
         text: mensaje,
         footer: ''
       }).then((result) =>{
-        if (result.isConfirmed) {
-            window.location = "registrarEmpresa.php"
-        }
+        // if (result.isConfirmed) {
+        //     window.location = "registrarEmpresa.php"
+        // }
     })
 }
 
