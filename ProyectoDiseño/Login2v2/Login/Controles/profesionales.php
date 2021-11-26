@@ -9,7 +9,7 @@ switch ($_POST['accion']) {
         AgregarProfesional();
         break;
     default:
-    AgregarProfesional();
+    // AgregarProfesional();
     break;
 }
 

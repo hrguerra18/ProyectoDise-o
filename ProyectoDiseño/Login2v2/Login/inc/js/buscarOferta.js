@@ -26,7 +26,6 @@ boton.addEventListener("click", (e) => {
           div.innerHTML = t;
           datoClases.tarjeta.appendChild(div);
           document.querySelector("input").value = "";
-          
         });
       },
     });
@@ -39,14 +38,11 @@ function recibirDatos() {
   let filtroOferta = document.getElementById("inputBuscarOferta").value;
   let tarjeta = document.querySelector(".row-filtros");
   var IdEmpresaOProfesional = document.getElementById("IdEmpresaOProfesional").value;
-  
-
   clases = {
     filtroOferta: filtroOferta,
     tarjeta: tarjeta,
     IdEmpresaOProfesional : IdEmpresaOProfesional,
   };
-
   return clases;
 }
 
@@ -87,12 +83,13 @@ function crearTarjeta(elemento,IdEmpresaOProfesional) {
 function EnviarIDempresa(NITempresa){
   localStorage.setItem('NITempresaEnviar',NITempresa)
 }
-
 function RegistrarPostulacion(IDoferta,IdEmpresaOProfesional) {
-   if(NoPermitirDobleRegistro(IDoferta,IdEmpresaOProfesional)){
+  let noPermitir = NoPermitirDobleRegistro(IDoferta,IdEmpresaOProfesional);
+   if(noPermitir){
     $.ajax({
       type: "POST",
       dataType :"json",
+      async: true,
       url : "Controles/buscarOfertas.php",
       data:{
         accion:"registrarPostulacion",
@@ -100,8 +97,8 @@ function RegistrarPostulacion(IDoferta,IdEmpresaOProfesional) {
         IdEmpresaOProfesional:IdEmpresaOProfesional
       },
       success:function(resp){
-        
-        
+        alert("entro")
+        console.log(resp)
           Swal.fire({
             icon: 'success',
             title: 'Postulado...',
@@ -118,11 +115,7 @@ function RegistrarPostulacion(IDoferta,IdEmpresaOProfesional) {
       footer: ''
     })
    }
- 
-  
-  
 }
-
 function NoPermitirDobleRegistro(IDoferta,IdEmpresaOProfesional){
   var retornar;
     $.ajax({
@@ -141,8 +134,6 @@ function NoPermitirDobleRegistro(IDoferta,IdEmpresaOProfesional){
   })
 return retornar;
 }
-
-
 function ConsultarOfertasDeTrabajoindex(){
   var tarjeta = document.querySelector(".row-filtros");
   var IdEmpresaOProfesional = document.getElementById("IdEmpresaOProfesional").value;
@@ -161,10 +152,8 @@ function ConsultarOfertasDeTrabajoindex(){
           var div = document.createElement("DIV");
           div.innerHTML = t;
           tarjeta.appendChild(div);
-          
         });
       }
     });
-   
   }
   

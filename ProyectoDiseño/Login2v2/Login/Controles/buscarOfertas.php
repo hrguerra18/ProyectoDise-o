@@ -2,7 +2,6 @@
 if (empty($_POST['accion'])) {
     $_POST['accion'] = "General";
 }
-
 // $_POST['accion'] = "registrarPostulacion";
 switch ($_POST['accion']) {
 
@@ -75,16 +74,20 @@ function RegistrarPostulacion(){
 
     $IDoferta = $_POST['IDoferta'];
     $IdEmpresaOProfesional = $_POST['IdEmpresaOProfesional'];
+    // $IDoferta = "55";
+    // $IdEmpresaOProfesional = "1232132222";
     $estadoProOfert = "En espera";
 
     $cantidadPostulados = ContarCuantosPostuladosTieneLaOferta($IDoferta);
     $cantidadDeAplicantes = CantidadDeAplicantes($IDoferta);
-    
+    echo($cantidadPostulados);
+
+    echo($cantidadDeAplicantes);
+
     
     if($IDoferta != "" && $IdEmpresaOProfesional != ""){
         if($cantidadDeAplicantes > $cantidadPostulados){
             $sql = "INSERT INTO pro_ofert (idProOfert,idProfesional,idOferta,estadoProOfert) VALUES (default,'$IdEmpresaOProfesional','$IDoferta','$estadoProOfert')";
-    
             if(mysqli_query($con,$sql)){
                 $cantidadPostuladosValidarUltimo = ContarCuantosPostuladosTieneLaOferta($IDoferta);
                
@@ -174,7 +177,7 @@ function ContarCuantosPostuladosTieneLaOferta($IDoferta){
     require "Conexion.php";
     $estado = "En espera";
     $estadoAceptado = "Aceptado";
-    $sql = "SELECT count(*) as contador FROM pro_ofert WHERE idOferta = '$IDoferta' OR estadoProOfert ='$estado' OR estadoProOfert = '$estadoAceptado'" ;
+    $sql = "SELECT count(*) as contador FROM pro_ofert WHERE idOferta = '$IDoferta' AND estadoProOfert ='$estado' OR estadoProOfert = '$estadoAceptado'" ;
     $result = mysqli_query($con,$sql);
     $row = mysqli_fetch_array($result);
 
