@@ -1,0 +1,6 @@
+projectKey=empleoweb
+serverUrl=http://localhost:9000
+serverVersion=9.2.1.49989
+dashboardUrl=http://localhost:9000/dashboard?id=empleoweb
+ceTaskId=AX1z1oNWiVEo0Ym7DaZn
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AX1z1oNWiVEo0Ym7DaZn
